@@ -7,7 +7,7 @@
 * Ricerca di una possibile immagine statica da riprodurre. Abbiamo considerato più alternative e di seguito verranno menzionate quelle che abbiamo maggiormente articolato:
 	* Idea del castello. Consiste nella creazione di un castello a pianta quadrata, in ogni faccia si 		troveranno delle piccoli torri disposte ad angolo tra di loro. Successivamente verranno aggiunti dei personaggi con la capacità di movimento (traslazione) come propostto nella figura sottostante. Inoltre abbiamo discusso della possibilità di introdurre alcune bandiere posizionate agli estremi  del castello e di animarle come se venissero investite dal vento. Nell'immagine sono presenti due diversi tipi di bandiera, una più semplice e una più complessa ed articolata.
 Nella figura si presentano alcuni sketch che abbiamo realizzato a matita.
- ![](JrnImages/IdeaA.jpg) 
+ ![](JrnImages/IdeaA.JPG) 
 
 	* Idea del tempio. 
 
