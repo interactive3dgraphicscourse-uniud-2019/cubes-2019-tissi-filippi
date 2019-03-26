@@ -20,7 +20,7 @@
 
 * Discussione relativa all'uso della possibilità di usare oppure fare a meno delle texture. Si è deiciso di utlizzare il documento 
 
-    quando si è deciso di fare quello introdotto la parte del muretto 
+    quando si è deciso di fare quello introdotto la parte del muretto.
 
 divisione del codice 
 
