@@ -21,7 +21,7 @@ function createCube(){
     let loader = new THREE.TextureLoader();
     loader.load(
         // resource URL
-        "textures/11635.jpg",
+        "textures/stone.jpg",
         // onLoad callback
         texture => {
             let material = new THREE.MeshPhongMaterial({ map: texture });
