@@ -2,20 +2,23 @@
 
 * Settaggio github e alcune correzioni al codice iniziale; si decide di menzionare la sostituzione di un file nella cartella "lib" dovuto ad un mancato aggiornamento.
 
-* DECISIONE: Verrà data priorità alla costruzione della parte statica del progetto e solo a terminazione avventuta ed in base alla scena creata si deciderà se introdurre un terreno piuttosto che un video multimediale per animare la scena.
+* DECISIONE: Verrà data priorità alla costruzione della parte statica del progetto e, solo a terminazione avventuta ed in base alla scena creata, si deciderà se introdurre un terreno piuttosto che un video multimediale per animare la scena.
 
-* Ricerca di una possibile immagine statica da riprodurre. Abbiamo considerato più alternative e di seguito verranno menzionate quelle che abbiamo maggiormente articolato:
-	* Idea del castello. Consiste nella creazione di un castello a pianta quadrata, in ogni faccia si 		troveranno delle piccoli torri disposte ad angolo tra di loro. Successivamente verranno aggiunti dei personaggi con la capacità di movimento (traslazione) come propostto nella figura sottostante. Inoltre abbiamo discusso della possibilità di introdurre alcune bandiere posizionate agli estremi  del castello e di animarle come se venissero investite dal vento. Nell'immagine sono presenti due diversi tipi di bandiera, una più semplice e una più complessa ed articolata.
-Nella figura si presentano alcuni sketch che abbiamo realizzato a matita.
- ![](JrnImages/IdeaA.JPG) 
+* Ricerca di una possibile immagine statica da riprodurre. Abbiamo considerato più alternative e di seguito verranno menzionate quelle che abbiamo maggiormente svliuppato:
+	* Idea del castello. Consiste nella creazione di un castello a pianta quadrata, in ogni faccia si troveranno delle piccoli torri disposte ad angolo tra di loro. Successivamente verranno aggiunti dei personaggi con la capacità di movimento (traslazione) come proposto nella figura sottostante. Inoltre abbiamo discusso della possibilità di introdurre alcune bandiere posizionate agli estremi  del castello e di animarle come se venissero investite dal vento. Nell'immagine sono presenti due diversi tipi di bandiera, una più semplice e una più complessa ed articolata.
+    Nella figura si presentano alcuni sketch che abbiamo realizzato a matita. ![](JrnImages/IdeaA.JPG) 
 
-	* Idea del tempio. 
+	* Idea del tempio. Consiste nella creazione di una base a pianta quadrata; per creare l'effetto scalini  "gradinata" si è deciso di inserire tre quadarati che verranno sovrapposti ed opportunamente scalati. 
+    La pianta del tempio sarà retttangolare, con le colonne ai lati; sul lato maggiore verranno inserite 6 colonne, mentre quello minore consterà di 3 colonne. Poichè le colonne sono disposte ad angolo la pianta che si formerà dovrebbe avere l'aspetto prensentato nella parte a destra della figura sottostante la descrizione.
+    La copertura del tempio consisterà in un rettangolo della stessa dimensione dell'ultimo che è stato inserito come scalino. Non si è ancora deciso con certezza cosa verrà inserito al di sopra, si pensava di relizzare due piramidi: per realizzare le facce di ciascuna delle piramidi si pensava di inserire dei quadrati che seguivano le diagonali del rettangolo che dovrebbero formare. Una volta completata tale fase si procederà con una rotazione delle stesse che andranno a formare la piramide. La parte rimanente del tetto potrebbe venire lasciata libera oppure potrebbero essere inserite delle bandiere, progettate in modo simile a quanto descritto nell'idea del castello.
+    Per quanto riguarda la parte di movimento della scena si pensava di introdurre due personaggi che si muoveranno in maniera opposta ai lati più lunghi del tempio. Ogni personaggio potrebbe venire rappresentato come è evidente nella parte sinistra della foto sottostante. Nel cielo si è pensato di introdurre delle nubi che verranno riprodotte usando dei cubi bianchi.
+    Nella figura si presentano alcuni sketch che abbiamo realizzato a matita. ![](JrnImages/IdeaB.JPG) 
 
 
+* DECISIONE: si è preferita l'alternativa del tempio poichè ritenuta più adeguata e che permette una miglior gestione delle animazioni. Inoltre si è pensato all'introduzione di un muretto che circonda il tempio e che poggia nel gradone più basso.
 
-* Discussione relativa all'uso della possibilità di usare oppure fare a meno delle texture. Si è deiciso di utlizzare il documento 
+* Divisione del codice e strutturazione diversa delle cartelle.
 
+# 27 marzo 2018
 
-divisione del codice 
-
-file principale in main.html 
+* In
