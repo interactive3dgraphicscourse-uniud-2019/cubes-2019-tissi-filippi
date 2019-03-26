@@ -16,11 +16,6 @@
     Nella figura si presentano alcuni sketch che abbiamo realizzato a matita. ![](JrnImages/IdeaB.JPG) 
 
 
+* DECISIONE: si è preferita l'alternativa del tempio poichè ritenuta più adeguata e che permette una miglior gestione delle animazioni. Inoltre si è pensato all'introduzione di un muretto che circonda il tempio e che poggia nel gradone più basso.
 
-* Discussione relativa all'uso della possibilità di usare oppure fare a meno delle texture. Si è deiciso di utlizzare il documento 
-
-    quando si è deciso di fare quello introdotto la parte del muretto.
-
-divisione del codice 
-
-file principale in main.html 
+* Divisione del codice e strutturazione diversa delle cartelle.
