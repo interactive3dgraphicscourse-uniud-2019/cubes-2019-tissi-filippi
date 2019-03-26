@@ -7,7 +7,7 @@
 * Ricerca di una possibile immagine statica da riprodurre. Abbiamo considerato più alternative e di seguito verranno menzionate quelle che abbiamo maggiormente articolato:
 
 
-* Idea della creazione di un castello a pianta quadrata: pianta base con torrette. Dopo una riflessione viene scartata, difficoltà nel trovare valide ani 
+    * Idea della creazione di un castello a pianta quadrata: pianta base con torrette. Dopo una riflessione viene scartata, difficoltà nel trovare valide ani 
 
 
 
