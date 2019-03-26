@@ -5,14 +5,11 @@
 * DECISIONE: Verrà data priorità alla costruzione della parte statica del progetto e solo a terminazione avventuta ed in base alla scena creata si deciderà se introdurre un terreno piuttosto che un video multimediale per animare la scena.
 
 * Ricerca di una possibile immagine statica da riprodurre. Abbiamo considerato più alternative e di seguito verranno menzionate quelle che abbiamo maggiormente articolato:
+	* Idea del castello. Consiste nella creazione di un castello a pianta quadrata, in ogni faccia si 		troveranno delle piccoli torri disposte ad angolo tra di loro. Successivamente verranno aggiunti dei personaggi con la capacità di movimento (traslazione) come propostto nella figura sottostante. Inoltre abbiamo discusso della possibilità di introdurre alcune bandiere posizionate agli estremi  del castello e di animarle come se venissero investite dal vento. Nell'immagine sono presenti due diversi tipi di bandiera, una più semplice e una più complessa ed articolata.
+Nella figura si presentano alcuni sketch che abbiamo realizzato a matita.
+ ![](JrnImages/IdeaA.jpg) 
 
-
-    * Idea della creazione di un castello a pianta quadrata: pianta base con torrette. Dopo una riflessione viene scartata, difficoltà nel trovare valide ani 
-
-
-
-Provo ad aggiungere una foto adesso: ![](JrnImages/partenone.jpg) 
-funziona?
+	* Idea del tempio. 
 
 
 
