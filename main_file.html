@@ -46,13 +46,14 @@
 
             setGround();
 			
+			
 			stats = new Stats();
 			stats.domElement.style.position = 'absolute';
 			stats.domElement.style.top = '0px';
 			document.body.appendChild( stats.domElement );
 			
 			// uncomment if you need to draw coordinate axes when building the scene
-			//Coordinates.drawAllAxes();
+			// Coordinates.drawAllAxes();
 			
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
 			
