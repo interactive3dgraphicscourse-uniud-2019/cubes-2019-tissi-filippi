@@ -27,12 +27,12 @@
 		
 		<script>
 		var scene, camera, renderer, controls, stats;
+		const RIENTRO=15;
 		const H_STEP = 5; 
-		const WIDTH_STEPS = 200;
-		const DEPH_STEPS = 300;
+		const WIDTH_STEPS = 205;
+		const DEPH_STEPS = 245;
 		const H_WALL = 20;
 		const WIDTH_WALL = 5;
-		const LENGTH_WALL = 270;
 		const TOWER_BASE = 5;
 		const H_TOWER = (3/2) * H_WALL;
 		//resize window
@@ -63,15 +63,17 @@
 			let t = steps.getSteps();
 			scene.add(t);
 
-			let wall = new Wall(LENGTH_WALL);
+			let wall = new Wall(WIDTH_STEPS, DEPH_STEPS);
 			let w = wall.getWall();
 			w.position.y = H_STEP*3;
 			scene.add(w);
 
+			/*
 			let column = new Column(5);
 			let c = column.getColumn();
 			scene.add(c);
-
+			*/
+			
 			//PERSONAGGI
 
 			//LUCI

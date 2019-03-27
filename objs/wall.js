@@ -1,5 +1,5 @@
 class Wall {
-    constructor(length) {
+    constructor(length, width) {
         this.wall = new THREE.Object3D();
         let wall_tex = new THREE.TextureLoader().load('textures/stone.jpg');
         let wallM = new THREE.MeshPhongMaterial( { map: wall_tex } );
@@ -8,11 +8,11 @@ class Wall {
         
 
         //Creo le pareti del muro
-        let wall_front_1 = this.createSubWall(wallG, wallM, length/3);
-        let wall_front_2 = this.createSubWall(wallG, wallM, length/3);
-        let wall_back = this.createSubWall(wallG, wallM, length - WIDTH_WALL*2);
-        let wall_sx = this.createSubWall(wallG, wallM, length - WIDTH_WALL*2);
-        let wall_dx = this.createSubWall(wallG, wallM, length - WIDTH_WALL*2);
+        let wall_front_1 = this.createSubWall(wallG, wallM, 60);
+        let wall_front_2 = this.createSubWall(wallG, wallM, 60);
+        let wall_back = this.createSubWall(wallG, wallM, length - (RIENTRO*2) - WIDTH_WALL*2);
+        let wall_sx = this.createSubWall(wallG, wallM, width - (RIENTRO*2) - WIDTH_WALL*2);
+        let wall_dx = this.createSubWall(wallG, wallM, width - (RIENTRO*2) - WIDTH_WALL*2);
         //Creo le torri
         let towers = [];
         for(let i=0; i<4; i++){
@@ -20,25 +20,27 @@ class Wall {
             this.wall.add(towers[i]);
         }
         //Posiziono le 4 torri agli angoli
-        towers[0].position.set(-(length/2) + TOWER_BASE/2,H_TOWER/2,length/2 - TOWER_BASE/2); //front sx
-        towers[1].position.set(length/2 - TOWER_BASE/2,H_TOWER/2,length/2 - TOWER_BASE/2); //front dx
-        towers[2].position.set(-(length/2) + TOWER_BASE/2,H_TOWER/2,-(length/2) + TOWER_BASE/2); //back sx
-        towers[3].position.set(length/2 - TOWER_BASE/2,H_TOWER/2,-(length/2) + TOWER_BASE/2); //back dx
+        towers[0].position.set(-(WIDTH_STEPS/2 - RIENTRO - WIDTH_WALL/2), H_TOWER/2, (width - (RIENTRO*2))/2 - WIDTH_WALL/2); //front sx
+        towers[1].position.set(WIDTH_STEPS/2 - RIENTRO - WIDTH_WALL/2, H_TOWER/2, (width - (RIENTRO*2))/2 - WIDTH_WALL/2);          //front dx
+        towers[2].position.set(-(WIDTH_STEPS/2 - RIENTRO - WIDTH_WALL/2), H_TOWER/2, -((width - (RIENTRO*2))/2 - WIDTH_WALL/2));    //back sx
+        towers[3].position.set(WIDTH_STEPS/2 - RIENTRO - WIDTH_WALL/2, H_TOWER/2, -((width - (RIENTRO*2))/2 - WIDTH_WALL/2)); //back dx
 
         //Posiziono le pareti del muro
         this.wall.add(wall_front_1);
         this.wall.add(wall_front_2);
         wall_front_1.rotation.y = 90 * Math.PI/180;
         wall_front_2.rotation.y = 90 * Math.PI/180;
-        wall_front_1.position.set(-length/3 + WIDTH_WALL, H_WALL/2, WIDTH_STEPS/2 - 15 - WIDTH_WALL/2);
-        wall_front_2.position.set(length/3 - WIDTH_WALL, H_WALL/2, WIDTH_STEPS/2 - 15 - WIDTH_WALL/2);
+
+        wall_front_1.position.set(-(length-(RIENTRO*2))/2 + WIDTH_WALL + 30, H_WALL/2, (width - (RIENTRO*2))/2 - WIDTH_WALL/2);
+        wall_front_2.position.set((length-(RIENTRO*2))/2 - WIDTH_WALL - 30, H_WALL/2, (width - (RIENTRO*2))/2 - WIDTH_WALL/2);
+        
         this.wall.add(wall_back);
         wall_back.rotation.y = 90 * Math.PI/180;
-        wall_back.position.set(0,H_WALL/2, -(WIDTH_STEPS/2 - 15 - WIDTH_WALL/2));
+        wall_back.position.set(0,H_WALL/2, -(DEPH_STEPS/2 - RIENTRO - WIDTH_WALL/2));
         this.wall.add(wall_sx);
-        wall_sx.position.set(-(WIDTH_STEPS/2 - 15 - WIDTH_WALL/2),H_WALL/2,0);
+        wall_sx.position.set(-(WIDTH_STEPS/2 - RIENTRO - WIDTH_WALL/2),H_WALL/2,0);
         this.wall.add(wall_dx);
-        wall_dx.position.set(WIDTH_STEPS/2 - 15 - WIDTH_WALL/2, H_WALL/2,0);
+        wall_dx.position.set(WIDTH_STEPS/2 - RIENTRO - WIDTH_WALL/2, H_WALL/2,0);
     }
   
     getWall(){

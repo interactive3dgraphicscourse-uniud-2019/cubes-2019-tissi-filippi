@@ -6,10 +6,10 @@ class Column {
 	  let columnM = new THREE.MeshPhongMaterial( { map: column_tex } );
       let columnG = new THREE.BoxGeometry(1,1,1);
 
-      let base0 = this.createBase(columnG, columnM, 30, 10);
-      let base1 = this.createBase(columnG, columnM, 20, 5);
-      let stem = this.createStem(columnG,columnM, 15, 50);
-      let capital = this.createCapital(columnG,columnM, 20, 10); 
+      let base0 = this.createBase(columnG, columnM, 15, 5);
+      let base1 = this.createBase(columnG, columnM, 10, 3);
+      let stem = this.createStem(columnG,columnM, 6, 50);
+      let capital = this.createCapital(columnG,columnM, 10, 3); 
 
       this.column.add(base0);
       base0.position.set(0, 20,0);

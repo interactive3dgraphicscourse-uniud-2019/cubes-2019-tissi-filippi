@@ -7,8 +7,8 @@ class Steps {
       let stepG = new THREE.BoxGeometry(1,1,1);
 
       let step0 = this.createStep(stepG, stepM, size, deph);
-      let step1 = this.createStep(stepG, stepM, size-15, deph);
-      let step2 = this.createStep(stepG, stepM, size-30, deph);
+      let step1 = this.createStep(stepG, stepM, size-RIENTRO, deph-RIENTRO);
+      let step2 = this.createStep(stepG, stepM, size-(RIENTRO*2), deph- (RIENTRO*2));
 
       this.steps.add(step0);
       step0.position.set(0,H_STEP/2,0);
