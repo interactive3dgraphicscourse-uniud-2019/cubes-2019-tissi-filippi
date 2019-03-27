@@ -33,3 +33,11 @@
 * Discussione sulla grandezza di una singola colonna e suo inserimento nel progetto (spazio occupato e valutazione dello spazio disponibile)
 
 * DECISIONE: riprogettazione dello spazio e conseguente riallineamento dei cubi che compongono la scena. Introduzione di variabili il più possibili modificabili e creazione del seguente sketch per la futura organizzazione della scena. ![](JrnImages/MisureProgetto.JPG) 
+
+* Osservando la figura precedentemente inserita è possibile osservare anche le misure che sono state decise per la creazione di ogni colonna. Ogni colonna è stata costruita con 4 cubi modellati e inseriti uno sopra all'altro.
+
+* DECISIONE: Si riporta il grafico per che tiene conto dei pivot che sono stati inseriti nella scena ![](JrnImages/OrganizzazioneScena.JPG) 
+
+* Raffinatura del codice
+
+* Allineamento dei pezzi che compongono la colonna
