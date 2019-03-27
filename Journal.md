@@ -22,4 +22,6 @@
 
 # 27 marzo 2018
 
-* Revisione del Journal trascritto la giornata precedente.
+* Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
+
+* DECISIONE: costruzione dei gradoni utilizzando 3 cubi opportunamente modellati
