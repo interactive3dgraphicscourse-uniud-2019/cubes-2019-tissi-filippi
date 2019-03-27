@@ -1,6 +1,18 @@
 <html>
 	<head>
 		<title>Project Tissi - Filippi</title>
+		<style>
+            body {
+                font-family: Monospace;
+                background-color: #f0f0f0;
+                margin: 0px;
+                overflow: hidden;
+            }
+            canvas {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
         <script src="lib/three.min.js"></script>
         <script src="lib/stats.min.js"></script>
         <script src="lib/Coordinates.js"></script>
@@ -8,7 +20,6 @@
         <script src="scripts/main.js"></script>
 		<script src="scripts/lights.js"></script>
 		<script src="objs/tempio.js"></script>
-        <link type="text/css" rel="stylesheet" href="styles/main.css">
 	</head>
 	<body>
 		
@@ -37,8 +48,9 @@
 			camera.position.set(2,2,2);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
-			let tempio = new Tempio(0,0,0);
-			scene.add(tempio.steps);
+			let gradini = new Steps(0,0,0);
+			let t = gradini.getSteps();
+			scene.add(t);
 
             setHemiLight();
 
