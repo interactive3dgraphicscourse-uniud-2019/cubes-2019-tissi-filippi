@@ -59,10 +59,11 @@
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 			//TEMPIO
+			//Aggiungo i gradini
 			let steps = new Steps(WIDTH_STEPS, DEPH_STEPS);
-			let t = steps.getSteps();
-			scene.add(t);
-
+			let s = steps.getSteps();
+			scene.add(s);
+			//Aggiungo il muretto
 			let wall = new Wall(WIDTH_STEPS, DEPH_STEPS);
 			let w = wall.getWall();
 			w.position.y = H_STEP*3;

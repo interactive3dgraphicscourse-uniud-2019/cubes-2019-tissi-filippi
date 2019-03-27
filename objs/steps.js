@@ -3,13 +3,16 @@ class Steps {
     constructor(size, deph) {
       this.steps = new THREE.Object3D();
       let step_tex = new THREE.TextureLoader().load('textures/stone.jpg');
-	    let stepM = new THREE.MeshPhongMaterial( { map: step_tex } );
+      let stepM = new THREE.MeshPhongMaterial( { map: step_tex } );
+      //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
       let stepG = new THREE.BoxGeometry(1,1,1);
 
+      //Creo i 3 gradini
       let step0 = this.createStep(stepG, stepM, size, deph);
       let step1 = this.createStep(stepG, stepM, size-RIENTRO, deph-RIENTRO);
       let step2 = this.createStep(stepG, stepM, size-(RIENTRO*2), deph- (RIENTRO*2));
 
+      //Aggiungo e posiziono i gradini
       this.steps.add(step0);
       step0.position.set(0,H_STEP/2,0);
       this.steps.add(step1);
@@ -22,6 +25,7 @@ class Steps {
       return this.steps;
     }
 
+    //Funzione per creare il singolo gradino
     createStep(geometry, material, size, deph){
       let step = new THREE.Mesh(geometry, material );
       step.scale.x = size;
