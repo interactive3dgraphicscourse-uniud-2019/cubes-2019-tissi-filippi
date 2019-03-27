@@ -58,7 +58,7 @@ class Wall {
 
     //Funzione per creare le torri
     createLittleTower(geometry, material, height){
-        var tower = new THREE.Mesh(geometry, material );
+        let tower = new THREE.Mesh(geometry, material );
         tower.scale.x = TOWER_BASE;
         tower.scale.y = height;;
         tower.scale.z = TOWER_BASE;

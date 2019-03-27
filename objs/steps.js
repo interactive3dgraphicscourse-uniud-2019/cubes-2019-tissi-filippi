@@ -23,7 +23,7 @@ class Steps {
     }
 
     createStep(geometry, material, size, deph){
-      var step = new THREE.Mesh(geometry, material );
+      let step = new THREE.Mesh(geometry, material );
       step.scale.x = size;
       step.scale.y = H_STEP;;
       step.scale.z = deph;
