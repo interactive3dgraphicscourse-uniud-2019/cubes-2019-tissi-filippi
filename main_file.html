@@ -45,10 +45,10 @@
 			renderer.shadowMap.enabled = true;
 			document.body.appendChild( renderer.domElement );
 			
-			camera.position.set(2,2,2);
+			camera.position.set(0,0,500);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
-			let gradini = new Steps(0,0,0);
+			let gradini = new Steps(200,5,200);
 			let t = gradini.getSteps();
 			scene.add(t);
 
