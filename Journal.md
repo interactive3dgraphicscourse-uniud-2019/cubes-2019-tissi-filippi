@@ -40,4 +40,12 @@
 
 * Raffinatura del codice
 
-* Allineamento dei pezzi che compongono la colonna
+* Allineamento dei pezzi che compongono la colonna per poterne visualizzare una completa nella scena. 
+
+* Discussione se questa mossa sia stata benfica oppure no poichè gli altri pezzi erano stati generati e poi ruotati, traslati dalla posizione iniziale. DECISIONE: in questo caso si è deciso di costruire una colonna della stessa altezza nell'asse y, così domani basterà solo posizionarle nella posizione corretta seguendo lo schema definito sopra.
+
+* Osservazioni relative alla possibilità di introdurre fin da subito alcune texture (almeno per differenziare all'occhio le colonne) e non fare tutto il lavoro alla fine.
+
+# 28 marzo 2018
+
+* Rev
