@@ -32,4 +32,4 @@
 
 * Discussione sulla grandezza di una singola colonna e suo inserimento nel progetto (spazio occupato e valutazione dello spazio disponibile)
 
-* DECISIONE: riprogettazione dello spazio e conseguente riallineamento dei cubi che compongono la scena. Introduzione di variabili il più possibili modificabili e 
+* DECISIONE: riprogettazione dello spazio e conseguente riallineamento dei cubi che compongono la scena. Introduzione di variabili il più possibili modificabili e creazione del seguente sketch per la futura organizzazione della scena. ![](JrnImages/MisureProgetto.JPG) 
