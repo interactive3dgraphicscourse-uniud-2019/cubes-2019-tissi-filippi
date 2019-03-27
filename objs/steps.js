@@ -23,13 +23,10 @@ class Steps {
     }
 
     createStep(geometry, material, size, deph){
-      var base = new THREE.Mesh(geometry, material );
-      //base.castShadow = true;
-      //base.receiveShadow = true;
-      //Steps(WIDTH_STEPS, H_STEP, WIDTH_STEPS);
-      base.scale.x = size;
-      base.scale.y = H_STEP;;
-      base.scale.z = deph;
-      return base;
+      var step = new THREE.Mesh(geometry, material );
+      step.scale.x = size;
+      step.scale.y = H_STEP;;
+      step.scale.z = deph;
+      return step;
     }
   }

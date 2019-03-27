@@ -49,19 +49,19 @@ class Wall {
 
     //Funzione per creare le pareti del muro
     createSubWall(geometry, material, length){
-        var base = new THREE.Mesh(geometry, material );
-        base.scale.x = WIDTH_WALL;
-        base.scale.y = H_WALL;;
-        base.scale.z = length;
-        return base;
+        let subwall = new THREE.Mesh(geometry, material );
+        subwall.scale.x = WIDTH_WALL;
+        subwall.scale.y = H_WALL;;
+        subwall.scale.z = length;
+        return subwall;
     }
 
     //Funzione per creare le torri
     createLittleTower(geometry, material, height){
-        var base = new THREE.Mesh(geometry, material );
-        base.scale.x = TOWER_BASE;
-        base.scale.y = height;;
-        base.scale.z = TOWER_BASE;
-        return base;
+        var tower = new THREE.Mesh(geometry, material );
+        tower.scale.x = TOWER_BASE;
+        tower.scale.y = height;;
+        tower.scale.z = TOWER_BASE;
+        return tower;
     }
   }
