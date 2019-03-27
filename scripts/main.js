@@ -16,8 +16,8 @@ function setGround(){
 }
 
 //FUNZIONE PER CUBO CON TEXTURE
-function createCube(){
-    let geometry = new THREE.BoxGeometry(1, 1, 1);
+function createCube(x,y,z){
+    let geometry = new THREE.BoxGeometry(x, y, z);
     let loader = new THREE.TextureLoader();
     loader.load(
         // resource URL
