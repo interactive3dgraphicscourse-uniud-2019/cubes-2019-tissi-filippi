@@ -6,10 +6,10 @@ class Column {
 	  let columnM = new THREE.MeshPhongMaterial( { map: column_tex } );
       let columnG = new THREE.BoxGeometry(1,1,1);
 
-      let base0 = this.createBase(columnG, columnM, 15, 5);
-      let base1 = this.createBase(columnG, columnM, 10, 3);
-      let stem = this.createStem(columnG,columnM, 6, 50);
-      let capital = this.createCapital(columnG,columnM, 10, 3); 
+      let base0 = this.createPartOf(columnG, columnM, 15, 5);
+      let base1 = this.createPartOf(columnG, columnM, 10, 3);
+      let stem = this.createPartOf(columnG,columnM, 6, 50);
+      let capital = this.createPartOf(columnG,columnM, 10, 3); 
 
       this.column.add(base0);
       base0.position.set(0, 20,0);
@@ -25,27 +25,11 @@ class Column {
       return this.column;
     }
 
-    createBase(geometry, material, size, heigth){
+    createPartOf(geometry, material, size, heigth){
       var base = new THREE.Mesh(geometry, material );
       base.scale.x = size;
       base.scale.y = heigth;;
       base.scale.z = size;
       return base;
     }
-
-    createStem(geometry, material, size, heigth){
-        var base = new THREE.Mesh(geometry, material );
-        base.scale.x = size;
-        base.scale.y = heigth;;
-        base.scale.z = size;
-        return base;
-     }
-
-     createCapital(geometry, material, size, heigth){
-        var base = new THREE.Mesh(geometry, material );
-        base.scale.x = size;
-        base.scale.y = heigth;;
-        base.scale.z = size;
-        return base;
-      }
   }
