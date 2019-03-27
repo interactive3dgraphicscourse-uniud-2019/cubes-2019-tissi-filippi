@@ -2,7 +2,7 @@ class Column {
 
     constructor(size) {
       this.column = new THREE.Object3D();
-      let column_tex = new THREE.TextureLoader().load('textures/stone.jpg');
+      let column_tex = new THREE.TextureLoader().load('textures/bas.jpg');
 	  let columnM = new THREE.MeshPhongMaterial( { map: column_tex } );
       let columnG = new THREE.BoxGeometry(1,1,1);
 
