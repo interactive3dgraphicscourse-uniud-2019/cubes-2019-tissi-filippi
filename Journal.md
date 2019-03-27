@@ -24,4 +24,12 @@
 
 * Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
 
-* DECISIONE: costruzione dei gradoni utilizzando 3 cubi opportunamente modellati
+* DECISIONE: costruzione dei gradoni utilizzando 3 cubi opportunamente modellati, le distanze e la dimensione dei cubi saranno evidenziate in seguito. 
+
+* Dopo aver costruito il basamento si è proseguito con la costruzione del muro.
+
+* DECISIONE: tutti i muri sono stati accorciati di 5 da entrambi i lati per permettere l'inserimento delle 4 torrette laterali.
+
+* Discussione sulla grandezza di una singola colonna e suo inserimento nel progetto (spazio occupato e valutazione dello spazio disponibile)
+
+* DECISIONE: riprogettazione dello spazio e conseguente riallineamento dei cubi che compongono la scena. Introduzione di variabili il più possibili modificabili e 
