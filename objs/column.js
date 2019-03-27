@@ -18,7 +18,7 @@ class Column {
       this.column.add(stem);
       stem.position.y = 52.5; 
       this.column.add(capital);
-      capital.position.y = 83.5;
+      capital.position.y = 82;
     }
   
     getColumn(){
