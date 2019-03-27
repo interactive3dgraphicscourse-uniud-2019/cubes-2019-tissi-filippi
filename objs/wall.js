@@ -20,10 +20,10 @@ class Wall {
             this.wall.add(towers[i]);
         }
         //Posiziono le 4 torri agli angoli
-        towers[0].position.set(-(length/2) + TOWER_BASE/2,H_TOWER/2,length/2 - TOWER_BASE/2);
-        towers[1].position.set(0,H_TOWER/2,0);
-        towers[2].position.set(0,H_TOWER/2,0);
-        towers[3].position.set(0,H_TOWER/2,0);
+        towers[0].position.set(-(length/2) + TOWER_BASE/2,H_TOWER/2,length/2 - TOWER_BASE/2); //front sx
+        towers[1].position.set(length/2 - TOWER_BASE/2,H_TOWER/2,length/2 - TOWER_BASE/2); //front dx
+        towers[2].position.set(-(length/2) + TOWER_BASE/2,H_TOWER/2,-(length/2) + TOWER_BASE/2); //back sx
+        towers[3].position.set(length/2 - TOWER_BASE/2,H_TOWER/2,-(length/2) + TOWER_BASE/2); //back dx
 
         //Posiziono le pareti del muro
         this.wall.add(wall_front_1);

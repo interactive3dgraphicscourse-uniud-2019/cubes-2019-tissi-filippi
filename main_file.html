@@ -21,6 +21,7 @@
 		<script src="scripts/lights.js"></script>
 		<script src="objs/steps.js"></script>
 		<script src="objs/wall.js"></script>
+		<script src="objs/column.js"></script>
 	</head>
 	<body>
 		
@@ -28,9 +29,10 @@
 		var scene, camera, renderer, controls, stats;
 		const H_STEP = 5; 
 		const WIDTH_STEPS = 200;
+		const DEPH_STEPS = 300;
 		const H_WALL = 20;
 		const WIDTH_WALL = 5;
-		const LENGTH_WALL = 170;
+		const LENGTH_WALL = 270;
 		const TOWER_BASE = 5;
 		const H_TOWER = (3/2) * H_WALL;
 		//resize window
@@ -56,7 +58,8 @@
 			camera.position.set(300,200,400);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
-			let steps = new Steps(WIDTH_STEPS);
+			//TEMPIO
+			let steps = new Steps(WIDTH_STEPS, DEPH_STEPS);
 			let t = steps.getSteps();
 			scene.add(t);
 
@@ -65,10 +68,18 @@
 			w.position.y = H_STEP*3;
 			scene.add(w);
 
+			let column = new Column(5);
+			let c = column.getColumn();
+			scene.add(c);
+
+			//PERSONAGGI
+
+			//LUCI
             setHemiLight();
 
             setDirectionalLight();
 
+			//TERRENO
             setGround();
 			
 			

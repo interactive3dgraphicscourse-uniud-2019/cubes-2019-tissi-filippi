@@ -1,14 +1,14 @@
 class Steps {
 
-    constructor(size) {
+    constructor(size, deph) {
       this.steps = new THREE.Object3D();
       let step_tex = new THREE.TextureLoader().load('textures/stone.jpg');
 	    let stepM = new THREE.MeshPhongMaterial( { map: step_tex } );
       let stepG = new THREE.BoxGeometry(1,1,1);
 
-      let step0 = this.createStep(stepG, stepM, size);
-      let step1 = this.createStep(stepG, stepM, size-15);
-      let step2 = this.createStep(stepG, stepM, size-30);
+      let step0 = this.createStep(stepG, stepM, size, deph);
+      let step1 = this.createStep(stepG, stepM, size-15, deph);
+      let step2 = this.createStep(stepG, stepM, size-30, deph);
 
       this.steps.add(step0);
       step0.position.set(0,H_STEP/2,0);
@@ -22,14 +22,14 @@ class Steps {
       return this.steps;
     }
 
-    createStep(geometry, material, size){
+    createStep(geometry, material, size, deph){
       var base = new THREE.Mesh(geometry, material );
       //base.castShadow = true;
       //base.receiveShadow = true;
       //Steps(WIDTH_STEPS, H_STEP, WIDTH_STEPS);
       base.scale.x = size;
       base.scale.y = H_STEP;;
-      base.scale.z = size;
+      base.scale.z = deph;
       return base;
-  }
+    }
   }
