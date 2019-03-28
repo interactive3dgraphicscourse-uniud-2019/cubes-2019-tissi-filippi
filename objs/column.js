@@ -18,7 +18,7 @@ class Column {
 
       let h_base = 2;
       let size_base = 10;
-      let h_stem = 59;
+      let h_stem = 60;
       let size_stem = 6;
       let h_capital = 4;
       let h_capital2 = 3;
