@@ -50,12 +50,16 @@
 
 * Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
 
-* Inizio giornata da inserire
+* Utilizzo degli schemi del giorno prima per la disposizione delle colonne.
 
-
+* Scrittura del codice della classe "Roof.js" che conterrà il tetto della sttruttura.
 
 * Problema inaspettato nell'osservazione del progetto originale del tetto una volta realizzato. Viene inserita l'immagine. ![](JrnImages/TettoSB.jpeg) 
 
-* DECISIONE: la modifica del tetto ha causato la modifiuca strutturale da parte del progetto elle colonne. La scelta di ieri di sotrutrile a parte è stata vicnetne. basterà solo modificare la colonna, il riposizionamento andrà da sè.
+* DECISIONE: Il tetto non è gradevole all'occhio e rende la struttura pesante. Soluzione: eliminazione e riprogettazione.
+
+* La modifica del tetto ha causato la modifica strutturale da parte del progetto delle colonne. La scelta di ieri di sotrutrile a parte è stata vicnetne. basterà solo modificare la colonna, il riposizionamento andrà da sè.
 
 * inserimento della struttura della nuova colonna.
+
+* Entro venerdi personaggi costruiti e posizionati.
