@@ -1,4 +1,7 @@
-# 26 marzo 2018
+
+<center> <h1>Journal Tissi-Filippi</h1> </center>
+
+# 26 marzo 2019
 
 * Settaggio github e alcune correzioni al codice iniziale; si decide di menzionare la sostituzione di un file ("OrbitControls.js") nella cartella "lib" dovuto ad un mancato aggiornamento.
 
@@ -20,9 +23,10 @@
 
 * Divisione del codice e strutturazione diversa delle cartelle.
 
-# 27 marzo 2018
 
-* Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
+# 27 marzo 2019
+
+* Revisione del Journal trascritto la giornata precedente.
 
 * DECISIONE: costruzione dei gradoni utilizzando 3 cubi opportunamente modellati, le distanze e la dimensione dei cubi saranno evidenziate in seguito. 
 
@@ -46,9 +50,9 @@
 
 * Osservazioni relative alla possibilità di introdurre fin da subito alcune texture (almeno per differenziare all'occhio le colonne) e non fare tutto il lavoro alla fine.
 
-# 28 marzo 2018
+# 28 marzo 2019
 
-* Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
+* Revisione del Journal trascritto la giornata precedente.
 
 * Disposizione delle colonne nel progetto seguendo lo schema predisposto il giorno prima.
 
@@ -77,3 +81,8 @@
 * Costruzione del personaggio seguendo fedelmente il progetto con aggiunta delle adeguate texture
 
 * DECISIONE: Alla testa sono state applicate delle texture con un array. Sono 2 diverse: una tutta bianca e una con la faccia. Entrambe le immagini sono state modificate con Adobe Photoshop.
+
+
+# 29 marzo 2019
+
+* Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
