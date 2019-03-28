@@ -11,7 +11,7 @@ class Column {
                       new THREE.MeshPhongMaterial( { map: column_tex }),
                       new THREE.MeshPhongMaterial( { map: column_tex }),
                     ];
-      let columnM = new THREE.MeshFaceMaterial(columnM_tex);
+      let columnM = new THREE.MultiMaterial(columnM_tex);
 
 
       let columnG = new THREE.BoxGeometry(1,1,1);
