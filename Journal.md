@@ -50,7 +50,7 @@
 
 * Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
 
-* Utilizzo degli schemi del giorno prima per la disposizione delle colonne.
+* Disposizione delle colonne nel progetto seguendo lo schema predisposto il giorno prima.
 
 * Scrittura del codice della classe "Roof.js" che conterrà il tetto della sttruttura.
 
@@ -58,8 +58,16 @@
 
 * DECISIONE: Il tetto non è gradevole all'occhio e rende la struttura pesante. Soluzione: eliminazione e riprogettazione.
 
-* La modifica del tetto ha causato la modifica strutturale da parte del progetto delle colonne. La scelta di ieri di sotrutrile a parte è stata vicnetne. basterà solo modificare la colonna, il riposizionamento andrà da sè.
+* La modifica del tetto ha causato la modifica strutturale da parte del progetto delle colonne. Codice che era stato scritto era mutevole senza grandi problemi dunque questo imprevisto non ha portato via molto tempo. 
 
-* inserimento della struttura della nuova colonna.
+* Modifica della colonna effettuata. Collocazione delle colonne nel progetto indipendenti dalla struttura delle stesse.
 
-* Entro venerdi personaggi costruiti e posizionati.
+* DECISIONE: Inserire nel fronte e nella faccia back del tempio una piramide vista frontalmente, come se fosse il frontone di un temopio classico. 
+
+* DECISIONE: Verrà inserito un ulteriore personaggio nel mezzo del tempio e per permettere la visione libera si deicde di non introdurre una trave che potrebbe coprire la scena e non renderla ben visibile.
+
+* Conclusione della mattinata con una breve discussione sulle texture che si potrebbero applicare alla scena.
+
+* DECISIONE: Entro venerdì sera bisogna costruire tutti i personaggi e posizionarli nel progetto.
+
+* DECISIONE: Discussione e rappresentazione del personaggio. Inserire immagine del quaderno.
