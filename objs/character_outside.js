@@ -28,8 +28,9 @@ class CharacterOutside {
       bottom_character.add(bottom[3]);
       bottom[3].position.set(0,2.5/2,0)
 
-      /****************** Creo il bottom *************/
+      /****************** Creo l'upper *************/
       let upper_character = new THREE.Object3D();
+      
       //Busto
       let bodyG = new THREE.BoxGeometry(7,10,4);
       let bodyM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
@@ -55,7 +56,7 @@ class CharacterOutside {
       upper_character.add(handDx);
       handDx.position.set(7/2+1.5/2, 2/2 + 2.5 + 3, 0);
       
-      //Testa
+      /************ Creo la testa **********************/
         let head_tex = new THREE.TextureLoader().load('textures/head_tex.jpg');
         let face_tex = new THREE.TextureLoader().load('textures/face.jpg');
 
@@ -72,24 +73,7 @@ class CharacterOutside {
       let head = new THREE.Mesh(headG, headM);
       upper_character.add(head);
       head.position.set(0, 3/2 + 2.5 + 10, 0);
-
-
-
-      /*
-      bottom.push(this.createBottomLevel(bottomG, bottomM, 3, 2, 2)); //livello 1
-      bottom_character.add(bottom[1]);
-      bottom[1].position.set(0, -(2/2 +2.5), -(2/2 + 2))
-
-      bottom.push(this.createBottomLevel(bottomG, bottomM, 5, 2.5, 2)); //livello 2
-      bottom_character.add(bottom[2]);
-      bottom[2].position.set(0,-2.5/2 , -2)
-
-      bottom.push(this.createBottomLevel(bottomG, bottomM, 7, 2.5, 4)); //livello 3
-      bottom_character.add(bottom[3]);
-      bottom[3].position.set(0,2.5/2,0)
-        */
-      //Creo la testa
-
+      
       this.character.add(bottom_character);
       this.character.add(upper_character);
       this.character.position.y = 25;
@@ -100,6 +84,7 @@ class CharacterOutside {
       return this.character;
     }
     
+    //Funzione per creare il singolo "livello" del bottom del character
     createBottomLevel(geometry, material, width, heigth, size){
         let step = new THREE.Mesh(geometry, material );
         step.scale.x = width;
