@@ -39,6 +39,8 @@
 		const ROOF_SIZE = 115;
 		const ROOF_DEPH = 175;
 		const COLUMN_CAPITAL_SIZE = 15;
+		const Z_COLUMN = 75;
+		const X_COLUMN = 45;
 		//resize window
 		window.addEventListener('resize', function () {
                 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -52,7 +54,7 @@
 
 			renderer = new THREE.WebGLRenderer( {antialias: true} );
 			renderer.setSize( window.innerWidth, window.innerHeight );
-			renderer.setClearColor( 0xf0f0f0 );
+			renderer.setClearColor( "rgb(30,144,255)" );
 			renderer.setPixelRatio( window.devicePixelRatio );
 			renderer.gammaInput = true;
 			renderer.gammaOutput = true;
@@ -63,7 +65,7 @@
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 
-			//TEMPIO
+			/*********************TEMPIO*******************/
 			let tempio = new THREE.Object3D();
 			scene.add(tempio);
 			//Aggiungo i gradini
@@ -83,7 +85,7 @@
 				columns_sx.push(new Column());
 				columns_sx_add.push(columns_sx[i].getColumn());
 				tempio.add(columns_sx_add[i]);
-				columns_sx_add[i].position.set(-45,0, -75 + i*30);
+				columns_sx_add[i].position.set(-X_COLUMN,0, -Z_COLUMN + i*30);
 			}
 
 			//Aggiungo le 6 colonne a destra
@@ -93,7 +95,7 @@
 				columns_dx.push(new Column());
 				columns_dx_add.push(columns_dx[i].getColumn());
 				tempio.add(columns_dx_add[i]);
-				columns_dx_add[i].position.set(45,0, -75 + i*30);
+				columns_dx_add[i].position.set(X_COLUMN,0, -Z_COLUMN + i*30);
 			}
 			
 			//Aggiungo le 2 colonne dietro
@@ -103,7 +105,7 @@
 				columns_back.push(new Column());
 				columns_back_add.push(columns_back[i].getColumn());
 				tempio.add(columns_back_add[i]);
-				columns_back_add[i].position.set(-15 + i*30, 0, -75);
+				columns_back_add[i].position.set(-15 + i*30, 0, -Z_COLUMN);
 			}
 			
 			//Aggiungo le 2 colonne davanti
@@ -113,23 +115,25 @@
 				columns_front.push(new Column());
 				columns_front_add.push(columns_front[i].getColumn());
 				tempio.add(columns_front_add[i]);
-				columns_front_add[i].position.set(-15 + i*30, 0, 75);
+				columns_front_add[i].position.set(-15 + i*30, 0, Z_COLUMN);
 			}
 			
 			//Aggiungo tetto
 			let roof = new Roof(105, 165);
 			let r = roof.getRoof();
-			r.position.y = 68 + H_STEP*3;
+			r.position.y = columns_front[0].getHColumn() + H_STEP*3;
 			tempio.add(r);
 
-			//PERSONAGGI
 
-			//LUCI
+			/******************************PERSONAGGI****************************/
+
+
+			/******************************LUCI****************************/
             setHemiLight();
 
             setDirectionalLight();
 
-			//TERRENO
+			/******************************TERRENO****************************/
             setGround();
 			
 			
