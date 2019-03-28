@@ -56,6 +56,19 @@ class CharacterOutside {
       handDx.position.set(7/2+1.5/2, 2/2 + 2.5 + 3, 0);
       
       //Testa
+        let head_tex_1 = new THREE.TextureLoader().load('textures/testa.jpg');
+        let face_tex = new THREE.TextureLoader().load('textures/faccia.jpg');
+        let head_tex_2 = new THREE.TextureLoader().load('textures/lati.jpg');
+        let head_tex_3 = new THREE.TextureLoader().load('textures/pelle.jpg');
+
+        let headM = [
+                new THREE.MeshPhongMaterial({map: head_tex_2}), 
+                new THREE.MeshPhongMaterial({map: head_tex_2}),
+                new THREE.MeshPhongMaterial({map: head_tex_1}),
+                new THREE.MeshPhongMaterial({map: head_tex_3}),
+                new THREE.MeshPhongMaterial({map: face_tex}),
+                new THREE.MeshPhongMaterial({map: head_tex_2})
+            ];
       let headG = new THREE.BoxGeometry(3,3,3);
       let headM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
       let head = new THREE.Mesh(headG, headM);
