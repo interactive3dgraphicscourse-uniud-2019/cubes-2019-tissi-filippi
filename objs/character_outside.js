@@ -56,21 +56,19 @@ class CharacterOutside {
       handDx.position.set(7/2+1.5/2, 2/2 + 2.5 + 3, 0);
       
       //Testa
-        let head_tex_1 = new THREE.TextureLoader().load('textures/testa.jpg');
-        let face_tex = new THREE.TextureLoader().load('textures/faccia.jpg');
-        let head_tex_2 = new THREE.TextureLoader().load('textures/lati.jpg');
-        let head_tex_3 = new THREE.TextureLoader().load('textures/pelle.jpg');
+        let head_tex = new THREE.TextureLoader().load('textures/head_tex.jpg');
+        let face_tex = new THREE.TextureLoader().load('textures/face.jpg');
 
-        let headM = [
-                new THREE.MeshPhongMaterial({map: head_tex_2}), 
-                new THREE.MeshPhongMaterial({map: head_tex_2}),
-                new THREE.MeshPhongMaterial({map: head_tex_1}),
-                new THREE.MeshPhongMaterial({map: head_tex_3}),
-                new THREE.MeshPhongMaterial({map: face_tex}),
-                new THREE.MeshPhongMaterial({map: head_tex_2})
+        let headM_array = [
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}), 
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: face_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true})
             ];
       let headG = new THREE.BoxGeometry(3,3,3);
-      let headM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
+      let headM = new THREE.MultiMaterial(headM_array);
       let head = new THREE.Mesh(headG, headM);
       upper_character.add(head);
       head.position.set(0, 3/2 + 2.5 + 10, 0);
