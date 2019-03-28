@@ -22,6 +22,7 @@
 		<script src="objs/steps.js"></script>
 		<script src="objs/wall.js"></script>
 		<script src="objs/column.js"></script>
+		<script src="objs/roof.js"></script>
 	</head>
 	<body>
 		
@@ -35,6 +36,9 @@
 		const WIDTH_WALL = 5;
 		const TOWER_BASE = 5;
 		const H_TOWER = (3/2) * H_WALL;
+		const ROOF_SIZE = 115;
+		const ROOF_DEPH = 175;
+		const COLUMN_CAPITAL_SIZE = 15;
 		//resize window
 		window.addEventListener('resize', function () {
                 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -69,11 +73,51 @@
 			w.position.y = H_STEP*3;
 			scene.add(w);
 
-		
-			let column = new Column(5);
-			let c = column.getColumn();
-			scene.add(c);
+			//Aggiungo le 6 colonne a sinistra
+			let columns_sx = [];
+			let columns_sx_add = [];
+			for(let i=0; i<6; i++){
+				columns_sx.push(new Column());
+				columns_sx_add.push(columns_sx[i].getColumn());
+				scene.add(columns_sx_add[i]);
+				columns_sx_add[i].position.set(-45,0, -75 + i*30);
+			}
+
+			//Aggiungo le 6 colonne a destra
+			let columns_dx = [];
+			let columns_dx_add = [];
+			for(let i=0; i<6; i++){
+				columns_dx.push(new Column());
+				columns_dx_add.push(columns_dx[i].getColumn());
+				scene.add(columns_dx_add[i]);
+				columns_dx_add[i].position.set(45,0, -75 + i*30);
+			}
 			
+			//Aggiungo le 2 colonne dietro
+			let columns_back = [];
+			let columns_back_add = [];
+			for(let i=0; i<2; i++){
+				columns_back.push(new Column());
+				columns_back_add.push(columns_back[i].getColumn());
+				scene.add(columns_back_add[i]);
+				columns_back_add[i].position.set(-15 + i*30, 0, -75);
+			}
+			
+			//Aggiungo le 2 colonne davanti
+			let columns_front = [];
+			let columns_front_add = [];
+			for(let i=0; i<2; i++){
+				columns_front.push(new Column());
+				columns_front_add.push(columns_front[i].getColumn());
+				scene.add(columns_front_add[i]);
+				columns_front_add[i].position.set(-15 + i*30, 0, 75);
+			}
+			
+			//Aggiungo tetto
+			let roof = new Roof(105, 165);
+			let r = roof.getRoof();
+			r.position.y = 68 + H_STEP*3;
+			scene.add(r);
 
 			//PERSONAGGI
 

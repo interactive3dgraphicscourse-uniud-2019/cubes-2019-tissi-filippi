@@ -1,24 +1,24 @@
 class Column {
 
-    constructor(size) {
+    constructor() {
       this.column = new THREE.Object3D();
       let column_tex = new THREE.TextureLoader().load('textures/bas.jpg');
 	  let columnM = new THREE.MeshPhongMaterial( { map: column_tex } );
       let columnG = new THREE.BoxGeometry(1,1,1);
 
-      let base0 = this.createPartOf(columnG, columnM, 15, 5);
-      let base1 = this.createPartOf(columnG, columnM, 10, 3);
+      let base = this.createPartOf(columnG,columnM, 10, 2);
       let stem = this.createPartOf(columnG,columnM, 6, 59);
-      let capital = this.createPartOf(columnG,columnM, 10, 3); 
+      let capital = this.createPartOf(columnG,columnM, 10, 4);
+      let capital2 = this.createPartOf(columnG,columnM, COLUMN_CAPITAL_SIZE, 3); 
 
-      this.column.add(base0);
-      base0.position.y = 17.5;
-      this.column.add(base1);
-      base1.position.y = 21.5;
+      this.column.add(base);
+      base.position.y = 2/1 + H_STEP*3;
       this.column.add(stem);
-      stem.position.y = 52.5; 
+      stem.position.y = 59/2 + H_STEP*3 + 2; 
       this.column.add(capital);
-      capital.position.y = 82;
+      capital.position.y = 4/2 + H_STEP*3 + 59 + 2;
+      this.column.add(capital2);
+      capital2.position.y = 3/2 + H_STEP*3 + 59 + 4 + 2;
     }
   
     getColumn(){

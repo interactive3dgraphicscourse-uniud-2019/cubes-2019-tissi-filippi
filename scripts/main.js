@@ -15,29 +15,4 @@ function setGround(){
     ground.receiveShadow = true;
 }
 
-//FUNZIONE PER CUBO CON TEXTURE
-function createCube(x,y,z){
-    let geometry = new THREE.BoxGeometry(x, y, z);
-    let loader = new THREE.TextureLoader();
-    loader.load(
-        // resource URL
-        "textures/stone.jpg",
-        // onLoad callback
-        texture => {
-            let material = new THREE.MeshPhongMaterial({ map: texture });
-            let cube = new THREE.Mesh(geometry, material);
-            cube.castShadow = true;
-            cube.receiveShadow = true;
-            scene.add(cube);
-        },
-        // onProgress callback currently not supported
-        undefined,
-        // onError callback
-        err => {
-            console.error("An error happened.");
-            console.error(err);
-        }
-    );
-}
-
-			
+		
