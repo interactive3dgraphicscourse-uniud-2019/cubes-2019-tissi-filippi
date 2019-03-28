@@ -1,34 +1,99 @@
 class CharacterOutside {
 
-    constructor(size, deph) {
+    constructor() {
       this.character = new THREE.Object3D();
-      let character_tex = new THREE.TextureLoader().load('textures/stone.jpg');
-      let stepM = new THREE.MeshPhongMaterial( { map: character_tex } );
+      let character_tex = new THREE.TextureLoader().load('textures/ros.jpg');
+      //let stepM = new THREE.MeshPhongMaterial( { map: character_tex } );
       //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
-      let stepG = new THREE.BoxGeometry(1,1,1);
+      //let stepG = new THREE.BoxGeometry(1,1,1);
       
-      //Creo i 3 gradini
-      
+      /****************** Creo il bottom *************/
+      let bottom = [];
+      let bottom_character = new THREE.Object3D();
+      let bottomG = new THREE.BoxGeometry(1,1,1);
+      let bottomM = new THREE.MeshPhongMaterial( { map: character_tex, opacity: .8, transparent: true } );
+      bottom.push(this.createBottomLevel(bottomG, bottomM, 1.5, 2, 2)); //livello 0
+      bottom_character.add(bottom[0]);
+      bottom[0].position.set(0, -(2/2 + 2.5 +2), -(2/2 + 2 + 1))
 
-      //Aggiungo e posiziono i gradini
-      this.steps.add(step0);
-      step0.position.set(0,H_STEP/2,0);
-      this.steps.add(step1);
-      step1.position.y = 3/2*H_STEP;
-      this.steps.add(step2);
-      step2.position.y = 5/2*H_STEP;
+      bottom.push(this.createBottomLevel(bottomG, bottomM, 3, 2, 2)); //livello 1
+      bottom_character.add(bottom[1]);
+      bottom[1].position.set(0, -(2/2 +2.5), -(2/2 + 2))
+
+      bottom.push(this.createBottomLevel(bottomG, bottomM, 5, 2.5, 2)); //livello 2
+      bottom_character.add(bottom[2]);
+      bottom[2].position.set(0,-2.5/2 , -2)
+
+      bottom.push(this.createBottomLevel(bottomG, bottomM, 7, 2.5, 4)); //livello 3
+      bottom_character.add(bottom[3]);
+      bottom[3].position.set(0,2.5/2,0)
+
+      /****************** Creo il bottom *************/
+      let upper_character = new THREE.Object3D();
+      //Busto
+      let bodyG = new THREE.BoxGeometry(7,10,4);
+      let bodyM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
+      let body = new THREE.Mesh(bodyG, bodyM);
+      upper_character.add(body);
+      body.position.set(0, 10/2 + 2.5, 0);
+
+      //Braccia e mani
+      let armG = new THREE.BoxGeometry(1.5, 5, 2);
+      let armM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
+      let handG = new THREE.BoxGeometry(1.5, 2, 2);
+      let handM = new THREE.MeshBasicMaterial( { color: "rgb(255,222,173)", opacity: .8, transparent: true } );
+      let armSx = new THREE.Mesh(armG, armM);
+      let armDx = new THREE.Mesh(armG, armM);
+      let handSx = new THREE.Mesh(handG, handM);
+      let handDx = new THREE.Mesh(handG, handM);
+      upper_character.add(armSx);
+      armSx.position.set(-(7/2+1.5/2), 5/2 + 2.5 + 10/2, 0);
+      upper_character.add(armDx);
+      armDx.position.set(7/2+1.5/2, 5/2 + 2.5 + 10/2, 0);
+      upper_character.add(handSx);
+      handSx.position.set(-(7/2+1.5/2), 2/2 + 2.5 + 3, 0);
+      upper_character.add(handDx);
+      handDx.position.set(7/2+1.5/2, 2/2 + 2.5 + 3, 0);
+      
+      //Testa
+      let headG = new THREE.BoxGeometry(3,3,3);
+      let headM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
+      let head = new THREE.Mesh(headG, headM);
+      upper_character.add(head);
+      head.position.set(0, 3/2 + 2.5 + 10, 0);
+
+
+
+      /*
+      bottom.push(this.createBottomLevel(bottomG, bottomM, 3, 2, 2)); //livello 1
+      bottom_character.add(bottom[1]);
+      bottom[1].position.set(0, -(2/2 +2.5), -(2/2 + 2))
+
+      bottom.push(this.createBottomLevel(bottomG, bottomM, 5, 2.5, 2)); //livello 2
+      bottom_character.add(bottom[2]);
+      bottom[2].position.set(0,-2.5/2 , -2)
+
+      bottom.push(this.createBottomLevel(bottomG, bottomM, 7, 2.5, 4)); //livello 3
+      bottom_character.add(bottom[3]);
+      bottom[3].position.set(0,2.5/2,0)
+        */
+      //Creo la testa
+
+      this.character.add(bottom_character);
+      this.character.add(upper_character);
+      this.character.position.y = 25;
+
     }
   
-    getSteps(){
-      return this.steps;
+    getCharacter(){
+      return this.character;
     }
-
-    //Funzione per creare il singolo gradino
-    createLevelBottom(geometry, material, size, deph){
-      let step = new THREE.Mesh(geometry, material );
-      step.scale.x = size;
-      step.scale.y = H_STEP;;
-      step.scale.z = deph;
-      return step;
-    }
+    
+    createBottomLevel(geometry, material, width, heigth, size){
+        let step = new THREE.Mesh(geometry, material );
+        step.scale.x = width;
+        step.scale.y = heigth;
+        step.scale.z = size;
+        return step;
+      }
   }

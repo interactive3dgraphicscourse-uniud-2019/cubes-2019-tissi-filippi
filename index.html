@@ -23,6 +23,7 @@
 		<script src="objs/wall.js"></script>
 		<script src="objs/column.js"></script>
 		<script src="objs/roof.js"></script>
+		<script src="objs/character_outside.js"></script>
 	</head>
 	<body>
 		
@@ -126,7 +127,11 @@
 
 
 			/******************************PERSONAGGI****************************/
-
+			//Aggiungo tetto
+			let png1 = new CharacterOutside();
+			let p1 = png1.getCharacter();
+			//r.position.y = columns_front[0].getHColumn() + H_STEP*3;
+			scene.add(p1);
 
 			/******************************LUCI****************************/
             setHemiLight();
