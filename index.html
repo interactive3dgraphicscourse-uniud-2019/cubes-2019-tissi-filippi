@@ -62,16 +62,19 @@
 			camera.position.set(300,200,400);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
+
 			//TEMPIO
+			let tempio = new THREE.Object3D();
+			scene.add(tempio);
 			//Aggiungo i gradini
 			let steps = new Steps(WIDTH_STEPS, DEPH_STEPS);
 			let s = steps.getSteps();
-			scene.add(s);
+			tempio.add(s);
 			//Aggiungo il muretto
 			let wall = new Wall(WIDTH_STEPS, DEPH_STEPS);
 			let w = wall.getWall();
 			w.position.y = H_STEP*3;
-			scene.add(w);
+			tempio.add(w);
 
 			//Aggiungo le 6 colonne a sinistra
 			let columns_sx = [];
@@ -79,7 +82,7 @@
 			for(let i=0; i<6; i++){
 				columns_sx.push(new Column());
 				columns_sx_add.push(columns_sx[i].getColumn());
-				scene.add(columns_sx_add[i]);
+				tempio.add(columns_sx_add[i]);
 				columns_sx_add[i].position.set(-45,0, -75 + i*30);
 			}
 
@@ -89,7 +92,7 @@
 			for(let i=0; i<6; i++){
 				columns_dx.push(new Column());
 				columns_dx_add.push(columns_dx[i].getColumn());
-				scene.add(columns_dx_add[i]);
+				tempio.add(columns_dx_add[i]);
 				columns_dx_add[i].position.set(45,0, -75 + i*30);
 			}
 			
@@ -99,7 +102,7 @@
 			for(let i=0; i<2; i++){
 				columns_back.push(new Column());
 				columns_back_add.push(columns_back[i].getColumn());
-				scene.add(columns_back_add[i]);
+				tempio.add(columns_back_add[i]);
 				columns_back_add[i].position.set(-15 + i*30, 0, -75);
 			}
 			
@@ -109,7 +112,7 @@
 			for(let i=0; i<2; i++){
 				columns_front.push(new Column());
 				columns_front_add.push(columns_front[i].getColumn());
-				scene.add(columns_front_add[i]);
+				tempio.add(columns_front_add[i]);
 				columns_front_add[i].position.set(-15 + i*30, 0, 75);
 			}
 			
@@ -117,7 +120,7 @@
 			let roof = new Roof(105, 165);
 			let r = roof.getRoof();
 			r.position.y = 68 + H_STEP*3;
-			scene.add(r);
+			tempio.add(r);
 
 			//PERSONAGGI
 
