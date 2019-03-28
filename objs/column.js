@@ -14,11 +14,14 @@ class Column {
       let h_capital2 = 3;
       let size_capital2 = COLUMN_CAPITAL_SIZE;
       this.h_total = h_base+h_stem+h_capital+h_capital2;
+
+      //Creo le 4 componenti della colonna
       let base = this.createPartOf(columnG,columnM, size_base, h_base);
       let stem = this.createPartOf(columnG,columnM, size_stem, h_stem);
       let capital = this.createPartOf(columnG,columnM, size_base, h_capital);
       let capital2 = this.createPartOf(columnG,columnM, size_capital2, h_capital2); 
 
+      //Aggiungo e posiziono le componenti appena create
       this.column.add(base);
       base.position.y = h_base/1 + H_STEP*3;
       this.column.add(stem);
@@ -33,10 +36,12 @@ class Column {
       return this.column;
     }
 
+    //Funzione che mi ritorna l'altezza della colonna: utile per posizionare il tetto
     getHColumn(){
       return this.h_total;
     }
 
+    //Funzione per creare le singole parti della colonna
     createPartOf(geometry, material, size, heigth){
       var base = new THREE.Mesh(geometry, material );
       base.scale.x = size;

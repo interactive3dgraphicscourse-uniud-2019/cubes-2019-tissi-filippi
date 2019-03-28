@@ -29,6 +29,8 @@ class Roof {
         this.roof.add(roof_dx);
         roof_dx.position.set(X_COLUMN, (H_WALL - 5)/2, 0);
 
+
+        //Creo i due triangoli: fronte e retro
         let triangle_levels_back = [];
         let triangle_levels_front = [];
         let n_level = 11;
@@ -57,6 +59,7 @@ class Roof {
         return subwall;
     }
 
+    //Funzione per creare il singolo livello del triangolo
     createLevels(geometry, material, length){
         let subwall = new THREE.Mesh(geometry, material );
         subwall.scale.x = COLUMN_CAPITAL_SIZE;
