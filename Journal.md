@@ -4,19 +4,19 @@
 
 * DECISIONE: Verrà data priorità alla costruzione della parte statica del progetto e, solo a terminazione avvenuta della stessa ed in base alla scena creata, si deciderà in modo definitivo se introdurre un terreno piuttosto che un video multimediale per animare la scena. 
 
-* Ricerca di una possibile immagine statica da riprodurre. Abbiamo considerato più alternative e di seguito verranno menzionate quelle che abbiamo maggiormente svliuppato:
+* Ricerca di una possibile immagine statica da riprodurre. Abbiamo considerato più alternative e di seguito verranno menzionate quelle che abbiamo maggiormente sviluppato:
 
-	* Idea del castello. Consiste nella creazione di un castello a pianta quadrata, in ogni faccia si troveranno delle piccoli torri disposte ad angolo tra di loro. Successivamente verranno aggiunti dei personaggi con la capacità di movimento (traslazione), come proposto nella figura sottostante. Inoltre abbiamo discusso della possibilità di introdurre alcune bandiere posizionate agli estremi  del castello e di animarle come se venissero investite dal vento. Nell'immagine sono presenti due diversi tipi di bandiera, una più semplice e una più complessa ed articolata.
+    * Idea del castello. Consiste nella creazione di un castello a pianta quadrata, in ogni faccia si troveranno delle piccole torri disposte ad angolo tra di loro. Successivamente verranno aggiunti dei personaggi con la capacità di movimento (traslazione), come proposto nella figura sottostante. Inoltre, abbiamo discusso della possibilità di introdurre alcune bandiere posizionate agli estremi del castello e di animarle come se venissero investite dal vento. Nell'immagine sono presenti due diversi tipi di bandiera, una più semplice e una più complessa ed articolata.
     Nella figura si presentano alcuni sketch che abbiamo realizzato a matita. ![](JrnImages/IdeaA.JPG) 
 
-	* Idea del tempio. Consiste nella creazione di una base a pianta quadrata; per creare l'effetto scalini  "gradinata" si è deciso di inserire tre quadarati che verranno sovrapposti ed opportunamente scalati. 
-    La pianta del tempio sarà retttangolare, con le colonne ai lati; sul lato maggiore verranno inserite 6 colonne, mentre quello minore consterà di 3 colonne. Poichè le colonne sono disposte ad angolo la pianta che si formerà dovrebbe avere l'aspetto prensentato nella parte a destra della figura sottostante la descrizione.
+    * Idea del tempio. Consiste nella creazione di una base a pianta quadrata; per creare l'effetto scalini o “gradinata" si è deciso di inserire tre quadrati che verranno sovrapposti ed opportunamente scalati. 
+    La pianta del tempio sarà rettangolare, con le colonne ai lati; sul lato maggiore verranno inserite 6 colonne, mentre quello minore consterà di 3 colonne. Poiché le colonne sono disposte ad angolo la pianta che si formerà dovrebbe avere l'aspetto presentato nella parte a destra della figura sottostante la descrizione.
     La copertura del tempio consisterà in un rettangolo della stessa dimensione dell'ultimo che è stato inserito come scalino. Non si è ancora deciso con certezza cosa verrà inserito al di sopra, si pensava di realizzare due piramidi: per realizzare le facce di ciascuna delle piramidi si pensava di inserire dei quadrati che seguivano le diagonali del rettangolo che dovrebbero formare. Una volta completata tale fase si procederà con una rotazione delle stesse che andranno a formare la piramide. La parte rimanente del tetto potrebbe venire lasciata libera oppure potrebbero essere inserite delle bandiere, progettate in modo simile a quanto descritto nell'idea del castello.
     Per quanto riguarda la parte di movimento della scena si pensava di introdurre due personaggi che si muoveranno in maniera opposta ai lati più lunghi del tempio. Ogni personaggio potrebbe venire rappresentato come è evidente nella parte sinistra della foto sottostante. Nel cielo si è pensato di introdurre delle nubi che verranno riprodotte usando dei cubi bianchi.
     Nella figura si presentano alcuni sketch che abbiamo realizzato a matita. ![](JrnImages/IdeaB.JPG) 
 
 
-* DECISIONE: si è preferita l'alternativa del tempio poichè ritenuta più adeguata e che permette una miglior gestione delle animazioni. Inoltre si è pensato all'introduzione di un muretto che circonda il tempio e che poggia nel gradone più basso.
+* DECISIONE: si è preferita l'alternativa del tempio poiché ritenuta più adeguata e che permette una miglior gestione delle animazioni. Inoltre, si è pensato all'introduzione di un muretto che circonda il tempio e che poggia nel gradone più basso.
 
 * Divisione del codice e strutturazione diversa delle cartelle.
 
@@ -42,7 +42,7 @@
 
 * Allineamento dei pezzi che compongono la colonna per poterne visualizzare una completa nella scena. 
 
-* Discussione se questa mossa sia stata benfica oppure no poichè gli altri pezzi erano stati generati e poi ruotati, traslati dalla posizione iniziale. DECISIONE: in questo caso si è deciso di costruire una colonna della stessa altezza nell'asse y, così domani basterà solo posizionarle nella posizione corretta seguendo lo schema definito sopra.
+* Discussione se questa mossa sia stata benefica oppure no poiché gli altri pezzi erano stati generati e poi ruotati, traslati dalla posizione iniziale. DECISIONE: in questo caso si è deciso di costruire una colonna della stessa altezza nell'asse y, così domani basterà solo posizionarle nella posizione corretta seguendo lo schema definito sopra.
 
 * Osservazioni relative alla possibilità di introdurre fin da subito alcune texture (almeno per differenziare all'occhio le colonne) e non fare tutto il lavoro alla fine.
 
@@ -62,9 +62,9 @@
 
 * Modifica della colonna effettuata. Collocazione delle colonne nel progetto indipendenti dalla struttura delle stesse.
 
-* DECISIONE: Inserire nel fronte e nella faccia back del tempio una piramide vista frontalmente, come se fosse il frontone di un temopio classico. 
+* DECISIONE: Inserire nel fronte e nella faccia back del tempio una piramide vista frontalmente, come se fosse il frontone di un tempio classico. 
 
-* DECISIONE: Verrà inserito un ulteriore personaggio nel mezzo del tempio e per permettere la visione libera si deicde di non introdurre una trave che potrebbe coprire la scena e non renderla ben visibile.
+* DECISIONE: Verrà inserito un ulteriore personaggio nel mezzo del tempio e per permettere la visione libera si decide di non introdurre una trave che potrebbe coprire la scena e non renderla ben visibile.
 
 * Conclusione della mattinata con una breve discussione sulle texture che si potrebbero applicare alla scena.
 
