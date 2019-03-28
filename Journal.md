@@ -48,4 +48,12 @@
 
 # 28 marzo 2018
 
-* Rev
+* Revisione del Journal trascritto la giornata precedente ed eventuali correzioni.
+
+* Inizio da ggiungere
+
+* Problema inaspettato nell'osservaione del progetto originale del tetto una volta realizzato. Viene inserita l'immagine. ![](JrnImages/TettoSB.jpeg) 
+
+* DECISIONE: la modifica del tetto ha causato la modifiuca strutturale da parte del progetto elle colonne. La scelta di ieri di sotrutrile a parte è stata vicnetne. basterà solo modificare la colonna, il riposizionamento andrà da se.
+
+* inserimento della struttura della nuova colonna.
