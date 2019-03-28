@@ -2,8 +2,18 @@ class Column {
 
     constructor() {
       this.column = new THREE.Object3D();
-      let column_tex = new THREE.TextureLoader().load('textures/bas.jpg');
-	    let columnM = new THREE.MeshPhongMaterial( { map: column_tex } );
+      let column_tex = new THREE.TextureLoader().load('textures/column.jpg');
+      let columnM_tex = [
+                      new THREE.MeshPhongMaterial( { map: column_tex }),
+                      new THREE.MeshPhongMaterial( { map: column_tex }),
+                      new THREE.MeshPhongMaterial( { map: column_tex }),
+                      new THREE.MeshPhongMaterial( { map: column_tex }),
+                      new THREE.MeshPhongMaterial( { map: column_tex }),
+                      new THREE.MeshPhongMaterial( { map: column_tex }),
+                    ];
+      let columnM = new THREE.MeshFaceMaterial(columnM_tex);
+
+
       let columnG = new THREE.BoxGeometry(1,1,1);
 
       let h_base = 2;
