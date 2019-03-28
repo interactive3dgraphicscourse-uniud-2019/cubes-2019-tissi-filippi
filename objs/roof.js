@@ -28,7 +28,19 @@ class Roof {
         this.roof.add(roof_dx);
         roof_dx.position.set(45, (H_WALL - 5)/2, 0);
 
-        
+        let triangle_levels_back = [];
+        let triangle_levels_front = [];
+        let n_level = 11;
+        for(let i=0; i<n_level; i++){
+            triangle_levels_back.push(this.createLevels(roofG, roofM, width - 10*i));
+            triangle_levels_front.push(this.createLevels(roofG, roofM, width - 10*i));
+            this.roof.add(triangle_levels_back[i]);
+            this.roof.add(triangle_levels_front[i]);
+            triangle_levels_back[i].rotation.y = 90 * Math.PI/180;
+            triangle_levels_back[i].position.set(0, 10 + 3*i ,-75);
+            triangle_levels_front[i].rotation.y = 90 * Math.PI/180;
+            triangle_levels_front[i].position.set(0, 10 + 3*i ,75);
+        }
     }
   
     getRoof(){
@@ -44,6 +56,12 @@ class Roof {
         return subwall;
     }
 
-    //Funzione per creare
+    createLevels(geometry, material, length){
+        let subwall = new THREE.Mesh(geometry, material );
+        subwall.scale.x = COLUMN_CAPITAL_SIZE;
+        subwall.scale.y = 3;
+        subwall.scale.z = length;
+        return subwall;
+    }
 
   }
