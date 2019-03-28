@@ -52,7 +52,7 @@
 
 * Disposizione delle colonne nel progetto seguendo lo schema predisposto il giorno prima.
 
-* Scrittura del codice della classe "Roof.js" che conterrà il tetto della sttruttura.
+* Scrittura del codice della classe "Roof.js" che conterrà il tetto della struttura.
 
 * Problema inaspettato nell'osservazione del progetto originale del tetto una volta realizzato. Viene inserita l'immagine. ![](JrnImages/TettoSB.jpeg) 
 
@@ -70,4 +70,10 @@
 
 * DECISIONE: Entro venerdì sera bisogna costruire tutti i personaggi e posizionarli nel progetto.
 
-* DECISIONE: Discussione e rappresentazione del personaggio. Inserire immagine del quaderno.
+* DECISIONE: Discussione e rappresentazione del personaggio.
+
+* Progettazione nel dettaglio delle dimensioni del personaggio prima di introdurlo nella scena. In un primo tempo si era deciso di attribuirgli un'altezza totale di 30 cm, poi è stata ridotta. ![](JrnImages/SchemaPers.jpg)
+
+* Costruzione del personaggio seguendo fedelmente il progetto con aggiunta delle adeguate texture
+
+* DECISIONE: Alla testa sono state applicate delle texture con un array. Sono 2 diverse: una tutta bianca e una con la faccia. Entrambe le immagini sono state modificate con Adobe Photoshop.
