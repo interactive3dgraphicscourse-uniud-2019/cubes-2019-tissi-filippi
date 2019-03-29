@@ -87,4 +87,8 @@
 
 * Revisione del Journal trascritto la giornata precedente.
 
-* Progettazione del personaggio nuovo.
+* Progettazione del personaggio nuovo e sua implementazione.
+
+* Inseriemnto del cubo e ricerca delle texture adeguate.
+
+* Valutazione ed introduzione duccessiva delle luci nella scena.
