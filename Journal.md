@@ -86,3 +86,5 @@
 # 29 marzo 2019
 
 * Revisione del Journal trascritto la giornata precedente.
+
+* Progettazione del personaggio nuovo.
