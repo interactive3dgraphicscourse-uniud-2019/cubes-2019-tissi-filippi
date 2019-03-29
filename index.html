@@ -16,7 +16,8 @@
         <script src="lib/three.min.js"></script>
         <script src="lib/stats.min.js"></script>
         <script src="lib/Coordinates.js"></script>
-        <script src="lib/OrbitControls.js"></script>
+		<script src="lib/OrbitControls.js"></script>
+		<script src="lib/RectAreaLightUniformsLib.js"></script>
         <script src="scripts/main.js"></script>
 		<script src="scripts/lights.js"></script>
 		<script src="objs/steps.js"></script>
@@ -29,7 +30,9 @@
 	<body>
 		
 		<script>
-		var scene, camera, renderer, controls, stats;
+		let scene, camera, renderer, controls, stats;
+		let sfera, guard_sx;
+		let direction = false;
 		const RIENTRO = 15;
 		const H_STEP = 5; 
 		const WIDTH_STEPS = 205;
@@ -128,13 +131,28 @@
 
 
 			/******************************PERSONAGGI****************************/
-			//Aggiungo tetto
-			let png1 = new CharacterInside();
-			let p1 = png1.getCharacter();
-			//r.position.y = columns_front[0].getHColumn() + H_STEP*3;
-			scene.add(p1);
-			p1.rotation.y = 180*Math.PI/180;
-			p1.position.z = 30;
+			//Aggiungo Prete interno
+			let png_priest = new CharacterInside();
+			let priest = png_priest.getCharacter();
+			scene.add(priest);
+			priest.rotation.y = 180*Math.PI/180;
+			priest.position.z = 30;
+
+			//Aggiungo Guardia sx
+			let png_guard_sx = new CharacterOutside();
+			guard_sx = png_guard_sx.getCharacter();
+			scene.add(guard_sx);
+			guard_sx.rotation.y = 180*Math.PI/180;
+			guard_sx.position.z = 85;
+			guard_sx.position.x = -67.5;
+
+			//Aggiungo Guardia dx
+			let png_guard_dx = new CharacterOutside();
+			let guard_dx = png_guard_dx.getCharacter();
+			scene.add(guard_dx);
+			guard_dx.position.z = -85;
+			guard_dx.position.x = 67.5;
+
 
 			/*********************** "SFERA" CHE RUOTA ********************/
 			//Posizioniamo un "altarino"
@@ -144,18 +162,21 @@
 			a.position.z = -30; 
 			tempio.add(a);
 
-			let sferaG = new THREE.BoxGeometry(5,5,5);
-			let sferaM_array = [
-                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}), 
-                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
-                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
-                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
-                new THREE.MeshPhongMaterial({map: face_tex, opacity: .8, transparent: true}),
-                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true})
-            ]; 
+			let sferaG = new THREE.BoxGeometry(20,20,20);
 			let sfera_tex = new THREE.TextureLoader().load('textures/sfera_tex.png');
-			let sferaM = new THREE.MultiMaterial(headM_array);
-			let sfera = new THREE.Mesh(sferaG, sferaM);
+			let sferaM_array = [
+                new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true}), 
+                new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true})
+            ]; 
+			
+			let sferaM = new THREE.MultiMaterial(sferaM_array);
+			sfera = new THREE.Mesh(sferaG, sferaM);
+			scene.add(sfera);
+			sfera.position.set(0,60,-30);
 
 			/******************************LUCI****************************/
             setHemiLight();
@@ -180,7 +201,37 @@
 		
 		function Update() {
 			requestAnimationFrame( Update );
-			controls.update();  
+			controls.update();
+			//Animazione sfera
+			sfera.rotation.x+=0.01;
+			sfera.rotation.y+=0.01;
+
+			//Animazione guardia sx
+			if(guard_sx.position.z>=-85 && !direction){
+				guard_sx.position.z-=0.5;
+			}else if(guard_sx.position.z<=85 && direction){
+				guard_sx.position.z+=0.5;
+			}
+			if(guard_sx.position.z<=-85 || guard_sx.position.z>=85 ){
+				direction = !direction;
+				guard_sx.rotation.y += 180 * Math.PI/180;
+			}
+			/*
+			//Animazione guardia dx
+			if(guard_sx.position.z>=-85 && !direction){
+				guard_sx.position.z-=0.5;
+			}else if(guard_sx.position.z<=85 && direction){
+				guard_sx.position.z+=0.5;
+			}
+			if(guard_sx.position.z<=-85 || guard_sx.position.z>=85 ){
+				direction = !direction;
+				guard_sx.rotation.y += 180 * Math.PI/180;
+			}
+			*/
+				
+
+			//guard_sx.position.z-=0.1;
+
 			stats.update();
 			Render();
 		}
