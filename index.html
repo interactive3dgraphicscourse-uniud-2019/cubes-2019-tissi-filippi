@@ -31,8 +31,9 @@
 		
 		<script>
 		let scene, camera, renderer, controls, stats;
-		let sfera, guard_sx;
+		let sfera, guard_sx, guard_dx;
 		let direction = false;
+		let direction_2 = false;
 		const RIENTRO = 15;
 		const H_STEP = 5; 
 		const WIDTH_STEPS = 205;
@@ -145,10 +146,11 @@
 			guard_sx.rotation.y = 180*Math.PI/180;
 			guard_sx.position.z = 85;
 			guard_sx.position.x = -67.5;
+			guard_sx.position.y = 27;
 
 			//Aggiungo Guardia dx
 			let png_guard_dx = new CharacterOutside();
-			let guard_dx = png_guard_dx.getCharacter();
+			guard_dx = png_guard_dx.getCharacter();
 			scene.add(guard_dx);
 			guard_dx.position.z = -85;
 			guard_dx.position.x = 67.5;
@@ -208,26 +210,32 @@
 
 			//Animazione guardia sx
 			if(guard_sx.position.z>=-85 && !direction){
-				guard_sx.position.z-=0.5;
+				guard_sx.position.z-=0.4;
+				/*
+				if(guard_sx.position.y<=23 && !direction_2)
+					guard_sx.position.y-=0.5;
+				else (guard_sx.position.y>=27 && direction_2)
+					guard_sx.position.y+=0.5;
+				*/
 			}else if(guard_sx.position.z<=85 && direction){
-				guard_sx.position.z+=0.5;
+				guard_sx.position.z+=0.4;
 			}
 			if(guard_sx.position.z<=-85 || guard_sx.position.z>=85 ){
 				direction = !direction;
 				guard_sx.rotation.y += 180 * Math.PI/180;
 			}
-			/*
+					
 			//Animazione guardia dx
-			if(guard_sx.position.z>=-85 && !direction){
-				guard_sx.position.z-=0.5;
-			}else if(guard_sx.position.z<=85 && direction){
-				guard_sx.position.z+=0.5;
+			if(guard_dx.position.z<=85 && !direction_2){
+				guard_dx.position.z+=0.4;
+			}else if(guard_dx.position.z>=-85 && direction_2){
+				guard_dx.position.z-=0.4;
 			}
-			if(guard_sx.position.z<=-85 || guard_sx.position.z>=85 ){
-				direction = !direction;
-				guard_sx.rotation.y += 180 * Math.PI/180;
+			if(guard_dx.position.z<=-85 || guard_dx.position.z>=85 ){
+				direction_2 = !direction_2;
+				guard_dx.rotation.y += 180 * Math.PI/180;
 			}
-			*/
+			
 				
 
 			//guard_sx.position.z-=0.1;
