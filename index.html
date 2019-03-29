@@ -24,6 +24,7 @@
 		<script src="objs/column.js"></script>
 		<script src="objs/roof.js"></script>
 		<script src="objs/character_outside.js"></script>
+		<script src="objs/character_inside.js"></script>
 	</head>
 	<body>
 		
@@ -128,10 +129,33 @@
 
 			/******************************PERSONAGGI****************************/
 			//Aggiungo tetto
-			let png1 = new CharacterOutside();
+			let png1 = new CharacterInside();
 			let p1 = png1.getCharacter();
 			//r.position.y = columns_front[0].getHColumn() + H_STEP*3;
 			scene.add(p1);
+			p1.rotation.y = 180*Math.PI/180;
+			p1.position.z = 30;
+
+			/*********************** "SFERA" CHE RUOTA ********************/
+			//Posizioniamo un "altarino"
+			let altar = new Steps(40, 40);
+			let a = altar.getSteps();
+			a.position.y = H_STEP*3; 
+			a.position.z = -30; 
+			tempio.add(a);
+
+			let sferaG = new THREE.BoxGeometry(5,5,5);
+			let sferaM_array = [
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}), 
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: face_tex, opacity: .8, transparent: true}),
+                new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true})
+            ]; 
+			let sfera_tex = new THREE.TextureLoader().load('textures/sfera_tex.png');
+			let sferaM = new THREE.MultiMaterial(headM_array);
+			let sfera = new THREE.Mesh(sferaG, sferaM);
 
 			/******************************LUCI****************************/
             setHemiLight();
