@@ -87,8 +87,20 @@
 
 * Revisione del Journal trascritto la giornata precedente.
 
-* Progettazione del personaggio nuovo e sua implementazione.
+* Modifica delle texture inserite al personaggio il giorno precedente.
 
-* Inseriemnto del cubo e ricerca delle texture adeguate.
+* Progettazione del personaggio nuovo e sua implementazione. Non si riporta nel Journal la descrizione dettagliata del personaggio come fatto precedentemente poiché la struttura è simile e si differenzia per la posizione delle braccia.
 
-* Valutazione ed introduzione duccessiva delle luci nella scena.
+* Inserimento e posizionamento del cubo nel mezzo del tempio e ricerca della texture adeguata. Inserimento dell'animazione sull'asse x e asse y in contemporanea.
+
+* DECISIONE: Valutazione ed introduzione delle luci relative al cubo nella scena.
+
+* Inserimento dell'animazione per i due personaggi posizionati ai lati del tempio. Lo spostamento è una semplice traslazione sull'asse z.
+
+* DECISIONE: osservando la scena, si decide cercare di creare un movimento ondulatorio progressivo durante l'avanzamento del personaggio, paragonabile alla funzione "coseno".
+
+# 30 marzo 2019 - 31 marzo 2019
+
+* Revisione del Journal trascritto la giornata precedente.
+
+* Programmazione degli obiettivi da raggiungere durante i giorni della settimana futura.
