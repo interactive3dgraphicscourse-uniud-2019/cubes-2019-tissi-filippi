@@ -18,7 +18,7 @@ function setDirectionalLight() {
   }
 
   function setPointLight(obj, color){
-      let light = new THREE.PointLight( color, 1, 100 );
+      light = new THREE.PointLight( color, 1, 100 );
       light.position.set( 0, 0, 0 );
       obj.add(light);
   }

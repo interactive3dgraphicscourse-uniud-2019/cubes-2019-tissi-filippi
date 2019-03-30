@@ -23,9 +23,9 @@ function setRandomColor() {
   return color;
 }
 
-function changeColorRandom(event){
-  if(event.key = 107)
-    light_color = setRandomColor();
+function removeEntity(object) {
+  let selectedObject = scene.getObjectByName(object.name);
+  sfera.remove( selectedObject );
 }
 
 		
