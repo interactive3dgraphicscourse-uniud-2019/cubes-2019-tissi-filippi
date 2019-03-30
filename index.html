@@ -98,10 +98,22 @@
 			let s = steps.getSteps();
 			tempio.add(s);
 
-			//Aggiungo le decorazioni
-			let decorations = new Decorations(8, 1);
-			let d = decorations.getDecorations();
-			tempio.add(d);
+			//Aggiungo le decorazioni davanti         NON MESSE DIETRO
+			let decorations = [];
+			let decorations_add = [];
+			for(let i=0; i<3; i++){
+				decorations.push(new Decorations(8,1));
+				decorations_add.push(decorations[i].getDecorations());
+				tempio.add(decorations_add[i]);
+				decorations_add[i].position.set(-30 + i*30 ,0, 0);
+			}
+
+			
+
+
+
+
+
 
 			//Aggiungo il muretto
 			let wall = new Wall(WIDTH_STEPS, DEPH_STEPS);
