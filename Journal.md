@@ -103,4 +103,6 @@
 
 * Revisione del Journal trascritto la giornata precedente.
 
+* Risoluzione del problema relativo all'animazione del personaggio di sinistra, all'esterno del tempio.
+
 * Programmazione degli obiettivi da raggiungere durante i giorni della settimana futura.
