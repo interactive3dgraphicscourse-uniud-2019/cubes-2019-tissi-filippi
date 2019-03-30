@@ -99,16 +99,25 @@
 			tempio.add(s);
 
 			//Aggiungo le decorazioni davanti         NON MESSE DIETRO
-			let decorations = [];
-			let decorations_add = [];
+			let decorationsF = [];
+			let decorationsF_add = [];
 			for(let i=0; i<3; i++){
-				decorations.push(new Decorations(8,1));
-				decorations_add.push(decorations[i].getDecorations());
-				tempio.add(decorations_add[i]);
-				decorations_add[i].position.set(-30 + i*30 ,0, 0);
+				decorationsF.push(new Decorations(8,1));
+				decorationsF_add.push(decorationsF[i].getDecorations());
+				tempio.add(decorationsF_add[i]);
+				decorationsF_add[i].position.set(-30 + i*30 ,0, 0);
 			}
 
-			
+			//Aggiungo le decorazioni lato sinistro     NON MESSE A DESTRA
+			let decorationsSx = [];
+			let decorationsSx_add = [];
+			for(let i=0; i<1; i++){
+				decorationsSx.push(new Decorations(8,1));
+				decorationsSx_add.push(decorationsSx[i].getDecorations());
+				
+				//decorationsSx_add[i].rotation.y = 90 * Math.PI/180;
+				tempio.add(decorationsSx_add[i]);
+			} 
 
 
 
