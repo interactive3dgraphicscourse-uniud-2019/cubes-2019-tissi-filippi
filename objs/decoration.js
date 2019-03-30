@@ -1,4 +1,4 @@
-class Decoration {
+class Decorations {
 
     constructor(size, deph) {
       this.decorations = new THREE.Object3D();
