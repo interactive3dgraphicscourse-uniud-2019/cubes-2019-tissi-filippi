@@ -37,6 +37,7 @@
 		<script src="objs/roof.js"></script>
 		<script src="objs/character_outside.js"></script>
 		<script src="objs/character_inside.js"></script>
+		<script src="objs/decoration.js"></script>
 	</head>
 	<body>
 		<div id="info_light"></div>
@@ -97,6 +98,12 @@
 			let steps = new Steps(WIDTH_STEPS, DEPH_STEPS);
 			let s = steps.getSteps();
 			tempio.add(s);
+
+			//Aggiungo le decorazioni
+			let decorations = new Decorations(10, 10);
+			let d = decorations.getDecorations();
+			tempio.add(d);
+
 			//Aggiungo il muretto
 			let wall = new Wall(WIDTH_STEPS, DEPH_STEPS);
 			let w = wall.getWall();
