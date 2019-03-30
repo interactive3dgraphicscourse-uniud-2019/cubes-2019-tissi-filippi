@@ -36,6 +36,7 @@
 		let direction_2 = false;
 		let direction_3 = false;
 		let direction_4 = false;
+		let direction_5 = false;
 		const RIENTRO = 15;
 		const H_STEP = 5; 
 		const WIDTH_STEPS = 205;
@@ -148,8 +149,7 @@
 			guard_sx.rotation.y = 180*Math.PI/180;
 			guard_sx.position.z = 85;
 			guard_sx.position.x = -67.5;
-			//guard_sx.position.y = 27;
-			console.log(guard_sx.position.y);
+			guard_sx.position.y = 26;
 			//Aggiungo Guardia dx
 			let png_guard_dx = new CharacterOutside();
 			guard_dx = png_guard_dx.getCharacter();
@@ -165,7 +165,7 @@
 			a.position.y = H_STEP*3; 
 			a.position.z = -30; 
 			tempio.add(a);
-
+			//Creiamo e posizioniamo la "sfera"
 			let sferaG = new THREE.BoxGeometry(20,20,20);
 			let sfera_tex = new THREE.TextureLoader().load('textures/sfera_tex.png');
 			let sferaM_array = [
@@ -180,7 +180,7 @@
 			let sferaM = new THREE.MultiMaterial(sferaM_array);
 			sfera = new THREE.Mesh(sferaG, sferaM);
 			scene.add(sfera);
-			sfera.position.set(0,60,-30);
+			sfera.position.set(0,65,-30);
 
 			/******************************LUCI****************************/
             setHemiLight();
@@ -200,46 +200,63 @@
 			// Coordinates.drawAllAxes();
 			
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
-			
 		}
 		
 		function Update() {
 			requestAnimationFrame( Update );
 			controls.update();
-			//Animazione sfera
+			/************** ANIMAZIONE SFERA *************/
 			sfera.rotation.x+=0.01;
 			sfera.rotation.y+=0.01;
+			//Su e giù
+			if(sfera.position.y>=55 && !direction_5)
+				sfera.position.y-=0.09;
+			else if(sfera.position.y<=65 && direction_5)
+				sfera.position.y+=0.09;
+			if(sfera.position.y<=55 || sfera.position.y>=65 ){
+				direction_5 = !direction_5;
+			}
 
-			//Animazione guardia sx
+			/************** ANIMAZIONE GUARDIA SX *************/
 			//Avanti e indietro
 			if(guard_sx.position.z>=-85 && !direction){
-				guard_sx.position.z-=0.4;
+				guard_sx.position.z-=0.3;
 			}else if(guard_sx.position.z<=85 && direction){
-				guard_sx.position.z+=0.4;
+				guard_sx.position.z+=0.3;
 			}
 			if(guard_sx.position.z<=-85 || guard_sx.position.z>=85 ){
 				direction = !direction;
 				guard_sx.rotation.y += 180 * Math.PI/180;
 			}
+
 			//Su e giù
-			if(guard_sx.position.y>=23 && !direction_3)
-				guard_sx.position.y-=0.3;
-			else (guard_sx.position.y<=25 && direction_3)
-				guard_sx.position.y+=0.3;
-			if(guard_sx.position.y<=23 || guard_sx.position.y>=25 ){
+			if(guard_sx.position.y>=22 && !direction_3)
+				guard_sx.position.y-=0.09;
+			else if(guard_sx.position.y<=26 && direction_3)
+				guard_sx.position.y+=0.09;
+			if(guard_sx.position.y<=22 || guard_sx.position.y>=26 ){
 				direction_3 = !direction_3;
 			}
 			
 					
-			//Animazione guardia dx
+			/************** ANIMAZIONE GUARDIA DX *************/
+			//Avanti e indietro
 			if(guard_dx.position.z<=85 && !direction_2){
-				guard_dx.position.z+=0.4;
+				guard_dx.position.z+=0.3;
 			}else if(guard_dx.position.z>=-85 && direction_2){
-				guard_dx.position.z-=0.4;
+				guard_dx.position.z-=0.3;
 			}
 			if(guard_dx.position.z<=-85 || guard_dx.position.z>=85 ){
 				direction_2 = !direction_2;
 				guard_dx.rotation.y += 180 * Math.PI/180;
+			}
+			//Su e giù
+			if(guard_dx.position.y>=22 && !direction_4)
+				guard_dx.position.y-=0.09;
+			else if(guard_dx.position.y<=26 && direction_4)
+				guard_dx.position.y+=0.09;
+			if(guard_dx.position.y<=22 || guard_dx.position.y>=26 ){
+				direction_4 = !direction_4;
 			}
 			
 				
