@@ -15,4 +15,17 @@ function setGround(){
     ground.receiveShadow = true;
 }
 
+function setRandomColor() {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let color = "rgb(" + x + "," + y + "," + z + ")";
+  return color;
+}
+
+function changeColorRandom(event){
+  if(event.key = 107)
+    light_color = setRandomColor();
+}
+
 		

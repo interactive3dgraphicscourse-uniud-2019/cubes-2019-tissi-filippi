@@ -3,7 +3,7 @@
 		<title>Project Tissi - Filippi</title>
 		<style>
             body {
-                font-family: Monospace;
+                font-family: "Courier New", Courier, monospace;
                 background-color: #f0f0f0;
                 margin: 0px;
                 overflow: hidden;
@@ -11,7 +11,18 @@
             canvas {
                 width: 100%;
                 height: 100%;
-            }
+			}
+
+			#info_light{
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 50%;
+				text-align: center;
+				padding-top: 20px;
+				font-size: 18px;
+			}
         </style>
         <script src="lib/three.min.js"></script>
         <script src="lib/stats.min.js"></script>
@@ -28,7 +39,7 @@
 		<script src="objs/character_inside.js"></script>
 	</head>
 	<body>
-		
+		<div id="info_light"></div>
 		<script>
 		let scene, camera, renderer, controls, stats;
 		let sfera, guard_sx, guard_dx;
@@ -37,6 +48,7 @@
 		let direction_3 = false;
 		let direction_4 = false;
 		let direction_5 = false;
+		let light_div;
 		const RIENTRO = 15;
 		const H_STEP = 5; 
 		const WIDTH_STEPS = 205;
@@ -58,6 +70,10 @@
 		});
 		
 		function Start() {
+			light_div = document.getElementById("info_light");
+			light_div.innerHTML = "Clicca " + "<b>+</b>" + " per cambiare il colore della luce";
+			
+			document.addEventListener("keypress", changeColorRandom);
 			scene = new THREE.Scene();
 			camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -181,6 +197,8 @@
 			sfera = new THREE.Mesh(sferaG, sferaM);
 			scene.add(sfera);
 			sfera.position.set(0,65,-30);
+			let light_color = setRandomColor();
+			setPointLight(sfera, light_color);
 
 			/******************************LUCI****************************/
             setHemiLight();

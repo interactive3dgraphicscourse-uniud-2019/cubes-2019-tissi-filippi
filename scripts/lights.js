@@ -16,3 +16,11 @@ function setDirectionalLight() {
     dirLight.shadow.mapSize.width = 1024;
     dirLight.shadow.mapSize.height = 1024;
   }
+
+  function setPointLight(obj, color){
+      let light = new THREE.PointLight( color, 1, 100 );
+      light.position.set( 0, 0, 0 );
+      obj.add(light);
+  }
+
+
