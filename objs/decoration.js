@@ -11,7 +11,7 @@ class Decorations {
       
       //Aggiungo e posiziono i gradini
       this.decorations.add(dec0);
-      dec0.position.set(0,30,20);
+      dec0.position.set(0,84+(8/2),79+(8/2));
       //this.decorations.add(dec1);
       //dec1.position.set(22,77,0);
     }
