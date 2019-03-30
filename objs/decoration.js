@@ -12,9 +12,9 @@ class Decorations {
       //Aggiungo e posiziono i gradini
       this.decorations.add(dec0);
       dec0.position.set(0,86+(8/2),79+(8/2));
-      this.decorations.add(dec1);
-      dec1.position.set(-45-15,86+(8/2),0);
-      dec1.rotation.y = 90 * Math.PI/180;
+      //this.decorations.add(dec1);
+      //dec1.position.set(-45-15,86+(8/2),0);
+      //dec1.rotation.y = 90 * Math.PI/180;
     }
   
     getDecorations(){

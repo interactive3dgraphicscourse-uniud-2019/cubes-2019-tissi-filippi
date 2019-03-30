@@ -111,12 +111,13 @@
 			//Aggiungo le decorazioni lato sinistro     NON MESSE A DESTRA
 			let decorationsSx = [];
 			let decorationsSx_add = [];
-			for(let i=0; i<1; i++){
+			for(let i=0; i<5; i++){
 				decorationsSx.push(new Decorations(8,1));
 				decorationsSx_add.push(decorationsSx[i].getDecorations());
-				
-				//decorationsSx_add[i].rotation.y = 90 * Math.PI/180;
 				tempio.add(decorationsSx_add[i]);
+				decorationsSx_add[i].rotation.y = 90*Math.PI/180;
+				decorationsSx_add[i].position.set(-136 , 0, -60 + i*30);
+				
 			} 
 
 
