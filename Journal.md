@@ -105,4 +105,12 @@
 
 * Risoluzione del problema relativo all'animazione del personaggio di sinistra, all'esterno del tempio.
 
+* DECISIONE: aggiunta delle decorazioni quadrate nel tempio. 5 si troveranno nel lato sinistro e destro mentre 3 davanti e dietro.
+
+* Proposta di inserire due paletti all'entrata del tempio, ma l'idea è stata scartata.
+
 * Programmazione degli obiettivi da raggiungere durante i giorni della settimana futura.
+
+# 1 aprile 2019
+
+* Revisione del Journal trascritto la giornata precedente.
