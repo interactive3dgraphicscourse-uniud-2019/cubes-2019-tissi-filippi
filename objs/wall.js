@@ -4,7 +4,7 @@ class Wall {
         let wall_tex = new THREE.TextureLoader().load('textures/stone.jpg');
         let wallM = new THREE.MeshPhongMaterial( { map: wall_tex } );
         //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
-        let wallG = new THREE.BoxGeometry(1,1,1);
+        let wallG = new THREE.BoxBufferGeometry(1,1,1);
         
 
         //Creo le pareti del muretto

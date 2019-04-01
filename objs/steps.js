@@ -5,7 +5,7 @@ class Steps {
       let step_tex = new THREE.TextureLoader().load('textures/stone.jpg');
       let stepM = new THREE.MeshPhongMaterial( { map: step_tex } );
       //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
-      let stepG = new THREE.BoxGeometry(1,1,1);
+      let stepG = new THREE.BoxBufferGeometry(1,1,1);
 
       //Creo i 3 gradini
       let step0 = this.createStep(stepG, stepM, size, deph);

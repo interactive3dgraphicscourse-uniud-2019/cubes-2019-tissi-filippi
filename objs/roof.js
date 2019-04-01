@@ -5,7 +5,7 @@ class Roof {
         let roof_tex = new THREE.TextureLoader().load('textures/stone.jpg');
         let roofM = new THREE.MeshPhongMaterial( { map: roof_tex } );
         //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
-        let roofG = new THREE.BoxGeometry(1,1,1);
+        let roofG = new THREE.BoxBufferGeometry(1,1,1);
         
 
         //Creo le pareti del muretto

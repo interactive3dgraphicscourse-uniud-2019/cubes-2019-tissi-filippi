@@ -4,7 +4,7 @@ class Decorations {
       this.decorations = new THREE.Object3D();
       let decoration_tex = new THREE.TextureLoader().load('textures/ros.jpg');
       let decorationM = new THREE.MeshPhongMaterial( { map: decoration_tex });
-      let decorationG = new THREE.BoxGeometry(1,1,1);
+      let decorationG = new THREE.BoxBufferGeometry(1,1,1);
 
       let dec0 = this.createDecoration(decorationG, decorationM, size, deph);
       this.decorations.add(dec0);

@@ -14,7 +14,7 @@ class Column {
       let columnM = new THREE.MultiMaterial(columnM_tex);
 
 
-      let columnG = new THREE.BoxGeometry(1,1,1);
+      let columnG = new THREE.BoxBufferGeometry(1,1,1);
 
       let h_base = 2;
       let size_base = 10;

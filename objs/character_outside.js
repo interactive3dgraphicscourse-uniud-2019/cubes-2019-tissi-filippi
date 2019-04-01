@@ -9,7 +9,7 @@ class CharacterOutside {
       let h_level = 2.5;
       let h_level_2 = 2;
       let bottom_character = new THREE.Object3D();
-      let bottomG = new THREE.BoxGeometry(1,1,1);
+      let bottomG = new THREE.BoxBufferGeometry(1,1,1);
       let bottomM = new THREE.MeshPhongMaterial( { map: character_tex, opacity: .8, transparent: true } );
       bottom.push(this.createBottomLevel(bottomG, bottomM, 1.5, h_level_2, 2)); //livello 0
       bottom_character.add(bottom[0]);
@@ -35,7 +35,7 @@ class CharacterOutside {
       let h_chest = 10;
       let w_body_in = 7;
       let w_arm_hand = 1.5;
-      let bodyG = new THREE.BoxGeometry(w_body_in, h_chest,4);
+      let bodyG = new THREE.BoxBufferGeometry(w_body_in, h_chest,4);
       let bodyM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,20)", opacity: .8, transparent: true } );
       let body = new THREE.Mesh(bodyG, bodyM);
       upper_character.add(body);
@@ -44,9 +44,9 @@ class CharacterOutside {
       //Braccia e mani
       let h_arm = 5;
       let h_hand = 2;
-      let armG = new THREE.BoxGeometry(w_arm_hand, h_arm, h_hand);
+      let armG = new THREE.BoxBufferGeometry(w_arm_hand, h_arm, h_hand);
       let armM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,20)", opacity: .8, transparent: true } );
-      let handG = new THREE.BoxGeometry(w_arm_hand, h_hand, h_hand);
+      let handG = new THREE.BoxBufferGeometry(w_arm_hand, h_hand, h_hand);
       let handM = new THREE.MeshBasicMaterial( { color: "rgb(255,222,173)", opacity: .8, transparent: true } );
       let armSx = new THREE.Mesh(armG, armM);
       let armDx = new THREE.Mesh(armG, armM);
@@ -71,7 +71,7 @@ class CharacterOutside {
       handDx.position.set(w_body_in/2+w_arm_hand/2, -(h_hand/2 + h_level), 0);
 
       //Aggiungiamo un piccola lancia
-      let spearG = new THREE.BoxGeometry(0.5,25,0.5);
+      let spearG = new THREE.BoxBufferGeometry(0.5,25,0.5);
       let spearM = new THREE.MeshBasicMaterial({ color: "rgb(0,0,0)", opacity: .8, transparent: true });
       let spear = new THREE.Mesh(spearG, spearM);
       spear.rotation.x = 90 * Math.PI/180;
@@ -90,7 +90,7 @@ class CharacterOutside {
                 new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true})
             ];
       let size_head = 3;
-      let headG = new THREE.BoxGeometry(size_head, size_head, size_head);
+      let headG = new THREE.BoxBufferGeometry(size_head, size_head, size_head);
       let headM = new THREE.MultiMaterial(headM_array);
       let head = new THREE.Mesh(headG, headM);
       upper_character.add(head);

@@ -7,14 +7,14 @@ class CharacterInside {
       let face_tex = new THREE.TextureLoader().load('textures/face.jpg');
       //let stepM = new THREE.MeshPhongMaterial( { map: character_tex } );
       //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
-      //let stepG = new THREE.BoxGeometry(1,1,1);
+      //let stepG = new THREE.BoxBufferGeometry(1,1,1);
       
       /****************** Creo il bottom *************/
       let bottom = [];
       let h_level = 2.5;
       let h_level_2 = 2;
       let bottom_character_in = new THREE.Object3D();
-      let bottomG = new THREE.BoxGeometry(1,1,1);
+      let bottomG = new THREE.BoxBufferGeometry(1,1,1);
       let bottomM = new THREE.MeshPhongMaterial( { map: character_tex_in, opacity: .8, transparent: true } );
       bottom.push(this.createBottomLevel(bottomG, bottomM, 1.5, 2, 2)); //livello 0
       bottom_character_in.add(bottom[0]);
@@ -40,7 +40,7 @@ class CharacterInside {
       let h_chest = 10;
       let w_body_in = 7;
       let w_arm_hand = 1.5;
-      let bodyG = new THREE.BoxGeometry(w_body_in,h_chest,4);
+      let bodyG = new THREE.BoxBufferGeometry(w_body_in,h_chest,4);
       let body = new THREE.Mesh(bodyG, bottomM);
       upper_character_in.add(body);
       body.position.set(0, w_body/2 + h_level, 0);
@@ -48,8 +48,8 @@ class CharacterInside {
       //Braccia e mani
       let h_arm = 5;
       let h_hand = 2;
-      let armG = new THREE.BoxGeometry(w_arm_hand, h_arm, h_hand);
-      let handG = new THREE.BoxGeometry(w_arm_hand, h_hand, h_hand);
+      let armG = new THREE.BoxBufferGeometry(w_arm_hand, h_arm, h_hand);
+      let handG = new THREE.BoxBufferGeometry(w_arm_hand, h_hand, h_hand);
       let handM = new THREE.MeshPhongMaterial( { map: head_tex, opacity: .8, transparent: true } );
       let armSx = new THREE.Mesh(armG, bottomM);
       let armDx = new THREE.Mesh(armG, bottomM);
@@ -84,7 +84,7 @@ class CharacterInside {
               new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true})
           ];
       let size_head = 3;
-      let headG = new THREE.BoxGeometry(size_head,size_head,size_head);
+      let headG = new THREE.BoxBufferGeometry(size_head,size_head,size_head);
       let headM = new THREE.MultiMaterial(headM_array);
       let head = new THREE.Mesh(headG, headM);
       upper_character_in.add(head);
