@@ -11,16 +11,18 @@ class CharacterInside {
       
       /****************** Creo il bottom *************/
       let bottom = [];
+      let h_level = 2.5;
+      let h_level_2 = 2;
       let bottom_character_in = new THREE.Object3D();
       let bottomG = new THREE.BoxGeometry(1,1,1);
       let bottomM = new THREE.MeshPhongMaterial( { map: character_tex_in, opacity: .8, transparent: true } );
       bottom.push(this.createBottomLevel(bottomG, bottomM, 1.5, 2, 2)); //livello 0
       bottom_character_in.add(bottom[0]);
-      bottom[0].position.set(0, -(2/2 + 2.5 +2), -(2/2 + 2 + 1))
+      bottom[0].position.set(0, -(2/2 + h_level +2), -(2/2 + 2 + 1))
 
       bottom.push(this.createBottomLevel(bottomG, bottomM, 3, 2, 2)); //livello 1
       bottom_character_in.add(bottom[1]);
-      bottom[1].position.set(0, -(2/2 +2.5), -(2/2 + 2))
+      bottom[1].position.set(0, -(2/2 +h_level), -(2/2 + 2))
 
       bottom.push(this.createBottomLevel(bottomG, bottomM, 5, 2.5, 2)); //livello 2
       bottom_character_in.add(bottom[2]);

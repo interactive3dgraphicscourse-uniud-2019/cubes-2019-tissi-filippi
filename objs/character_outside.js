@@ -42,22 +42,24 @@ class CharacterOutside {
       body.position.set(0, w_body/2 + h_level, 0);
 
       //Braccia e mani
-      let armG = new THREE.BoxGeometry(w_arm_hand, 5, 2);
+      let h_arm = 5;
+      let h_hand = 2;
+      let armG = new THREE.BoxGeometry(w_arm_hand, h_arm, h_hand);
       let armM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
-      let handG = new THREE.BoxGeometry(w_arm_hand, 2, 2);
+      let handG = new THREE.BoxGeometry(w_arm_hand, h_hand, h_hand);
       let handM = new THREE.MeshBasicMaterial( { color: "rgb(255,222,173)", opacity: .8, transparent: true } );
       let armSx = new THREE.Mesh(armG, armM);
       let armDx = new THREE.Mesh(armG, armM);
       let handSx = new THREE.Mesh(handG, handM);
       let handDx = new THREE.Mesh(handG, handM);
       upper_character.add(armSx);
-      armSx.position.set(-(w_body_in/2+w_arm_hand/2), 5/2 + 2.5 + h_chest/2, 0);
+      armSx.position.set(-(w_body_in/2+w_arm_hand/2), h_arm/2 + h_level + h_chest/2, 0);
       upper_character.add(armDx);
-      armDx.position.set(w_body_in/2+w_arm_hand/2, 5/2 + 2.5 + h_chest/2, 0);
+      armDx.position.set(w_body_in/2+w_arm_hand/2, h_arm/2 + h_level + h_chest/2, 0);
       upper_character.add(handSx);
-      handSx.position.set(-(w_body_in/2+w_arm_hand/2), 2/2 + 2.5 + 3, 0);
+      handSx.position.set(-(w_body_in/2+w_arm_hand/2), h_hand/2 + h_level + (h_chest-h_arm-h_hand), 0);
       upper_character.add(handDx);
-      handDx.position.set(w_body_in/2+w_arm_hand/2, 2/2 + 2.5 + 3, 0);
+      handDx.position.set(w_body_in/2+w_arm_hand/2, h_hand/2 + h_level + (h_chest-h_arm-h_hand), 0);
       
       /************ Creo la testa **********************/
         let head_tex = new THREE.TextureLoader().load('textures/head_tex.jpg');
@@ -71,11 +73,12 @@ class CharacterOutside {
                 new THREE.MeshPhongMaterial({map: face_tex, opacity: .8, transparent: true}),
                 new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true})
             ];
-      let headG = new THREE.BoxGeometry(3,3,3);
+      let size_head = 3;
+      let headG = new THREE.BoxGeometry(size_head, size_head, size_head);
       let headM = new THREE.MultiMaterial(headM_array);
       let head = new THREE.Mesh(headG, headM);
       upper_character.add(head);
-      head.position.set(0, 3/2 + 2.5 + h_chest, 0);
+      head.position.set(0, size_head/2 + h_level + h_chest, 0);
       
       this.character.add(bottom_character);
       this.character.add(upper_character);

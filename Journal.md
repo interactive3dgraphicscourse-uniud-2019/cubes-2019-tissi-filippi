@@ -91,7 +91,7 @@
 
 * Progettazione del personaggio nuovo e sua implementazione. Non si riporta nel Journal la descrizione dettagliata del personaggio come fatto precedentemente poiché la struttura è simile e si differenzia per la posizione delle braccia.
 
-* Inserimento e posizionamento del cubo nel mezzo del tempio e ricerca della texture adeguata. Inserimento della rotazione sull'asse x e asse y in contemporanea, inserimento inoltre di una traslazione continua su e giù.
+* Inserimento e posizionamento del cubo nel mezzo del tempio e ricerca della texture adeguata. Inserimento della rotazione sull'asse x e asse y in contemporanea, inserimento inoltre di una traslazione continua sull'asse y.
 
 * DECISIONE: Valutazione ed introduzione delle luci relative al cubo nella scena.
 
