@@ -63,17 +63,11 @@ class CharacterOutside {
 
       upper_character.add(armSx);
       armSx.position.set(-(w_body_in/2+w_arm_hand/2), h_arm/2 + h_level + h_chest/2, 0);
-      //upper_character.add(armDx);
-      //armDx.position.set(w_body_in/2+w_arm_hand/2, h_arm/2 + h_level + h_chest/2, 0);
       upper_character.add(handSx);
       handSx.position.set(-(w_body_in/2+w_arm_hand/2), h_hand/2 + h_level + (h_chest-h_arm-h_hand), 0);
-      //upper_character.add(handDx);
-      //handDx.position.set(w_body_in/2+w_arm_hand/2, h_hand/2 + h_level + (h_chest-h_arm-h_hand), 0);
 
       upper_character.add(test1);
-      //armSx.position.set(-(w_body_in/2+w_arm_hand/2), 0, 0);
       armDx.position.set(w_body_in/2+w_arm_hand/2, 0, 0);
-      //handSx.position.set(-(w_body_in/2+w_arm_hand/2), -(h_hand/2 + h_level), 0);
       handDx.position.set(w_body_in/2+w_arm_hand/2, -(h_hand/2 + h_level), 0);
 
       //Aggiungiamo un piccola lancia come arma
