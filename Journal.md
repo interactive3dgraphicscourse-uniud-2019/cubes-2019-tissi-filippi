@@ -124,7 +124,7 @@
 
 * DECISIONE: i personaggi all'esterno del tempio avranno in mano un'asta.
 
-** DA SVOLGERE GLI ULTIMI GIORNI**
+** _DA SVOLGERE GLI ULTIMI GIORNI_ **
  - texture colonna
  - colore delle decorazioni
  - colore altare
