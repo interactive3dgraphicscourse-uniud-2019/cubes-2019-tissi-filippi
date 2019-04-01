@@ -77,7 +77,7 @@ class CharacterOutside {
       spear.rotation.x = 90 * Math.PI/180;
       handDx.add(spear);
       
-      /************ Creo la testa **********************/
+      /************ Creo la testa *********************/
         let head_tex = new THREE.TextureLoader().load('textures/head_tex.jpg');
         let face_tex = new THREE.TextureLoader().load('textures/face.jpg');
 
