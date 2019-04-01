@@ -91,13 +91,14 @@
 
 * Progettazione del personaggio nuovo e sua implementazione. Non si riporta nel Journal la descrizione dettagliata del personaggio come fatto precedentemente poiché la struttura è simile e si differenzia per la posizione delle braccia.
 
-* Inserimento e posizionamento del cubo nel mezzo del tempio e ricerca della texture adeguata. Inserimento dell'animazione sull'asse x e asse y in contemporanea.
+* Inserimento e posizionamento del cubo nel mezzo del tempio e ricerca della texture adeguata. Inserimento della rotazione sull'asse x e asse y in contemporanea, inserimento inoltre di una traslazione continua su e giù.
 
 * DECISIONE: Valutazione ed introduzione delle luci relative al cubo nella scena.
 
 * Inserimento dell'animazione per i due personaggi posizionati ai lati del tempio. Lo spostamento è una semplice traslazione sull'asse z.
 
-* DECISIONE: osservando la scena, si decide cercare di creare un movimento ondulatorio progressivo durante l'avanzamento del personaggio, paragonabile alla funzione "coseno".
+* DECISIONE: osservando la scena, si decide cercare di creare un movimento ondulatorio progressivo durante l'avanzamento del personaggio, movimento che ricorda di più un fantasma.
+ 
 
 # 30 marzo 2019 - 31 marzo 2019
 
