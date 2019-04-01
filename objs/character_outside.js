@@ -36,7 +36,7 @@ class CharacterOutside {
       let w_body_in = 7;
       let w_arm_hand = 1.5;
       let bodyG = new THREE.BoxGeometry(w_body_in, h_chest,4);
-      let bodyM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
+      let bodyM = new THREE.MeshBasicMaterial( { color: "rgb(53,29,204)", opacity: .8, transparent: true } );
       let body = new THREE.Mesh(bodyG, bodyM);
       upper_character.add(body);
       body.position.set(0, w_body/2 + h_level, 0);
@@ -45,21 +45,43 @@ class CharacterOutside {
       let h_arm = 5;
       let h_hand = 2;
       let armG = new THREE.BoxGeometry(w_arm_hand, h_arm, h_hand);
-      let armM = new THREE.MeshBasicMaterial( { color: "rgb(0,0,0)", opacity: .8, transparent: true } );
+      let armM = new THREE.MeshBasicMaterial( { color: "rgb(53,29,2040)", opacity: .8, transparent: true } );
       let handG = new THREE.BoxGeometry(w_arm_hand, h_hand, h_hand);
       let handM = new THREE.MeshBasicMaterial( { color: "rgb(255,222,173)", opacity: .8, transparent: true } );
       let armSx = new THREE.Mesh(armG, armM);
       let armDx = new THREE.Mesh(armG, armM);
       let handSx = new THREE.Mesh(handG, handM);
       let handDx = new THREE.Mesh(handG, handM);
+
+      let test1 = new THREE.Object3D();
+      test1.position.set(0,10,2);
+      let test2 = new THREE.Object3D();
+      test1.add(test2);
+      test2.add(armDx);
+      test2.add(handDx);
+      test2.rotation.x = -90*Math.PI/180;
+
       upper_character.add(armSx);
       armSx.position.set(-(w_body_in/2+w_arm_hand/2), h_arm/2 + h_level + h_chest/2, 0);
-      upper_character.add(armDx);
-      armDx.position.set(w_body_in/2+w_arm_hand/2, h_arm/2 + h_level + h_chest/2, 0);
+      //upper_character.add(armDx);
+      //armDx.position.set(w_body_in/2+w_arm_hand/2, h_arm/2 + h_level + h_chest/2, 0);
       upper_character.add(handSx);
       handSx.position.set(-(w_body_in/2+w_arm_hand/2), h_hand/2 + h_level + (h_chest-h_arm-h_hand), 0);
-      upper_character.add(handDx);
-      handDx.position.set(w_body_in/2+w_arm_hand/2, h_hand/2 + h_level + (h_chest-h_arm-h_hand), 0);
+      //upper_character.add(handDx);
+      //handDx.position.set(w_body_in/2+w_arm_hand/2, h_hand/2 + h_level + (h_chest-h_arm-h_hand), 0);
+
+      upper_character.add(test1);
+      //armSx.position.set(-(w_body_in/2+w_arm_hand/2), 0, 0);
+      armDx.position.set(w_body_in/2+w_arm_hand/2, 0, 0);
+      //handSx.position.set(-(w_body_in/2+w_arm_hand/2), -(h_hand/2 + h_level), 0);
+      handDx.position.set(w_body_in/2+w_arm_hand/2, -(h_hand/2 + h_level), 0);
+
+      //Aggiungiamo un piccola lancia come arma
+      let spearG = new THREE.BoxGeometry(1,20,1);
+      let spearM = new THREE.MeshBasicMaterial({ color: "rgb(0,0,0)", opacity: .8, transparent: true });
+      let spear = new THREE.Mesh(spearG, spearM);
+      spear.rotation.x = 90 * Math.PI/180;
+      handDx.add(spear);
       
       /************ Creo la testa **********************/
         let head_tex = new THREE.TextureLoader().load('textures/head_tex.jpg');

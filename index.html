@@ -43,12 +43,13 @@
 		<div id="info_light"></div>
 		<script>
 		let scene, camera, renderer, controls, stats;
-		let sfera, guard_sx, guard_dx;
+		let sfera, guard_sx, guard_dx, priest;
 		let direction = false;
 		let direction_2 = false;
 		let direction_3 = false;
 		let direction_4 = false;
 		let direction_5 = false;
+		let direction_6 = false;
 		let h_decoration = 8;
 		let light_div;
 		//Costanti per creazione del tempio: utilizzate anche in altre classi
@@ -198,7 +199,7 @@
 			/******************************PERSONAGGI****************************/
 			//Aggiungo Prete interno
 			let png_priest = new CharacterInside();
-			let priest = png_priest.getCharacter();
+			priest = png_priest.getCharacter();
 			scene.add(priest);
 			priest.rotation.y = 180*Math.PI/180;
 			priest.position.z = 30;
@@ -255,8 +256,6 @@
 
 			/******************************LUCI****************************/
             setHemiLight();
-
-            setDirectionalLight();
 
 			/******************************TERRENO****************************/
             setGround();
@@ -329,10 +328,16 @@
 			if(guard_dx.position.y<=22 || guard_dx.position.y>=26 ){
 				direction_4 = !direction_4;
 			}
-			
-				
 
-			//guard_sx.position.z-=0.1;
+			/************** ANIMAZIONE PRETE INTERNO *************/
+			//Su e giù
+			if(priest.position.y>=23 && !direction_6)
+				priest.position.y-=0.03;
+			else if(priest.position.y<=25 && direction_6)
+				priest.position.y+=0.03;
+			if(priest.position.y<=23 || priest.position.y>=25 ){
+				direction_6 = !direction_6;
+			}
 
 			stats.update();
 			Render();
