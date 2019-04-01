@@ -49,7 +49,9 @@
 		let direction_3 = false;
 		let direction_4 = false;
 		let direction_5 = false;
+		let h_decoration = 8;
 		let light_div;
+		//Costanti per creazione del tempio: utilizzate anche in altre classi
 		const RIENTRO = 15;
 		const H_STEP = 5; 
 		const WIDTH_STEPS = 205;
@@ -98,48 +100,6 @@
 			let s = steps.getSteps();
 			tempio.add(s);
 
-			//Aggiungo le decorazioni davanti
-			let decorationsF = [];
-			let decorationsF_add = [];
-			for(let i=0; i<3; i++){
-				decorationsF.push(new Decorations(8,1));
-				decorationsF_add.push(decorationsF[i].getDecorations());
-				tempio.add(decorationsF_add[i]);
-				decorationsF_add[i].position.set(-30 + i*30 ,86+(8/2) , 79+(8/2));
-			}
-
-			 //Aggiungo le decorazioni dietro
-			let decorationsB = [];
-			let decorationsB_add = [];
-			for(let i=0; i<3; i++){
-				decorationsB.push(new Decorations(8,1));
-				decorationsB_add.push(decorationsB[i].getDecorations());
-				tempio.add(decorationsB_add[i]);
-				decorationsB_add[i].position.set(-30 + i*30 ,86+(8/2) , -(79+(8/2)));
-			} 
-
-			//Aggiungo le decorazioni lato sinistro
-			let decorationsSx = [];
-			let decorationsSx_add = [];
-			for(let i=0; i<5; i++){
-				decorationsSx.push(new Decorations(8,1));
-				decorationsSx_add.push(decorationsSx[i].getDecorations());
-				tempio.add(decorationsSx_add[i]);
-				decorationsSx_add[i].rotation.y = 90*Math.PI/180;
-				decorationsSx_add[i].position.set(-52.5 , 86+(8/2) , -60 + i*30);
-			} 
-
-			//Aggiungo le decorazioni lato destro
-			let decorationsDx = [];
-			let decorationsDx_add = [];
-			for(let i=0; i<5; i++){
-				decorationsDx.push(new Decorations(8,1));
-				decorationsDx_add.push(decorationsDx[i].getDecorations());
-				tempio.add(decorationsDx_add[i]);
-				decorationsDx_add[i].rotation.y = 90*Math.PI/180;
-				decorationsDx_add[i].position.set(52.5 , 86+(8/2) , -60 + i*30);
-			}
-
 			//Aggiungo il muretto
 			let wall = new Wall(WIDTH_STEPS, DEPH_STEPS);
 			let w = wall.getWall();
@@ -186,6 +146,48 @@
 				columns_front_add[i].position.set(-15 + i*30, 0, Z_COLUMN);
 			}
 			
+			//Aggiungo le decorazioni davanti
+			let decorationsF = [];
+			let decorationsF_add = [];
+			for(let i=0; i<3; i++){
+				decorationsF.push(new Decorations(h_decoration,1));
+				decorationsF_add.push(decorationsF[i].getDecorations());
+				tempio.add(decorationsF_add[i]);
+				decorationsF_add[i].position.set(-30 + i*30 , H_STEP*3+columns_front[0].getHColumn()+(h_decoration/2) + 1, Z_COLUMN + h_decoration);
+			}
+
+			//Aggiungo le decorazioni dietro
+			let decorationsB = [];
+			let decorationsB_add = [];
+			for(let i=0; i<3; i++){
+				decorationsB.push(new Decorations(h_decoration,1));
+				decorationsB_add.push(decorationsB[i].getDecorations());
+				tempio.add(decorationsB_add[i]);
+				decorationsB_add[i].position.set(-30 + i*30 ,H_STEP*3+columns_front[0].getHColumn()+(h_decoration/2) + 1, -(Z_COLUMN + h_decoration));
+			} 
+
+			//Aggiungo le decorazioni lato sinistro
+			let decorationsSx = [];
+			let decorationsSx_add = [];
+			for(let i=0; i<5; i++){
+				decorationsSx.push(new Decorations(h_decoration,1));
+				decorationsSx_add.push(decorationsSx[i].getDecorations());
+				tempio.add(decorationsSx_add[i]);
+				decorationsSx_add[i].rotation.y = 90*Math.PI/180;
+				decorationsSx_add[i].position.set(-52.5 , H_STEP*3+columns_front[0].getHColumn()+(h_decoration/2) + 1, -60 + i*30);
+			} 
+
+			//Aggiungo le decorazioni lato destro
+			let decorationsDx = [];
+			let decorationsDx_add = [];
+			for(let i=0; i<5; i++){
+				decorationsDx.push(new Decorations(h_decoration,1));
+				decorationsDx_add.push(decorationsDx[i].getDecorations());
+				tempio.add(decorationsDx_add[i]);
+				decorationsDx_add[i].rotation.y = 90*Math.PI/180;
+				decorationsDx_add[i].position.set(52.5 , H_STEP*3+columns_front[0].getHColumn()+(h_decoration/2) + 1 , -60 + i*30);
+			}
+
 			//Aggiungo tetto
 			let roof = new Roof(105, 165);
 			let r = roof.getRoof();
