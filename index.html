@@ -248,9 +248,7 @@
 			sfera.add(light);
 			let onKeyPress = function(event) {
 				if (event.key == 'a') {
-					console.log(light_color)
 					light.color.setRGB(Math.random(), Math.random(), Math.random());
-					console.log(light.color);
 				}
 			};
 			document.addEventListener("keydown", onKeyPress);
