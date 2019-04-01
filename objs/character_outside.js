@@ -70,7 +70,7 @@ class CharacterOutside {
       armDx.position.set(w_body_in/2+w_arm_hand/2, 0, 0);
       handDx.position.set(w_body_in/2+w_arm_hand/2, -(h_hand/2 + h_level), 0);
 
-      //Aggiungiamo un piccola lancia come arma al personaggio
+      //Aggiungiamo un piccola lancia
       let spearG = new THREE.BoxGeometry(0.5,25,0.5);
       let spearM = new THREE.MeshBasicMaterial({ color: "rgb(0,0,0)", opacity: .8, transparent: true });
       let spear = new THREE.Mesh(spearG, spearM);
