@@ -117,3 +117,16 @@
 * Revisione del Journal trascritto la giornata precedente.
 
 * Pulizia del codice.
+
+* Animazione del personaggio al centro della scena.
+
+* DECISIONE: rimozione della luce direzionale
+
+* DECISIONE: i personaggi all'esterno del tempio avranno in mano un'asta.
+
+** _DA SVOLGERE GLI ULTIMI GIORNI_ **
+ - texture colonna
+ - colore delle decorazioni
+ - colore altare
+ - colore del muretto, lo stesso delle colonne
+ - controllare le luci
