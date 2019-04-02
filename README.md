@@ -1,4 +1,21 @@
+# Report Tissi-Filippi
+Il progetto finale è costituito da un tempio con all'interno delle presenze. Due si trovano all'esterno e hanno lo scopo di sorvegliare il tempio. La presenza del protagonista è al centro della scena: è intento a far levitare verso l'alto e verso il basso il cubo, che ruota nelle varie direzioni. E' possibile modificare la luce che fuoriesce dal cubo, premendo il tasto "a"
+
+# Presentazione della strutturazione delle cartelle
+
+Il progetto ha avuto inizio a partire dal codice contenuto nel file _StartingCode-withlights.html_ e _StartingCode-heightmap.html_
+
+* Il codice princiapale si trova nel file: _index.html_
+* All'interno della cartella _obj_ sono stati inseriti i file in javascript che contengono le varie classi costruite.
+* Nella cartella _StartingCode_ abbiamo inserito il codice di partenza che ci è stato fornito.
+* Nella cartella _scripts_ sono stati inseriti i vari script (MODIFICARE)...
+* Le texture usate sono state inserite nella cartella denominata _textures_, mentre la heightmap usata per la generazione del terreno è stata inserita all'interno della cartella _ground_.
+
+
+
+
 # Modeling and rendering with boxes
+
 
 ![Image from Minecraft](https://jordanweagly.files.wordpress.com/2012/02/figure_4.png)
 
