@@ -4,6 +4,7 @@ Il progetto finale è costituito da un tempio con all'interno delle presenze. Du
 # Presentazione della strutturazione delle cartelle
 
 Il progetto ha avuto inizio a partire dal codice contenuto nel file _StartingCode-withlights.html_ e _StartingCode-heightmap.html_
+
 Il processo di creazione dell'eleaborato finale aggiornato di giorno in giorno si trova nel file _Journal.md_
 Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle durante il progetto:
 
