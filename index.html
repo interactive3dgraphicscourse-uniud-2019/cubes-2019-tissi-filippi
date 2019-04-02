@@ -81,7 +81,8 @@
 			
 			scene = new THREE.Scene();
 			camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
+			let total = new THREE.Object3D();
+			scene.add(total);
 			renderer = new THREE.WebGLRenderer( {antialias: true} );
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			renderer.setClearColor( "rgb(30,144,255)" );
@@ -91,13 +92,13 @@
 			renderer.shadowMap.enabled = true;
 			document.body.appendChild( renderer.domElement );
 			
-			camera.position.set(0,200,400);
+			camera.position.set(50,100,100);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 
 			/*********************TEMPIO*******************/
 			let tempio = new THREE.Object3D();
-			scene.add(tempio);
+			total.add(tempio);
 			//Aggiungo i gradini
 			let steps = new Steps(WIDTH_STEPS, DEPH_STEPS);
 			let s = steps.getSteps();
@@ -197,19 +198,18 @@
 			r.position.y = columns_front[0].getHColumn() + H_STEP*3;
 			tempio.add(r);
 
-
 			/******************************PERSONAGGI****************************/
 			//Aggiungo Prete interno
 			let png_priest = new CharacterInside();
 			priest = png_priest.getCharacter();
-			scene.add(priest);
+			total.add(priest);
 			priest.rotation.y = 180*Math.PI/180;
 			priest.position.z = 30;
 
 			//Aggiungo Guardia sx
 			let png_guard_sx = new CharacterOutside();
 			guard_sx = png_guard_sx.getCharacter();
-			scene.add(guard_sx);
+			total.add(guard_sx);
 			guard_sx.rotation.y = 180*Math.PI/180;
 			guard_sx.position.z = 85;
 			guard_sx.position.x = -67.5;
@@ -217,7 +217,7 @@
 			//Aggiungo Guardia dx
 			let png_guard_dx = new CharacterOutside();
 			guard_dx = png_guard_dx.getCharacter();
-			scene.add(guard_dx);
+			total.add(guard_dx);
 			guard_dx.position.z = -85;
 			guard_dx.position.x = 67.5;
 
@@ -243,7 +243,7 @@
 			
 			let sferaM = new THREE.MultiMaterial(sferaM_array);
 			sfera = new THREE.Mesh(sferaG, sferaM);
-			scene.add(sfera);
+			total.add(sfera);
 			sfera.position.set(0,65,-30);
 			let light_color = setRandomColor();
 			let light = new THREE.PointLight( light_color, 1, 100 );
@@ -255,18 +255,20 @@
 				}
 			};
 			document.addEventListener("keydown", onKeyPress);
-
+			total.scale.set(0.5,0.5,0.5);
 			/******************************LUCI****************************/
             setHemiLight();
 
 			/******************************TERRENO****************************/
-			var img = new Image();
+			let img = new Image();
 			img.onload = function () {
 				//get height data from img
-				var data = getHeightData(img,1);
+				let data = getHeightData(img, 1);
 				createGround(data, img);
+				console.log(data);
 			}
-			img.src = "textures/heightmap2.png";
+			img.src = "textures/ground/heightmap2.png";
+			
 
 			stats = new Stats();
 			stats.domElement.style.position = 'absolute';
@@ -355,6 +357,43 @@
 			renderer.render(scene, camera);
 		}
 		
+		function createGround(data, img){
+			let geometry = new THREE.BoxBufferGeometry(2,2,2);
+			let sandM = new THREE.MeshBasicMaterial( { color: "rgb(184,134,11)" } );
+			let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(105,105,105)" } );
+			let snowM = new THREE.MeshBasicMaterial( { color: "rgb(255,250,250)" } );
+
+			let sand = new THREE.Mesh( geometry, sandM);
+			let mountain = new THREE.Mesh(geometry, mountainM );
+			let snow = new THREE.Mesh(geometry, snowM );
+			sand.castShadow = true;
+			sand.receiveShadow = true;
+			mountain.castShadow = true;
+			mountain.receiveShadow = true;
+			snow.castShadow = true;
+			snow.receiveShadow = true;	
+			
+			let ground = new THREE.Object3D();
+			scene.add(ground);
+			ground.position.set(0,0,0);
+			let cube;
+			for(let i=0; i<data.length; i++){
+			
+				if(data[i]<127){
+					cube = sand.clone();
+					cube.position.set(0, data[i]-120<0 ? 0 : data[i]-120,0);
+				}else if(data[i]<200){
+					cube = mountain.clone();
+					cube.position.set(0, 50, 0);
+				}else{
+					cube = snow.clone();
+					cube.position.set(0, 70, 0);
+				}
+				ground.add(cube);
+			
+			}
+		}
+
 		Start();
 		Update();
 			

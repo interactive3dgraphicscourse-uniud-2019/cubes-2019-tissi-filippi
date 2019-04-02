@@ -1,31 +1,3 @@
-function createGround(data, img){
-    let geometry = new THREE.BoxGeometry(2,2,2);
-    let sand_tex = new THREE.TextureLoader().load('textures/sand.jpg');
-    let mountain_tex = new THREE.TextureLoader().load('textures/mountain.jpg');
-    let snow_tex = new THREE.TextureLoader().load('textures/snow.jpg');
-    let materials = [];
-    materials.push(new THREE.MeshPhongMaterial( { map: sand_tex } ));
-    materials.push(new THREE.MeshPhongMaterial( { map: mountain_tex } ));
-    materials.push(new THREE.MeshPhongMaterial( { map: snow_tex } ));
-    //3 tipi di cubi: sabbia, montagna e neve
-	let sand = new THREE.Mesh( geometry, materials[0]);
-    let mountain = new THREE.Mesh(geometry, materials[1] );
-    let snow = new THREE.Mesh(geometry, materials[2] );
-	sand.castShadow = true;
-	sand.receiveShadow = true;
-	mountain.castShadow = true;
-	mountain.receiveShadow = true;
-	snow.castShadow = true;
-    snow.receiveShadow = true;	
-    
-	//let ground = new THREE.Object3D();
-	//scene.add(ground);
-
-
-}
-
-
-
 function getHeightData(img,scale) {
   
     if (scale == undefined) scale=1;
