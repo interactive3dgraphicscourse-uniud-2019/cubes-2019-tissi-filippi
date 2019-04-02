@@ -38,6 +38,7 @@
 		<script src="objs/character_outside.js"></script>
 		<script src="objs/character_inside.js"></script>
 		<script src="objs/decoration.js"></script>
+		<script src="scripts/heightmap.js"></script>
 	</head>
 	<body>
 		<div id="info_light"></div>
@@ -258,20 +259,18 @@
             setHemiLight();
 
 			/******************************TERRENO****************************/
-			createGround("textures/ground/heightmap2.png");
-			//setGround();
+			//createGround("textures/ground/heightmap2.png");
 			// terrain
-			/*
 			var img = new Image();
 			img.onload = function () {
   
 				//get height data from img
 				var data = getHeightData(img,0.1);
-  
+				for(let i=0; i<data.length;i++)
+            		console.log(data[i]);
 				// load img source
-				img.src = "textures/heightmap2.png";
+				img.src = "textures/mountain.jpg";
 			}
-			*/
 			
 			stats = new Stats();
 			stats.domElement.style.position = 'absolute';

@@ -1,4 +1,4 @@
-function createGround(){
+function createGround(path){
     let geometry = new THREE.BoxGeometry(2,2,2);
     let sand_tex = new THREE.TextureLoader().load('textures/sand.jpg');
     let mountain_tex = new THREE.TextureLoader().load('textures/mountain.jpg');
@@ -22,13 +22,13 @@ function createGround(){
 	scene.add(ground);
 
     let img = new Image();
-    
     img.onload = function () {
         //get height data from img
-        var data = getHeightData(img,0.1);
-        // disegna tutti i cubi presenti in data usando i colori di img
-        
-        
+        let data = getHeightData(img,1);
+        for(let i=0; i<data.length;i++)
+            console.log(data[i]);
+        img.src =path;
+
     }
 }
 
