@@ -91,15 +91,13 @@
 			// terrain
 			var img = new Image();
 			img.onload = function () {
-  
-				//get height data from img
-				var data = getHeightData(img,0.1);
-
-				// load img source
-				img.src = "textures/heightmap2.png";
+				console.log("ciao");
+				var data = getHeightData(img,1);
+                console.log(data[0]);
+				
 			}
 			
-			
+			img.src = "textures/heightmap2.png";
 		}
 		
 		function Update() {

@@ -39,6 +39,7 @@
 		<script src="objs/character_inside.js"></script>
 		<script src="objs/decoration.js"></script>
 		<script src="scripts/heightmap.js"></script>
+		
 	</head>
 	<body>
 		<div id="info_light"></div>
@@ -73,7 +74,7 @@
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
 		});
-		
+
 		function Start() {
 			light_div = document.getElementById("info_light");
 			light_div.innerHTML = "Clicca " + "<b>'a'</b>" + " per cambiare il colore della luce";
@@ -259,19 +260,14 @@
             setHemiLight();
 
 			/******************************TERRENO****************************/
-			//createGround("textures/ground/heightmap2.png");
-			// terrain
 			var img = new Image();
 			img.onload = function () {
-  
 				//get height data from img
 				var data = getHeightData(img,1);
-				
-				// load img source
-				img.src = "textures/heightmap2.png";
-				console.log("ciao");
+				createGround(data, img);
 			}
-			
+			img.src = "textures/heightmap2.png";
+
 			stats = new Stats();
 			stats.domElement.style.position = 'absolute';
 			stats.domElement.style.top = '0px';

@@ -1,4 +1,4 @@
-function createGround(path){
+function createGround(data, img){
     let geometry = new THREE.BoxGeometry(2,2,2);
     let sand_tex = new THREE.TextureLoader().load('textures/sand.jpg');
     let mountain_tex = new THREE.TextureLoader().load('textures/mountain.jpg');
@@ -18,17 +18,10 @@ function createGround(path){
 	snow.castShadow = true;
     snow.receiveShadow = true;	
     
-	let ground = new THREE.Object3D();
-	scene.add(ground);
+	//let ground = new THREE.Object3D();
+	//scene.add(ground);
 
-    let img = new Image();
-    img.onload = function () {
-        //get height data from img
-        let data = getHeightData(img,1);
-        console.log(data[0]);
-        img.src = path;
 
-    }
 }
 
 
@@ -63,3 +56,7 @@ function getHeightData(img,scale) {
 
        return data;
    }
+
+function createGround(path){
+
+}
