@@ -15,11 +15,11 @@ Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle duran
 
 # Albero della scena
 
-L'immagine che segue contiene l'albero che si è deciso di seguire per la formazione della scena.
+L'immagine che segue contiene l'albero che si è deciso di seguire per la formazione della scena. ![](JrnImages/fs.jpg) 
 
 # Risultato finale
 
-L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro.
+L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro. ![](JrnImages/fs.jpg) 
 
 
 
