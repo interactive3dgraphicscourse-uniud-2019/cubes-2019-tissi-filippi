@@ -4,12 +4,22 @@ Il progetto finale è costituito da un tempio con all'interno delle presenze. Du
 # Presentazione della strutturazione delle cartelle
 
 Il progetto ha avuto inizio a partire dal codice contenuto nel file _StartingCode-withlights.html_ e _StartingCode-heightmap.html_
+Il processo di creazione dell'eleaborato finale aggiornato di giorno in giorno si trova nel file _Journal.md_
+Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle durante il progetto:
 
 * Il codice princiapale si trova nel file: _index.html_
 * All'interno della cartella _obj_ sono stati inseriti i file in javascript che contengono le varie classi costruite.
 * Nella cartella _StartingCode_ abbiamo inserito il codice di partenza che ci è stato fornito.
 * Nella cartella _scripts_ sono stati inseriti i vari script (MODIFICARE)...
 * Le texture usate sono state inserite nella cartella denominata _textures_, mentre la heightmap usata per la generazione del terreno è stata inserita all'interno della cartella _ground_.
+
+# Albero della scena
+
+L'immagine che segue contiene l'albero che si è deciso di seguire per la formazione della scena.
+
+# Risultato finale
+
+L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro.
 
 
 
