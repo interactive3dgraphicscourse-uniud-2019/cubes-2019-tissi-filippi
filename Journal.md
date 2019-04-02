@@ -137,4 +137,6 @@
 
  * Preparazione del file del terreno.
 
- * Preparazione della mappa in scala di grigi usando Photoshop
+ * Preparazione della mappa in scala di grigi usando  Adobe Photoshop.
+
+ * m
