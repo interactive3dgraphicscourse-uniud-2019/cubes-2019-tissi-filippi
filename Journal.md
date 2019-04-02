@@ -120,9 +120,13 @@
 
 * Animazione del personaggio al centro della scena.
 
-* DECISIONE: rimozione della luce direzionale
+* DECISIONE: rimozione della luce direzionale.
+
+* Introduzione del BoxBufferGeometry.
 
 * DECISIONE: i personaggi all'esterno del tempio avranno in mano un'asta.
+
+* Realizzazione dell'idea appena decisa.
 
 ** _DA SVOLGERE GLI ULTIMI GIORNI_ **
  - texture colonna
@@ -137,6 +141,6 @@
 
  * Preparazione del file del terreno.
 
- * Preparazione della mappa in scala di grigi usando  Adobe Photoshop.
+ * Preparazione della mappa in scala di grigi usando il programma Adobe Photoshop.
 
  * m
