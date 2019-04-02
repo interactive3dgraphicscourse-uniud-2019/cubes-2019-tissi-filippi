@@ -130,3 +130,7 @@
  - colore altare
  - colore del muretto, lo stesso delle colonne
  - controllare le luci
+
+ # 2 aprile 2019
+
+ * Revisione del Journal trascritto la giornata precedente.
