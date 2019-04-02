@@ -141,6 +141,12 @@
 
  * Preparazione del file del terreno.
 
- * Preparazione della mappa in scala di grigi usando il programma Adobe Photoshop.
+ * Preparazione della mappa in scala di grigi usando il programma Adobe Photoshop. Riduzione della dimensioni della mappa.
 
- * m
+ * DECISONE: dedicare del tempo domani per controllare le texture.
+
+ # 3 aprile 2019
+
+ * Revisione del Journal trascritto la giornata precedente.
+
+ * i
