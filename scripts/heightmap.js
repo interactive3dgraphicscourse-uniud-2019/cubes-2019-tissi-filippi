@@ -25,9 +25,8 @@ function createGround(path){
     img.onload = function () {
         //get height data from img
         let data = getHeightData(img,1);
-        for(let i=0; i<data.length;i++)
-            console.log(data[i]);
-        img.src =path;
+        console.log(data[0]);
+        img.src = path;
 
     }
 }
