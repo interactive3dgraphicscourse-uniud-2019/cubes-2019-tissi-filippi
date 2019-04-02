@@ -135,6 +135,6 @@
 
  * Revisione del Journal trascritto la giornata precedente.
 
- * Preparazione del file del terreno
+ * Preparazione del file del terreno.
 
- * Preparazione della mappa in scala di grigi
+ * Preparazione della mappa in scala di grigi usando Photoshop
