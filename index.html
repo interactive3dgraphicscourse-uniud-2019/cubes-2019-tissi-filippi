@@ -408,8 +408,9 @@
 			}
 
 			//riempio i "buchi"
-			/*
 			let h1, h2, h3, h4, myH;
+			let min;
+			let refill;
 			for(let i =0; i<matrixHeight.length; i++){
 				for(let j=0;i<matrixHeight[i].length; j++){
 					myH = matrixHeight[i][j];
@@ -425,25 +426,24 @@
 					if (isInEdge(i, j - 1, img.width - 1, img.width - 1)) h4 = matrixHeight[i][j - 1];
 					else h4 = 30;
 
-					let min = Math.min(h1, h2, h3, h4);
-					let refill;
+					min = Math.min(h1, h2, h3, h4);
 					if(min < myH-1){
-						for(let h=0; h < myH-min;h++){
+						for(let h=0; h < myH-min; h++){
 							if(matrixHeightmap[i][j]<8){
 								refill = sand.clone();
-								refill.position.set(i, matrixHeight[i][j]-1, j);
+								refill.position.set(i, matrixHeight[i][j]-h, j);
 							}else if (matrixHeightmap[i][j]<14){ 
 								refill = mountain.clone();
-								refill.position.set(i, matrixHeight[i][j]-1, j);
+								refill.position.set(i, matrixHeight[i][j]-h, j);
 							}else{ 
 								refill = snow.clone();
-								refill.position.set(i, matrixHeight[i][j]-1, j);
+								refill.position.set(i, matrixHeight[i][j]-h, j);
 							}
 						}
 					}
 				}
 			}	
-			*/
+			/******************************************************************************************/
 
 		}		
 		Start();

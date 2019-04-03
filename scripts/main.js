@@ -24,10 +24,7 @@ function setRandomColor() {
 }
 
 function isInEdge(x,z,xmax,zmax){
-  if(x>0 && x<xmax && z>0 && z<zmax) 
-    return true;
-  else 
-    return false;
+  return (x>0 && x<xmax && z>0 && z<zmax) 
 }
 
 
