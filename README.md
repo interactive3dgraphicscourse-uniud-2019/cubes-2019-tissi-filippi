@@ -1,5 +1,5 @@
 # Report Tissi-Filippi
-La scena che si siamo immaginati ha come location un zona deserica con alcuni rilievi montuosi che circonda un tempio greco ormai lasciato alle intemperie. All'interno di esso si svolge la abbandonato
+La scena che si siamo immaginati ha come location un zona deserica dove si possono intravedere alcuni rilievi montuosi; posizionato al centro, nel piano, è situato un tempio greco ormai lasciato alle intemperie. All'interno di esso si svolge la....
 
 da un tempio con all'interno alcuni personaggi che si è scelto di rappresentare come fossero delle presenze. Due si trovano all'esterno e hanno lo scopo di sorvegliare il tempio. La presenza del protagonista è al centro della scena: è intento a far levitare verso l'alto e verso il basso il cubo, che ruota nelle varie direzioni. E' possibile modificare la luce che fuoriesce dal cubo, premendo il tasto "a"
 
