@@ -255,15 +255,16 @@
 				}
 			};
 			document.addEventListener("keydown", onKeyPress);
-			total.scale.set(0.5,0.5,0.5);
+			total.scale.set(0.15,0.15,0.15);
 			/******************************LUCI****************************/
-            setHemiLight();
+			setHemiLight();
+			setDirectionalLight();
 
 			/******************************TERRENO****************************/
 			let img = new Image();
 			img.onload = function () {
 				//get height data from img
-				let data = getHeightData(img, 1);
+				let data = getHeightData(img, 0.1);
 				createGround(data, img);
 				console.log(data);
 			}
@@ -358,7 +359,7 @@
 		}
 		
 		function createGround(data, img){
-			let geometry = new THREE.BoxBufferGeometry(2,2,2);
+			let geometry = new THREE.BoxBufferGeometry(1,1,1);
 			let sandM = new THREE.MeshBasicMaterial( { color: "rgb(184,134,11)" } );
 			let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(105,105,105)" } );
 			let snowM = new THREE.MeshBasicMaterial( { color: "rgb(255,250,250)" } );
@@ -378,16 +379,24 @@
 			ground.position.set(0,0,0);
 			let cube;
 			for(let i=0; i<data.length; i++){
-			
-				if(data[i]<127){
+				if(data[i]<20){
 					cube = sand.clone();
-					cube.position.set(0, data[i]-120<0 ? 0 : data[i]-120,0);
-				}else if(data[i]<200){
+					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
+					cube.scale.y = data[i];
+					cube.castShadow = true;
+					cube.receiveShadow = true;
+				}else if(data[i]<50){
 					cube = mountain.clone();
-					cube.position.set(0, 50, 0);
+					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
+					cube.scale.y = data[i];
+					cube.castShadow = true;
+					cube.receiveShadow = true;
 				}else{
 					cube = snow.clone();
-					cube.position.set(0, 70, 0);
+					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
+					cube.scale.y = data[i];
+					cube.castShadow = true;
+					cube.receiveShadow = true;
 				}
 				ground.add(cube);
 			
