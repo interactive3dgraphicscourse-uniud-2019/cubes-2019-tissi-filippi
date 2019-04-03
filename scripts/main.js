@@ -23,9 +23,12 @@ function setRandomColor() {
   return color;
 }
 
-function removeEntity(object) {
-  let selectedObject = scene.getObjectByName(object.name);
-  sfera.remove( selectedObject );
+function isInEdge(x,z,xmax,zmax){
+  if(x>0 && x<xmax && z>0 && z<zmax) 
+    return true;
+  else 
+    return false;
 }
+
 
 		
