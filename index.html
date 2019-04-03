@@ -360,8 +360,8 @@
 		function createGround(data, img){
 			let geometry = new THREE.BoxBufferGeometry(1,1,1);
 			let sandM = new THREE.MeshBasicMaterial( { color: "rgb(184,134,11)", transparent: true, opacity: 0.8 } );
-			let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(139,69,19)", transparent: true, opacity: 0.8 } );
-			let mountainBlackM = new THREE.MeshBasicMaterial( { color: "rgb(51, 51, 0)", transparent: true, opacity: 0.8 } );
+			let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(51, 51, 0)", transparent: true, opacity: 0.8 } );
+			let mountainBlackM = new THREE.MeshBasicMaterial( { color: "rgb(139,69,19)", transparent: true, opacity: 0.8 } );
 			let snowM = new THREE.MeshBasicMaterial( { color: "rgb(255,255,255)", transparent: true, opacity: 0.8 } );
 
 			let sand = new THREE.Mesh( geometry, sandM);
@@ -400,11 +400,11 @@
 					if(matrixHeightmap[i][j]<8){
 						cube = sand.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
-					}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<10){ 
+					}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<13){ 
 						cube = mountain.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
 
-					}else if (matrixHeightmap[i][j]>=10 && matrixHeightmap[i][j]<22){ 
+					}else if (matrixHeightmap[i][j]>=13 && matrixHeightmap[i][j]<22){ 
 						cube = mountainBlack.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
 
@@ -444,12 +444,12 @@
 								refill = sand.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
-							}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<10){ 
+							}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<13){ 
 								refill = mountain.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
 
-							}else if (matrixHeightmap[i][j]>=10 && matrixHeightmap[i][j]<22){ 
+							}else if (matrixHeightmap[i][j]>=13 && matrixHeightmap[i][j]<22){ 
 								refill = mountainBlack.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
