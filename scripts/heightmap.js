@@ -28,7 +28,3 @@ function getHeightData(img,scale) {
 
        return data;
    }
-
-function createGround(path){
-
-}
