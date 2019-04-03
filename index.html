@@ -382,7 +382,7 @@
 				if(data[i]<8){
 					cube = sand.clone();
 					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
-					//cube.scale.y = data[i];
+					cube.scale.y = data[i];
 				}else if(data[i]<15){
 					cube = mountain.clone();
 					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
