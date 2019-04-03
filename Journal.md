@@ -149,4 +149,5 @@
 
  * Revisione del Journal trascritto la giornata precedente.
 
- * Ter
+ * to doù
+ 
