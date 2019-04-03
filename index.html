@@ -383,20 +383,14 @@
 					cube = sand.clone();
 					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
 					cube.scale.y = data[i];
-					cube.castShadow = true;
-					cube.receiveShadow = true;
 				}else if(data[i]<50){
 					cube = mountain.clone();
 					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
 					cube.scale.y = data[i];
-					cube.castShadow = true;
-					cube.receiveShadow = true;
 				}else{
 					cube = snow.clone();
 					cube.position.set(i%img.width - img.width/2, data[i]/5, Math.trunc(i/img.height) - img.height/2);
 					cube.scale.y = data[i];
-					cube.castShadow = true;
-					cube.receiveShadow = true;
 				}
 				ground.add(cube);
 			
