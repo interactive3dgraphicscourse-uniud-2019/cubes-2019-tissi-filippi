@@ -432,12 +432,15 @@
 							if(matrixHeightmap[i][j]<8){
 								refill = sand.clone();
 								refill.position.set(i, matrixHeight[i][j]-h, j);
+								ground.add(refill);
 							}else if (matrixHeightmap[i][j]<14){ 
 								refill = mountain.clone();
 								refill.position.set(i, matrixHeight[i][j]-h, j);
+								ground.add(refill);
 							}else{ 
 								refill = snow.clone();
 								refill.position.set(i, matrixHeight[i][j]-h, j);
+								ground.add(refill);
 							}
 						}
 					}
