@@ -158,6 +158,8 @@
 
    - Pulizia del codice
 
+   - Possibile rimozione della neve nelle heightmap
+
    - Modifica delle texture già esistenti
 
    - Rialzare un po' il tempio (asse y)
