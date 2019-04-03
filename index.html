@@ -386,7 +386,7 @@
 				matrixHeight[i] = [];
 				for(let j=0; j<img.height; j++){
 					matrixHeightmap[i][j] = Math.trunc(data[i+j*img.width]);
-					matrixHeight[i][j] = matrixHeightmap[i][j]*(2/3);
+					matrixHeight[i][j] = Math.trunc(matrixHeightmap[i][j]*(2/3));
 				}
 			}
 
