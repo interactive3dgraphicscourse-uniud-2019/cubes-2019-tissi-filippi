@@ -395,19 +395,20 @@
 				for(let j=0; j<matrixHeightmap[i].length; j++){
 					if(matrixHeightmap[i][j]<8){
 						cube = sand.clone();
-						cube.position.set(i, matrixHeightmap[i][j]*(2/3), j);
+						cube.position.set(i, matrixHeight[i][j], j);
 					}else if (matrixHeightmap[i][j]<14){ 
 						cube = mountain.clone();
-						cube.position.set(i, matrixHeightmap[i][j]*(2/3), j);
+						cube.position.set(i, matrixHeight[i][j], j);
 					}else{ 
 						cube = snow.clone();
-						cube.position.set(i, matrixHeightmap[i][j]*(2/3), j);
+						cube.position.set(i, matrixHeight[i][j], j);
 					}
 					ground.add(cube);
 				}
 			}
 
 			//riempio i "buchi"
+			/*
 			let h1, h2, h3, h4, myH;
 			for(let i =0; i<matrixHeight.length; i++){
 				for(let j=0;i<matrixHeight[i].length; j++){
@@ -442,6 +443,8 @@
 					}
 				}
 			}	
+			*/
+
 		}		
 		Start();
 		Update();
