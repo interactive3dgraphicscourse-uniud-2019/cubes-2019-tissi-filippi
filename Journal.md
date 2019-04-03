@@ -143,11 +143,23 @@
 
  * Preparazione della mappa in scala di grigi usando il programma Adobe Photoshop. Riduzione della dimensioni della mappa.
 
- * DECISONE: dedicare del tempo domani per controllare le texture.
+ * DECISONE: dedicare del tempo domani per controllare le texture della scena.
 
  # 3 aprile 2019
 
  * Revisione del Journal trascritto la giornata precedente.
 
- * to doù
- 
+ * Generazione del terreno e della funzione che pratica il refill.
+
+ * TO DO:
+   - Inserire la "cornice" del nostro terreno, ossia tutti i pixel che si trovano in posizione: (0,n) gli orizzontali alti, (n,0) verticali a sinistra, (75,n) per i bassi e (n,75) per i verticali destri. [con n che va da 0 a 75] ... Ognuno di quei pixel deve avere la colonna piena fino alla base (altezza uguale alla sua altezza), cosi facendo creo un modo maggiormente gradevole all'occhio.
+
+   - gestire le texture e valutare la loro possibile introduzione per sostituire i colori RGB di cui ci si è serviti fino ora.
+
+   - Pulizia del codice
+
+   - Modifica delle texture già esistenti
+
+   - Rialzare un po' il tempio (asse y)
+
+   - Completamento del READMEfile _README.md_

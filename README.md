@@ -15,6 +15,7 @@ Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle duran
 * Nella cartella _StartingCode_ abbiamo inserito il codice di partenza che ci è stato fornito.
 * Nella cartella _scripts_ sono stati inseriti i file riguardanti le luci, il codice di getHeightData.
 * Le texture usate sono state inserite nella cartella denominata _textures_, mentre la heightmap usata per la generazione del terreno è stata inserita all'interno della cartella _ground_, presente nella stessa cartella.
+* La Heightmap è stata creata da noi _ah hoc_ per questo progetto adattandola al meglio per valorizzare il nostro lavoro.
 
 # Albero della scena
 
