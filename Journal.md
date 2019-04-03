@@ -149,4 +149,4 @@
 
  * Revisione del Journal trascritto la giornata precedente.
 
- * i
+ * Ter
