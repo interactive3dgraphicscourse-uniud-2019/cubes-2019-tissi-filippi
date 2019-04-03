@@ -164,4 +164,4 @@
 
    - Rialzare un po' il tempio (asse y)
 
-   - Completamento del READMEfile _README.md_
+   - Completamento del file _README.md_
