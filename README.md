@@ -1,5 +1,7 @@
 # Report Tissi-Filippi
-Il progetto finale è costituito da un tempio con all'interno delle presenze. Due si trovano all'esterno e hanno lo scopo di sorvegliare il tempio. La presenza del protagonista è al centro della scena: è intento a far levitare verso l'alto e verso il basso il cubo, che ruota nelle varie direzioni. E' possibile modificare la luce che fuoriesce dal cubo, premendo il tasto "a"
+La scena che si siamo immaginati ha come location un zona deserica con alcuni rilievi montuosi che circonda un tempio greco ormai lasciato alle intemperie. All'interno di esso si svolge la abbandonato
+
+da un tempio con all'interno alcuni personaggi che si è scelto di rappresentare come fossero delle presenze. Due si trovano all'esterno e hanno lo scopo di sorvegliare il tempio. La presenza del protagonista è al centro della scena: è intento a far levitare verso l'alto e verso il basso il cubo, che ruota nelle varie direzioni. E' possibile modificare la luce che fuoriesce dal cubo, premendo il tasto "a"
 
 # Presentazione della strutturazione delle cartelle
 
