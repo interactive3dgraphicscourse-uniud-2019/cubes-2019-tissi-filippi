@@ -360,16 +360,20 @@
 		function createGround(data, img){
 			let geometry = new THREE.BoxBufferGeometry(1,1,1);
 			let sandM = new THREE.MeshBasicMaterial( { color: "rgb(184,134,11)", transparent: true, opacity: 0.8 } );
-			let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(105,105,105)", transparent: true, opacity: 0.8 } );
-			let snowM = new THREE.MeshBasicMaterial( { color: "rgb(255,250,250)", transparent: true, opacity: 0.8 } );
+			let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(139,69,19)", transparent: true, opacity: 0.8 } );
+			let mountainBlackM = new THREE.MeshBasicMaterial( { color: "rgb(51, 51, 0)", transparent: true, opacity: 0.8 } );
+			let snowM = new THREE.MeshBasicMaterial( { color: "rgb(255,255,255)", transparent: true, opacity: 0.8 } );
 
 			let sand = new THREE.Mesh( geometry, sandM);
 			let mountain = new THREE.Mesh(geometry, mountainM );
+			let mountainBlack = new THREE.Mesh(geometry, mountainBlackM );
 			let snow = new THREE.Mesh(geometry, snowM );
 			sand.castShadow = true;
 			sand.receiveShadow = true;
 			mountain.castShadow = true;
 			mountain.receiveShadow = true;
+			mountainBlack.castShadow = true;
+			mountainBlack.receiveShadow = true;
 			snow.castShadow = true;
 			snow.receiveShadow = true;	
 			
@@ -396,9 +400,14 @@
 					if(matrixHeightmap[i][j]<8){
 						cube = sand.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
-					}else if (matrixHeightmap[i][j]<15){ 
+					}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<10){ 
 						cube = mountain.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
+
+					}else if (matrixHeightmap[i][j]>=10 && matrixHeightmap[i][j]<22){ 
+						cube = mountainBlack.clone();
+						cube.position.set(i, matrixHeight[i][j], j);
+
 					}else{ 
 						cube = snow.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
@@ -435,10 +444,16 @@
 								refill = sand.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
-							}else if (matrixHeightmap[i][j]<15){ 
+							}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<10){ 
 								refill = mountain.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
+
+							}else if (matrixHeightmap[i][j]>=10 && matrixHeightmap[i][j]<22){ 
+								refill = mountainBlack.clone();
+								refill.position.set(i, myH-1-h, j);
+								ground.add(refill);
+
 							}else{ 
 								refill = snow.clone();
 								refill.position.set(i, myH-1-h, j);
