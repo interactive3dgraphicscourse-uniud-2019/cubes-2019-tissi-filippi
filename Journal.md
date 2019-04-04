@@ -147,7 +147,7 @@
 
  # 3 aprile 2019
 
- * Revisione del Journal trascritto la giornata precedente.
+ * Revisione del Journal trascritto la giornata precedente. 
 
  * Generazione del terreno e della funzione che pratica il refill.
 
