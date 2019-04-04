@@ -3,17 +3,15 @@ class Column {
     constructor() {
       this.column = new THREE.Object3D();
       let column_tex = new THREE.TextureLoader().load('textures/column.jpg');
-      let columnM_tex = [
-                      new THREE.MeshPhongMaterial( { map: column_tex }),
-                      new THREE.MeshPhongMaterial( { map: column_tex }),
-                      new THREE.MeshPhongMaterial( { map: column_tex }),
-                      new THREE.MeshPhongMaterial( { map: column_tex }),
-                      new THREE.MeshPhongMaterial( { map: column_tex }),
-                      new THREE.MeshPhongMaterial( { map: column_tex }),
-                    ];
-      let columnM = new THREE.MultiMaterial(columnM_tex);
-
-
+      let column_tex_2 = new THREE.TextureLoader().load('textures/column.jpg');
+      let columnM = new THREE.MeshPhongMaterial( { map: column_tex });
+      let columnM_2 = new THREE.MeshPhongMaterial( { map: column_tex_2 });
+      column_tex.wrapS = column_tex.wrapT = THREE.RepeatWrapping;
+      column_tex.offset.set( 0, 0 );
+      column_tex.repeat.set( 1, 10 );
+      column_tex_2.wrapS = column_tex_2.wrapT = THREE.RepeatWrapping;
+      column_tex_2.offset.set( 0, 0 );
+      column_tex_2.repeat.set( 2, 1 );
       let columnG = new THREE.BoxBufferGeometry(1,1,1);
 
       let h_base = 2;
@@ -26,10 +24,10 @@ class Column {
       this.h_total = h_base+h_stem+h_capital+h_capital2;
 
       //Creo le 4 componenti della colonna
-      let base = this.createPartOf(columnG,columnM, size_base, h_base);
+      let base = this.createPartOf(columnG,columnM_2, size_base, h_base);
       let stem = this.createPartOf(columnG,columnM, size_stem, h_stem);
-      let capital = this.createPartOf(columnG,columnM, size_base, h_capital);
-      let capital2 = this.createPartOf(columnG,columnM, size_capital2, h_capital2); 
+      let capital = this.createPartOf(columnG,columnM_2, size_base, h_capital);
+      let capital2 = this.createPartOf(columnG,columnM_2, size_capital2, h_capital2); 
 
       //Aggiungo e posiziono le componenti appena create
       this.column.add(base);

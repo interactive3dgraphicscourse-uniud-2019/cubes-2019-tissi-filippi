@@ -3,6 +3,9 @@ class Roof {
         this.roof = new THREE.Object3D();
         this.h_level = 3;
         let roof_tex = new THREE.TextureLoader().load('textures/stone.jpg');
+        roof_tex.wrapS = roof_tex.wrapT = THREE.RepeatWrapping;
+        roof_tex.offset.set( 0, 0 );
+        roof_tex.repeat.set( 10, 2 );
         let roofM = new THREE.MeshPhongMaterial( { map: roof_tex } );
         //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
         let roofG = new THREE.BoxBufferGeometry(1,1,1);

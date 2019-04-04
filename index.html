@@ -359,66 +359,65 @@
 		
 		function createGround(data, img){
 			let geometry = new THREE.BoxBufferGeometry(1,1,1);
-			let sandM = new THREE.MeshBasicMaterial( { color: "rgb(255,213,0)", transparent: true, opacity: 0.8 } );
-			let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(51, 51, 0)", transparent: true, opacity: 0.8 } );
-			let mountainBlackM = new THREE.MeshBasicMaterial( { color: "rgb(26,13,0)", transparent: true, opacity: 0.8 } );
-			let snowM = new THREE.MeshBasicMaterial( { color: "rgb(255,255,255)", transparent: true, opacity: 0.8 } );
+			//let sandM = new THREE.MeshBasicMaterial( { color: "rgb(255,213,0)", transparent: true, opacity: 0.7 } );
+			//let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(51, 51, 0)", transparent: true, opacity: 0.7 } );
+			//let mountainBlackM = new THREE.MeshBasicMaterial( { color: "rgb(26,13,0)", transparent: true, opacity: 0.7 } );
 
+			let sand_tex = new THREE.TextureLoader().load('textures/ground/sand.jpg');
+			let sandM = new THREE.MeshPhongMaterial( { map: sand_tex } );
+			let mountain_tex = new THREE.TextureLoader().load('textures/ground/mountain.jpg');
+			let mountainM = new THREE.MeshPhongMaterial( { map: mountain_tex } );
+			let mountainB_tex = new THREE.TextureLoader().load('textures/ground/mountainBlack.jpg');
+			let mountainBlackM = new THREE.MeshPhongMaterial( { map: mountainB_tex } );
+			
 			let sand = new THREE.Mesh( geometry, sandM);
 			let mountain = new THREE.Mesh(geometry, mountainM );
 			let mountainBlack = new THREE.Mesh(geometry, mountainBlackM );
-			let snow = new THREE.Mesh(geometry, snowM );
 			sand.castShadow = true;
 			sand.receiveShadow = true;
 			mountain.castShadow = true;
 			mountain.receiveShadow = true;
 			mountainBlack.castShadow = true;
-			mountainBlack.receiveShadow = true;
-			snow.castShadow = true;
-			snow.receiveShadow = true;	
+			mountainBlack.receiveShadow = true;	
 			
 			let ground = new THREE.Object3D();
 			scene.add(ground);
 			ground.position.set(-img.width/2,0,-img.height/2);
 			let cube;
-			let matrixHeightmap = [];
+			let matrixData = [];
 			let matrixHeight = [];
 
-			//Matrice contenente i valori di output della funzione getHeightData
+			// Matrici contenenti: 
+			// matrixData: il vettore di output della funzione getHeightData
+			// matrixHeight: i valori del vettore scalati a 2/3 per riportarli nella scena
 			for(let i=0; i<img.width; i++){
-				matrixHeightmap[i]=[];
+				matrixData[i]=[];
 				matrixHeight[i] = [];
 				for(let j=0; j<img.height; j++){
-					matrixHeightmap[i][j] = Math.trunc(data[i+j*img.width]);
-					matrixHeight[i][j] = Math.trunc(matrixHeightmap[i][j]*(2/3));
+					matrixData[i][j] = Math.trunc(data[i+j*img.width]);
+					matrixHeight[i][j] = matrixData[i][j]*(2/3);
 				}
 			}
 
 			//posiziono i cubetti principali
-			for(let i=0; i<matrixHeightmap.length; i++){
-				for(let j=0; j<matrixHeightmap[i].length; j++){
-					if(matrixHeightmap[i][j]<8){
+			for(let i=0; i<matrixData.length; i++){
+				for(let j=0; j<matrixData[i].length; j++){
+					if(matrixData[i][j]<8){
 						cube = sand.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
-					}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<13){ 
+					}else if (matrixData[i][j]<13){ 
 						cube = mountain.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
 
-					}else if (matrixHeightmap[i][j]>=13 && matrixHeightmap[i][j]<22){ 
-						cube = mountainBlack.clone();
-						cube.position.set(i, matrixHeight[i][j], j);
-
 					}else{ 
-						cube = snow.clone();
+						cube = mountainBlack.clone();
 						cube.position.set(i, matrixHeight[i][j], j);
 					}
 					ground.add(cube);
 				}
 			}
 
-			console.log(matrixHeight);
 			//riempio i "buchi"
-			
 			let h1, h2, h3, h4, myH;
 			let min;
 			let refill;
@@ -440,24 +439,20 @@
 					min = Math.min(h1, h2, h3, h4);
 					if(min < myH-1){
 						for(let h=0; h < myH-min; h++){
-							if(matrixHeightmap[i][j]<8){
+							if(matrixData[i][j]<8){
 								refill = sand.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
-							}else if (matrixHeightmap[i][j]>=8 && matrixHeightmap[i][j]<13){ 
+							}else if (matrixData[i][j]<13){ 
 								refill = mountain.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
 
-							}else if (matrixHeightmap[i][j]>=13 && matrixHeightmap[i][j]<22){ 
+							}else{ 
 								refill = mountainBlack.clone();
 								refill.position.set(i, myH-1-h, j);
 								ground.add(refill);
 
-							}else{ 
-								refill = snow.clone();
-								refill.position.set(i, myH-1-h, j);
-								ground.add(refill);
 							}
 						}
 					}

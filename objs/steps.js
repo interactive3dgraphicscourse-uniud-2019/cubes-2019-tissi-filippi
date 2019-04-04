@@ -3,6 +3,9 @@ class Steps {
     constructor(size, deph) {
       this.steps = new THREE.Object3D();
       let step_tex = new THREE.TextureLoader().load('textures/stone.jpg');
+      step_tex.wrapS = step_tex.wrapT = THREE.RepeatWrapping;
+      step_tex.offset.set( 0, 0 );
+      step_tex.repeat.set( 5, 5 );
       let stepM = new THREE.MeshPhongMaterial( { map: step_tex } );
       //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
       let stepG = new THREE.BoxBufferGeometry(1,1,1);

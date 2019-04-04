@@ -3,6 +3,9 @@ class Wall {
         this.wall = new THREE.Object3D();
         let wall_tex = new THREE.TextureLoader().load('textures/stone.jpg');
         let wallM = new THREE.MeshPhongMaterial( { map: wall_tex } );
+        wall_tex.wrapS = wall_tex.wrapT = THREE.RepeatWrapping;
+        wall_tex.offset.set( 0, 0 );
+        wall_tex.repeat.set( 10, 2 );
         //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
         let wallG = new THREE.BoxBufferGeometry(1,1,1);
         
