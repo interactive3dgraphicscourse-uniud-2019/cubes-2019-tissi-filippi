@@ -291,9 +291,9 @@
 			sfera.rotation.y+=0.01;
 			//Su e giù
 			if(sfera.position.y>=55 && !direction_5)
-				sfera.position.y-=0.09;
+				sfera.position.y-=0.1;
 			else if(sfera.position.y<=65 && direction_5)
-				sfera.position.y+=0.09;
+				sfera.position.y+=0.1;
 			if(sfera.position.y<=55 || sfera.position.y>=65 ){
 				direction_5 = !direction_5;
 			}
@@ -301,9 +301,9 @@
 			/************** ANIMAZIONE GUARDIA SX *************/
 			//Avanti e indietro
 			if(guard_sx.position.z>=-85 && !direction){
-				guard_sx.position.z-=0.3;
+				guard_sx.position.z-=0.7;
 			}else if(guard_sx.position.z<=85 && direction){
-				guard_sx.position.z+=0.3;
+				guard_sx.position.z+=0.7;
 			}
 			if(guard_sx.position.z<=-85 || guard_sx.position.z>=85 ){
 				direction = !direction;
@@ -312,9 +312,9 @@
 
 			//Su e giù
 			if(guard_sx.position.y>=22 && !direction_3)
-				guard_sx.position.y-=0.05;
+				guard_sx.position.y-=0.07;
 			else if(guard_sx.position.y<=26 && direction_3)
-				guard_sx.position.y+=0.05;
+				guard_sx.position.y+=0.07;
 			if(guard_sx.position.y<=22 || guard_sx.position.y>=26 ){
 				direction_3 = !direction_3;
 			}
@@ -323,9 +323,9 @@
 			/************** ANIMAZIONE GUARDIA DX *************/
 			//Avanti e indietro
 			if(guard_dx.position.z<=85 && !direction_2){
-				guard_dx.position.z+=0.3;
+				guard_dx.position.z+=0.7;
 			}else if(guard_dx.position.z>=-85 && direction_2){
-				guard_dx.position.z-=0.3;
+				guard_dx.position.z-=0.7;
 			}
 			if(guard_dx.position.z<=-85 || guard_dx.position.z>=85 ){
 				direction_2 = !direction_2;
@@ -333,9 +333,9 @@
 			}
 			//Su e giù
 			if(guard_dx.position.y>=22 && !direction_4)
-				guard_dx.position.y-=0.05;
+				guard_dx.position.y-=0.07;
 			else if(guard_dx.position.y<=26 && direction_4)
-				guard_dx.position.y+=0.05;
+				guard_dx.position.y+=0.07;
 			if(guard_dx.position.y<=22 || guard_dx.position.y>=26 ){
 				direction_4 = !direction_4;
 			}
@@ -343,9 +343,9 @@
 			/************** ANIMAZIONE PRETE INTERNO *************/
 			//Su e giù
 			if(priest.position.y>=23 && !direction_6)
-				priest.position.y-=0.03;
+				priest.position.y-=0.05;
 			else if(priest.position.y<=25 && direction_6)
-				priest.position.y+=0.03;
+				priest.position.y+=0.05;
 			if(priest.position.y<=23 || priest.position.y>=25 ){
 				direction_6 = !direction_6;
 			}
