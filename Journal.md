@@ -182,3 +182,7 @@
     - completare il file _README.md_
 
     - pulire il codice e finire di commentarlo
+    
+    - posizionare la telecamere
+
+    - fare gli screen
