@@ -27,5 +27,8 @@ function isInEdge(x,z,xmax,zmax){
   return ((x>=0) && (x<=xmax) && (z>=0) && (z<=zmax)); 
 }
 
+function isEdge(x,z,xmax){
+  return ((x==0) || (z==0) || (x==xmax)) 
+}
 
 		
