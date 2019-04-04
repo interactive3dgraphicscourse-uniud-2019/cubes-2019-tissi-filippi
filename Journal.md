@@ -165,3 +165,20 @@
    - Rialzare un po' il tempio (asse y)
 
    - Completamento del file _README.md_
+
+# 4 aprile 2019
+  
+  * Revisione Journal trascritto la giornata precedente
+
+  * Cambio texture del terreno
+
+  * TO DO:
+    - rifinire l'immagine per la heightmap
+
+    - rialzare il tempio
+
+    - segnare nella relazione il nostro frame rate
+
+    - completare il file _README.md_
+
+    - pulire il codice e finire di commentarlo
