@@ -456,6 +456,28 @@
 							}
 						}
 					}
+
+					//Disegno i bordi
+					if(isEdge(i, j, img.width - 1, img.width -1)){
+						for(let h=0; h<myH; h++){
+							if(matrixData[i][j]<8){
+								refill = sand.clone();
+								refill.position.set(i, myH-1-h, j);
+								ground.add(refill);
+							}else if (matrixData[i][j]<13){ 
+								refill = mountain.clone();
+								refill.position.set(i, myH-1-h, j);
+								ground.add(refill);
+
+							}else{ 
+								refill = mountainBlack.clone();
+								refill.position.set(i, myH-1-h, j);
+								ground.add(refill);
+
+							}
+						}
+					}
+
 				}
 			}	
 			/******************************************************************************************/
