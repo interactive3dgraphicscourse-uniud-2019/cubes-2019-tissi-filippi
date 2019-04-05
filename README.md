@@ -29,6 +29,11 @@ Sono state introdotte 4 animazioni nella scena:
 
 * La luce nella scena è modificabile premendo il tasto "a" della tastiera.
 
+# Progettazione oggetti della scena
+
+Abbiamo deciso di progettare la scena prima su carta e solo dopo un minuzioso lavoro abbiamo deciso di riportarla nel file javascript. Per completezza, anche se già presenti nel file _Journal.md_ si riportano alcune immagini della progettazione.
+![](JrnImages/MisureProgetto.jpg)
+![](JrnImages/SchemaPers.jpg)
 
 # Albero della scena
 
