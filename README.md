@@ -15,10 +15,27 @@ Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle duran
 * Le texture usate sono state inserite nella cartella denominata _textures_, mentre la heightmap usata per la generazione del terreno è stata inserita all'interno della cartella _ground_, presente nella stessa cartella.
 * La Heightmap è stata creata da noi _ah hoc_ per questo progetto adattandola al meglio per valorizzare il nostro lavoro.
 
+# Animazioni della scena
+
+Sono state introdotte 4 animazioni nella scena:
+
+* Animazione ondeggiante del personaggio "guardia" sulla sinistra del tempio.
+
+* Animazione ondeggiante del personaggio "guardia" sulla destra del tempio.
+
+* Aniomazione della sfera: levitazione verso alto e verso il basso, inoltre rotazione asse x e y.
+
+* Animazione del personaggio posizionato al centro della scena: movimento verso l'alto e verso il basso.
+
+* La luce nella scena è modificabile premendo il tasto "a" della tastiera.
+
+
 # Albero della scena
 
 L'immagine che segue contiene l'albero che si è deciso di seguire per la formazione della scena. ![](JrnImages/Grafo.jpg) 
 
 # Risultato finale
 
-L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro. ![](JrnImages/fs.jpg)
+L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro e il frame-rate, testato utilizzando il nostro pc (MacBook Pro), è di 35 fps.
+
+![](JrnImages/fs.jpg)
