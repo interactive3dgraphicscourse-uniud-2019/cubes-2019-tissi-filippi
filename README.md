@@ -35,7 +35,7 @@ Abbiamo deciso di progettare la scena prima su carta e solo dopo un minuzioso la
 
 ![](JrnImages/MisureProgetto.JPG) 
 
-s
+
 
 ![](JrnImages/SchemaPers.jpg)
 
