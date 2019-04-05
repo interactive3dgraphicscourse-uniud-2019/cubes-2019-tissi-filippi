@@ -3,9 +3,8 @@ La scena che ci siamo immaginati ha come location un zona pianeggiante con rilie
 
 # Presentazione della strutturazione delle cartelle
 
-Il progetto ha avuto inizio a partire dal codice contenuto nel file _StartingCode-withlights.html_ e _StartingCode-heightmap.html_
+Il progetto ha avuto inizio a partire dal codice contenuto nel file _StartingCode-withlights.html_ e _StartingCode-heightmap.html_. Il processo di creazione dell'eleaborato finale aggiornato, di giorno in giorno, si trova nel file _Journal.md_. Per una migliore gestione del lavoro abbiamo deciso di servirci anche del programma _GitKraken_.
 
-Il processo di creazione dell'eleaborato finale aggiornato, di giorno in giorno, si trova nel file _Journal.md_
 Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle durante il progetto:
 
 * Il codice principale si trova nel file: _index.html_
