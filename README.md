@@ -5,7 +5,7 @@ La scena che ci siamo immaginati ha come location un zona pianeggiante con rilie
 
 Il progetto ha avuto inizio a partire dal codice contenuto nel file _StartingCode-withlights.html_ e _StartingCode-heightmap.html_
 
-Il processo di creazione dell'eleaborato finale aggiornato di giorno in giorno si trova nel file _Journal.md_
+Il processo di creazione dell'eleaborato finale aggiornato, di giorno in giorno, si trova nel file _Journal.md_
 Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle durante il progetto:
 
 * Il codice principale si trova nel file: _index.html_
@@ -21,5 +21,4 @@ L'immagine che segue contiene l'albero che si è deciso di seguire per la formaz
 
 # Risultato finale
 
-L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro. ![](JrnImages/fs.jpg) 
-
+L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro. ![](JrnImages/fs.jpg)
