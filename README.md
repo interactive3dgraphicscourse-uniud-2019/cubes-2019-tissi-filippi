@@ -1,7 +1,5 @@
 # Report Tissi-Filippi
-La scena che si siamo immaginati ha come location un zona deserica dove si possono intravedere alcuni rilievi montuosi; posizionato al centro, nel piano, è situato un tempio greco ormai lasciato alle intemperie. All'interno di esso si svolge la....
-
-da un tempio con all'interno alcuni personaggi che si è scelto di rappresentare come fossero delle presenze. Due si trovano all'esterno e hanno lo scopo di sorvegliare il tempio. La presenza del protagonista è al centro della scena: è intento a far levitare verso l'alto e verso il basso il cubo, che ruota nelle varie direzioni. E' possibile modificare la luce che fuoriesce dal cubo, premendo il tasto "a"
+La scena che ci siamo immaginati ha come location un zona pianeggiante con rilievi montuosi; posizionato al centro, nel piano, è situato un tempio greco ormai abbandoneto alle intemperie e al passare inesorabile del tempo. All'interno di esso si svolge la scena dove i protagonisti sono alcuni personaggi che si è scelto di rappresentare come fossero degli spiriti, quasi delle presenze. Due si trovano all'esterno e hanno lo scopo di sorvegliare il tempio. Il protagonista è al centro della scena, intento a far levitare verso l'alto il cubo, che ruota nelle varie direzioni. E' possibile modificare la luce che fuoriesce dal cubo, premendo il tasto "a".
 
 # Presentazione della strutturazione delle cartelle
 
@@ -24,7 +22,6 @@ L'immagine che segue contiene l'albero che si è deciso di seguire per la formaz
 # Risultato finale
 
 L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro. ![](JrnImages/fs.jpg) 
-
 
 
 
