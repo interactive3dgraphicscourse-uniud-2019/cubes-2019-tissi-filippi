@@ -44,7 +44,8 @@ class Wall {
         this.wall.add(wall_dx);
         wall_dx.position.set(WIDTH_STEPS/2 - RIENTRO - WIDTH_WALL/2, H_WALL/2,0);
     }
-  
+    
+    //Funzione che mi ritorna l'oggetto appena creato
     getWall(){
         return this.wall;
     }

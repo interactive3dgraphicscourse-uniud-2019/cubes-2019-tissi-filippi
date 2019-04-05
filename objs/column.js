@@ -39,7 +39,8 @@ class Column {
       this.column.add(capital2);
       capital2.position.y = h_capital2/2 + H_STEP*3 + h_stem + h_capital + h_base;
     }
-  
+    
+    //Funzione che mi ritorna l'oggetto appena creato
     getColumn(){
       return this.column;
     }

@@ -5,11 +5,8 @@ class CharacterInside {
       let character_tex_in = new THREE.TextureLoader().load('textures/ros.jpg');
       let head_tex = new THREE.TextureLoader().load('textures/head_tex.jpg');
       let face_tex = new THREE.TextureLoader().load('textures/face.jpg');
-      //let stepM = new THREE.MeshPhongMaterial( { map: character_tex } );
-      //Geometria comune: viene utilizzata per tutti gli elementi, che poi vengono scalati
-      //let stepG = new THREE.BoxBufferGeometry(1,1,1);
       
-      /****************** Creo il bottom *************/
+      /****************** Creo la parte inferiore del personaggio *************/
       let bottom = [];
       let h_level = 2.5;
       let h_level_2 = 2;
@@ -32,7 +29,7 @@ class CharacterInside {
       bottom_character_in.add(bottom[3]);
       bottom[3].position.set(0,h_level/2,0)
 
-      /****************** Creo l'upper *************/
+      /****************** Creo la parte superiore del personaggio ***************/
       let upper_character_in = new THREE.Object3D();
       
       //Busto
@@ -56,6 +53,7 @@ class CharacterInside {
       let handSx = new THREE.Mesh(handG, handM);
       let handDx = new THREE.Mesh(handG, handM);
 
+      //Oggetti che mi servono per ruotare le braccia
       let test1 = new THREE.Object3D();
       test1.position.set(0,10,2);
       let test2 = new THREE.Object3D();
@@ -72,9 +70,7 @@ class CharacterInside {
       handSx.position.set(-(w_body_in/2+w_arm_hand/2), -(h_hand/2 + h_level), 0);
       handDx.position.set(w_body_in/2+w_arm_hand/2, -(h_hand/2 + h_level), 0);
 
-      /************ Creo la testa **********************/
-        
-
+      /******************* Creo la testa del personaggio **********************/
       let headM_array = [
               new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}), 
               new THREE.MeshPhongMaterial({map: head_tex, opacity: .8, transparent: true}),
@@ -96,12 +92,13 @@ class CharacterInside {
       this.character_in.position.y = 25;
 
     }
-  
+    
+    //Funzione che mi ritorna l'oggetto appena creato
     getCharacter(){
       return this.character_in;
     }
     
-    //Funzione per creare il singolo "livello" del bottom del character
+    //Funzione per creare il singolo "livello" della parte inferiore del personaggio
     createBottomLevel(geometry, material, width, heigth, size){
         let step = new THREE.Mesh(geometry, material );
         step.scale.x = width;

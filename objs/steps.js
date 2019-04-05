@@ -23,7 +23,8 @@ class Steps {
       this.steps.add(step2);
       step2.position.y = 5/2*H_STEP;
     }
-  
+    
+    //Funzione che mi ritorna l'oggetto appena creato
     getSteps(){
       return this.steps;
     }

@@ -10,12 +10,13 @@ class Decorations {
       this.decorations.add(dec0);
       dec0.position.set(0,0,0);
     }
-  
+    
+    //Funzione che mi ritorna l'oggetto appena creato
     getDecorations(){
       return this.decorations;
     }
 
-    //Funzione per creare la singola dec
+    //Funzione per creare la singola decorazione
     createDecoration(geometry, material, size, deph){
       let decoration = new THREE.Mesh(geometry, material );
       decoration.scale.x = size;
