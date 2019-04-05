@@ -4,7 +4,7 @@ class CharacterOutside {
       this.character = new THREE.Object3D();
       let character_tex = new THREE.TextureLoader().load('textures/ros.jpg');
       
-      /****************** Creo il bottom *************/
+      /******************** Creo la parte inferiore del personaggio *****************/
       let bottom = [];
       let h_level = 2.5;
       let h_level_2 = 2;
@@ -27,7 +27,7 @@ class CharacterOutside {
       bottom_character.add(bottom[3]);
       bottom[3].position.set(0,h_level/2,0)
 
-      /****************** Creo l'upper *************/
+      /******************** Creo la parte superiore del personaggio *****************/
       let upper_character = new THREE.Object3D();
       
       //Busto
@@ -53,6 +53,7 @@ class CharacterOutside {
       let handSx = new THREE.Mesh(handG, handM);
       let handDx = new THREE.Mesh(handG, handM);
 
+      //Oggetti che mi servono per ruotare il braccio
       let test1 = new THREE.Object3D();
       test1.position.set(0,10,2);
       let test2 = new THREE.Object3D();
@@ -70,14 +71,14 @@ class CharacterOutside {
       armDx.position.set(w_body_in/2+w_arm_hand/2, 0, 0);
       handDx.position.set(w_body_in/2+w_arm_hand/2, -(h_hand/2 + h_level), 0);
 
-      //Aggiungiamo un piccola lancia
+      //Aggiungiamo un piccola "lancia" al personaggio
       let spearG = new THREE.BoxBufferGeometry(0.5,25,0.5);
       let spearM = new THREE.MeshBasicMaterial({ color: "rgb(0,0,0)", opacity: .8, transparent: true });
       let spear = new THREE.Mesh(spearG, spearM);
       spear.rotation.x = 90 * Math.PI/180;
       handDx.add(spear);
       
-      /************ Creo la testa *********************/
+      /******************* Creo la testa del personaggio ************************/
         let head_tex = new THREE.TextureLoader().load('textures/head_tex.jpg');
         let face_tex = new THREE.TextureLoader().load('textures/face.jpg');
 
@@ -101,7 +102,8 @@ class CharacterOutside {
       this.character.position.y = 25;
 
     }
-  
+
+    //Funzione che mi ritorna l'oggetto appena creato
     getCharacter(){
       return this.character;
     }
@@ -113,5 +115,6 @@ class CharacterOutside {
         step.scale.y = heigth;
         step.scale.z = size;
         return step;
-      }
+    }
+
   }

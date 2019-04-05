@@ -93,7 +93,7 @@
 			renderer.shadowMap.enabled = true;
 			document.body.appendChild( renderer.domElement );
 			
-			camera.position.set(50,100,100);
+			camera.position.set(5,20,35);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 
@@ -104,6 +104,7 @@
 			let steps = new Steps(WIDTH_STEPS, DEPH_STEPS);
 			let s = steps.getSteps();
 			tempio.add(s);
+			
 
 			//Aggiungo il muretto
 			let wall = new Wall(WIDTH_STEPS, DEPH_STEPS);
@@ -244,11 +245,14 @@
                 new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true})
             ]; 
 			
+			
 			let sferaM = new THREE.MultiMaterial(sferaM_array);
 			sfera = new THREE.Mesh(sferaG, sferaM);
+			sfera.castShadow = true; //default is false
+			sfera.receiveShadow = true; //default
 			total.add(sfera);
 			sfera.position.set(0,65,-30);
-			let light_color = setRandomColor();
+			let light_color = createRandomColor();
 			let light = new THREE.PointLight( light_color, 1, 100 );
 			light.position.set(0,0,0);
 			sfera.add(light);
@@ -259,9 +263,9 @@
 			};
 			document.addEventListener("keydown", onKeyPress);
 			total.scale.set(0.15,0.15,0.15);
+			total.position.y = 0.5;
 			/******************************LUCI****************************/
 			setHemiLight();
-			//setDirectionalLight();
 
 			/******************************TERRENO****************************/
 			let img = new Image();
@@ -316,6 +320,7 @@
 				guard_sx.position.y-=0.07;
 			else if(guard_sx.position.y<=26 && direction_3)
 				guard_sx.position.y+=0.07;
+			
 			if(guard_sx.position.y<=22 || guard_sx.position.y>=26 ){
 				direction_3 = !direction_3;
 			}
@@ -376,12 +381,6 @@
 			let sand = new THREE.Mesh( geometry, sandM);
 			let mountain = new THREE.Mesh(geometry, mountainM );
 			let mountainBlack = new THREE.Mesh(geometry, mountainBlackM );
-			sand.castShadow = true;
-			sand.receiveShadow = true;
-			mountain.castShadow = true;
-			mountain.receiveShadow = true;
-			mountainBlack.castShadow = true;
-			mountainBlack.receiveShadow = true;	
 			
 			let ground = new THREE.Object3D();
 			scene.add(ground);
@@ -459,29 +458,6 @@
 							}
 						}
 					}
-
-					//Disegno i bordi
-					/*
-					if(isEdge(i, j, img.width - 1, img.width -1)){
-						for(let h=0; h<myH; h++){
-							if(matrixData[i][j]<8){
-								refill = sand.clone();
-								refill.position.set(i, myH-1-h, j);
-								ground.add(refill);
-							}else if (matrixData[i][j]<13){ 
-								refill = mountain.clone();
-								refill.position.set(i, myH-1-h, j);
-								ground.add(refill);
-
-							}else{ 
-								refill = mountainBlack.clone();
-								refill.position.set(i, myH-1-h, j);
-								ground.add(refill);
-
-							}
-						}
-					}
-					*/
 
 				}
 			}	

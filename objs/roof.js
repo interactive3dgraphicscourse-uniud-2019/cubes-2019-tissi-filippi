@@ -11,13 +11,13 @@ class Roof {
         let roofG = new THREE.BoxBufferGeometry(1,1,1);
         
 
-        //Creo le pareti del muretto
+        //Creo le pareti del tetto
         let roof_front = this.createSubWall(roofG, roofM, width - COLUMN_CAPITAL_SIZE*2);
         let roof_back = this.createSubWall(roofG, roofM, width - COLUMN_CAPITAL_SIZE*2);
         let roof_sx = this.createSubWall(roofG, roofM, length);
         let roof_dx = this.createSubWall(roofG, roofM, length);
 
-        //Aggiungo e posiziono le pareti del muretto
+        //Aggiungo e posiziono le pareti del tetto
         this.roof.add(roof_front);
         roof_front.rotation.y = 90 * Math.PI/180;
         roof_front.position.set(0,(H_WALL - 5)/2,Z_COLUMN);
@@ -33,7 +33,7 @@ class Roof {
         roof_dx.position.set(X_COLUMN, (H_WALL - 5)/2, 0);
 
 
-        //Creo i due triangoli: fronte e retro
+        //Creo i due "triangoli": fronte e retro
         let triangle_levels_back = [];
         let triangle_levels_front = [];
         let n_level = 11;
@@ -48,7 +48,8 @@ class Roof {
             triangle_levels_front[i].position.set(0, (H_WALL - 5) + (this.h_level)/2 + 3*i ,Z_COLUMN);
         }
     }
-  
+    
+    //Funzione che mi ritorna l'oggetto appena creato
     getRoof(){
         return this.roof;
     }

@@ -152,7 +152,7 @@
  * Generazione del terreno e della funzione che pratica il refill.
 
  * TO DO:
-   - Inserire la "cornice" del nostro terreno, ossia tutti i pixel che si trovano in posizione: (0,n) gli orizzontali alti, (n,0) verticali a sinistra, (75,n) per i bassi e (n,75) per i verticali destri. [con n che va da 0 a 75] ... Ognuno di quei pixel deve avere la colonna piena fino alla base (altezza uguale alla sua altezza), cosi facendo creo un modo maggiormente gradevole all'occhio.
+   - Inserire la "cornice" del nostro terreno, ossia tutti i pixel che si trovano in posizione: (0,n) gli orizzontali alti, (n,0) verticali a sinistra, (75,n) per i bassi e (n,75) per i verticali destri. [con n che va da 0 a 75] ... Ognuno di quei pixel deve avere la colonna piena fino alla base (altezza uguale alla sua altezza), cosi facendo creo un modo maggiormente gradevole all'occhio --> IDEA SCARTATA
 
    - gestire le texture e valutare la loro possibile introduzione per sostituire i colori RGB di cui ci si è serviti fino ora.
 
@@ -186,3 +186,13 @@
     - posizionare la telecamere
 
     - fare gli screen
+
+# 5 aprile 2019
+
+  * Revisione Journal trascritto la giornata precedente
+  
+  * Tempio rialzato
+
+  * Telecamera posizionata
+
+  * 
