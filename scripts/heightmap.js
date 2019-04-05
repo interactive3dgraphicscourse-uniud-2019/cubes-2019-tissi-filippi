@@ -1,3 +1,4 @@
+//Funzione fornita dal codice di partenza
 function getHeightData(img,scale) {
   
     if (scale == undefined) scale=1;

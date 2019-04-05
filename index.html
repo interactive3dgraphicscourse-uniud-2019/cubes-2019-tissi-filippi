@@ -93,11 +93,12 @@
 			renderer.shadowMap.enabled = true;
 			document.body.appendChild( renderer.domElement );
 			
+			//Posiziono la telecamera
 			camera.position.set(5,20,35);
 			camera.lookAt( new THREE.Vector3(0,0,0));
 			
 
-			/*********************TEMPIO*******************/
+			/*************************** TEMPIO *************************/
 			let tempio = new THREE.Object3D();
 			total.add(tempio);
 			//Aggiungo i gradini
@@ -111,6 +112,8 @@
 			let w = wall.getWall();
 			w.position.y = H_STEP*3;
 			tempio.add(w);
+
+			//Aggiungo tutte le colonne:
 
 			//Aggiungo le 6 colonne a sinistra
 			let columns_sx = [];
@@ -152,7 +155,8 @@
 				columns_front_add[i].position.set(-15 + i*30, 0, Z_COLUMN);
 			}
 			
-			
+			//Aggiungo tutte le decorazioni:
+
 			//Aggiungo le decorazioni davanti
 			let decorationsF = [];
 			let decorationsF_add = [];
@@ -195,14 +199,14 @@
 				decorationsDx_add[i].position.set(52.5 , H_STEP*3+columns_front[0].getHColumn()+(h_decoration/2) + 1 , -60 + i*30);
 			}
 			
-
 			//Aggiungo tetto
 			let roof = new Roof(105, 165);
 			let r = roof.getRoof();
 			r.position.y = columns_front[0].getHColumn() + H_STEP*3;
 			tempio.add(r);
 
-			/******************************PERSONAGGI****************************/
+			/******************************** PERSONAGGI ******************************/
+
 			//Aggiungo Prete interno
 			let png_priest = new CharacterInside();
 			priest = png_priest.getCharacter();
@@ -218,6 +222,7 @@
 			guard_sx.position.z = 85;
 			guard_sx.position.x = -67.5;
 			guard_sx.position.y = 26;
+
 			//Aggiungo Guardia dx
 			let png_guard_dx = new CharacterOutside();
 			guard_dx = png_guard_dx.getCharacter();
@@ -226,13 +231,15 @@
 			guard_dx.position.x = 67.5;
 
 
-			/*********************** "SFERA" CHE RUOTA ********************/
-			//Posizioniamo un "altarino"
+			/**************************** "SFERA" CHE RUOTA ************************/
+
+			//Posizioniamo un "altarino" dove sarà presente la sfera
 			let altar = new Steps(40, 40);
 			let a = altar.getSteps();
 			a.position.y = H_STEP*3; 
 			a.position.z = -30; 
 			tempio.add(a);
+
 			//Creiamo e posizioniamo la "sfera"
 			let sferaG = new THREE.BoxGeometry(20,20,20);
 			let sfera_tex = new THREE.TextureLoader().load('textures/sfera_tex.png');
@@ -244,18 +251,16 @@
                 new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true}),
                 new THREE.MeshPhongMaterial({map: sfera_tex, opacity: .8, transparent: true})
             ]; 
-			
-			
 			let sferaM = new THREE.MultiMaterial(sferaM_array);
 			sfera = new THREE.Mesh(sferaG, sferaM);
-			sfera.castShadow = true; //default is false
-			sfera.receiveShadow = true; //default
 			total.add(sfera);
 			sfera.position.set(0,65,-30);
+			//Aggiungo alla sfera una luce
 			let light_color = createRandomColor();
 			let light = new THREE.PointLight( light_color, 1, 100 );
 			light.position.set(0,0,0);
 			sfera.add(light);
+			//Gestico evento per il cambio colore della luce da tastiera
 			let onKeyPress = function(event) {
 				if (event.key == 'a') {
 					light.color.setRGB(Math.random(), Math.random(), Math.random());
@@ -264,14 +269,15 @@
 			document.addEventListener("keydown", onKeyPress);
 			total.scale.set(0.15,0.15,0.15);
 			total.position.y = 0.5;
-			/******************************LUCI****************************/
+
+			/****************************** LUCE della SCENA *****************************/
 			setHemiLight();
 
-			/******************************TERRENO****************************/
+			/******************************** TERRENO ************************************/
 			let img = new Image();
 			img.onload = function () {
-				//get height data from img
 				let data = getHeightData(img, 0.1);
+				//La seguente funzione è definita a fine file
 				createGround(data, img); 
 			}
 			img.src = "textures/ground/heightmapNEW.png"; 
@@ -282,15 +288,13 @@
 			stats.domElement.style.top = '0px';
 			document.body.appendChild( stats.domElement );
 			
-			// uncomment if you need to draw coordinate axes when building the scene
-			// Coordinates.drawAllAxes();
-			
 			controls = new THREE.OrbitControls( camera, renderer.domElement );
 		}
 		
 		function Update() {
 			requestAnimationFrame( Update );
 			controls.update();
+
 			/************** ANIMAZIONE SFERA *************/
 			sfera.rotation.x+=0.01;
 			sfera.rotation.y+=0.01;
@@ -365,12 +369,10 @@
 			renderer.render(scene, camera);
 		}
 		
+		//Funzione per creare il terreno dato l'array dei valori
 		function createGround(data, img){
 			let geometry = new THREE.BoxBufferGeometry(1,1,1);
-			//let sandM = new THREE.MeshBasicMaterial( { color: "rgb(255,213,0)", transparent: true, opacity: 0.7 } );
-			//let mountainM = new THREE.MeshBasicMaterial( { color: "rgb(51, 51, 0)", transparent: true, opacity: 0.7 } );
-			//let mountainBlackM = new THREE.MeshBasicMaterial( { color: "rgb(26,13,0)", transparent: true, opacity: 0.7 } );
-
+	
 			let sand_tex = new THREE.TextureLoader().load('textures/ground/sand.jpg');
 			let sandM = new THREE.MeshPhongMaterial( { map: sand_tex } );
 			let mountain_tex = new THREE.TextureLoader().load('textures/ground/mountain.jpg');
@@ -397,11 +399,11 @@
 				matrixHeight[i] = [];
 				for(let j=0; j<img.height; j++){
 					matrixData[i][j] = Math.trunc(data[i+j*img.width]);
-					matrixHeight[i][j] = matrixData[i][j]*(2/3);
+					matrixHeight[i][j] = matrixData[i][j]*0.45;
 				}
 			}
 
-			//posiziono i cubetti principali
+			//Posiziono i cubetti principali -- quelli dei valori dell'array
 			for(let i=0; i<matrixData.length; i++){
 				for(let j=0; j<matrixData[i].length; j++){
 					if(matrixData[i][j]<8){
@@ -419,27 +421,39 @@
 				}
 			}
 
-			//riempio i "buchi"
+			//Riempio i "buchi" sotto i cubetti principali
 			let h1, h2, h3, h4, myH;
 			let min;
 			let refill;
 			for(let i =0; i<matrixHeight.length; i++){
 				for(let j=0;j<matrixHeight[i].length; j++){
 					myH = matrixHeight[i][j];
-					if (isInEdge(i + 1, j, img.width - 1, img.width - 1)) h1 = matrixHeight[i + 1][j];
-					else h1 = 30;
+					//Prendo le altezze dei cubetti intorno a quello dove sono ora
+					//se questi cubetti stanno all'interno dell'immagine
+					if (isInImg(i + 1, j, img.width - 1, img.width - 1)) 
+						h1 = matrixHeight[i + 1][j];
+					else 
+						h1 = 30;
 
-					if (isInEdge(i - 1, j, img.width - 1, img.width - 1)) h2 = matrixHeight[i - 1][j];
-					else h2 = 30;
+					if (isInImg(i, j + 1, img.width - 1, img.width - 1)) 
+						h2 = matrixHeight[i][j + 1];
+					else 
+						h2 = 30;
 
-					if (isInEdge(i, j + 1, img.width - 1, img.width - 1)) h3 = matrixHeight[i][j + 1];
-					else h3 = 30;
+					if (isInImg(i - 1, j, img.width - 1, img.width - 1)) 
+						h3 = matrixHeight[i - 1][j];
+					else 
+						h3 = 30;
 
-					if (isInEdge(i, j - 1, img.width - 1, img.width - 1)) h4 = matrixHeight[i][j - 1];
-					else h4 = 30;
+					if (isInImg(i, j - 1, img.width - 1, img.width - 1)) 
+						h4 = matrixHeight[i][j - 1];
+					else 
+						h4 = 30;
 
+					//Prendo l'altezza minima tra i cubetti intorno a quello dove sono ora
 					min = Math.min(h1, h2, h3, h4);
 					if(min < myH-1){
+						//Creo una pila di cubetti sotto a dove sono fino all'altezza minima dei cubetti intorno a me
 						for(let h=0; h < myH-min; h++){
 							if(matrixData[i][j]<8){
 								refill = sand.clone();
@@ -461,9 +475,9 @@
 
 				}
 			}	
-			/******************************************************************************************/
-			
-		}		
+		}	
+		
+		
 		Start();
 		Update();
 		

@@ -1,4 +1,4 @@
-/* FUNZIONE NON UTILIZZATA
+//Funzione per il terreno -- NON UTILIZZATA
 function setGround(){
     let groundGeo = new THREE.PlaneBufferGeometry(10000, 10000);
     let groundMat = new THREE.MeshPhongMaterial({
@@ -13,7 +13,7 @@ function setGround(){
     scene.add(ground);
     ground.receiveShadow = true;
 }
-*/
+
 
 // Genera un colore rgb random --> ci serve per inizializzare la luce
 function createRandomColor() {
@@ -24,7 +24,7 @@ function createRandomColor() {
   return color;
 }
 // Verifica che le coordinate date siano all'interno dell'immagine e che non siano negative
-function isInEdge(x,z,xmax,zmax){
+function isInImg(x,z,xmax,zmax){
   return ((x>=0) && (z>=0) && (x<=xmax) && (z<=zmax)); 
 }
 

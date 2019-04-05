@@ -195,4 +195,4 @@
 
   * Telecamera posizionata
 
-  * 
+  * Commentato tutto il codice
