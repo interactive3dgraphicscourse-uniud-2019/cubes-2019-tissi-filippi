@@ -35,8 +35,6 @@ Abbiamo deciso di progettare la scena prima su carta e solo dopo un minuzioso la
 
 ![](JrnImages/MisureProgetto.JPG) 
 
-
-
 ![](JrnImages/SchemaPers.jpg)
 
 # Albero della scena
@@ -47,4 +45,8 @@ L'immagine che segue contiene l'albero che si è deciso di seguire per la formaz
 
 L'immagine che segue rappresenta, in modo statico, l'elaborato finale del nostro lavoro e il frame-rate, testato utilizzando il nostro pc (MacBook Pro), è di 35 fps.
 
-![](JrnImages/fs.jpg)
+![](JrnImages/screen/s1.png)
+
+![](JrnImages/screen/s2.png)
+
+![](JrnImages/screen/s3.png)
