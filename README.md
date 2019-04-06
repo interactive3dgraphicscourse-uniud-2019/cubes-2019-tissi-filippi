@@ -1,5 +1,5 @@
 # Report Tissi-Filippi
-La scena che ci siamo immaginati ha come location un zona pianeggiante con rilievi montuosi; posizionato al centro, nel piano, è situato un tempio greco ormai abbandoneto alle intemperie e al passare inesorabile del tempo. All'interno di esso si svolge la scena dove i protagonisti sono alcuni personaggi che si è scelto di rappresentare come fossero degli spiriti, quasi delle presenze. Due si trovano all'esterno e hanno lo scopo di sorvegliare il tempio. Il protagonista è al centro della scena, intento a far levitare verso l'alto il cubo, che ruota nelle varie direzioni. E' possibile modificare la luce della scena premendo il tasto "a" della tastiera.
+La scena che ci siamo immaginati ha come location un zona montuosa; posizionato al centro, nel piano, è situato un tempio greco ormai abbandonato, all'interno del quale si svolge la scena che ci siamo immaginati: i protagonisti sono alcuni personaggi che si è scelto di rappresentare come degli spiriti che hanno preso possesso del tempio. Due si trovano all'esterno e hanno lo scopo di sorvegliare il sacerdote, che si trova al centro della scena, intento a compiere magie su un cubo che abbiamo immaginato come una sorta di Tesseract, ovvero un dispositivo contenente una immensa quantità di energia e in grado di trasformare in realtà ogni desiderio di chi lo detiene. E' possibile modificare la luce della scena premendo il tasto "a" della tastiera.
 
 # Presentazione della strutturazione delle cartelle
 
@@ -9,10 +9,10 @@ Di seguito presentiamo l'organizzazione che abbiamo scelto per le cartelle duran
 
 * Il codice principale si trova nel file: _index.html_
 * All'interno della cartella _obj_ sono stati inseriti i file in javascript che contengono le varie classi costruite.
-* Nella cartella _StartingCode_ abbiamo inserito il codice di partenza che ci è stato fornito.
-* Nella cartella _scripts_ sono stati inseriti i file riguardanti le luci, il codice di getHeightData.
-* Le texture usate sono state inserite nella cartella denominata _textures_, mentre la heightmap usata per la generazione del terreno è stata inserita all'interno della cartella _ground_, presente nella stessa cartella.
-* La Heightmap è stata creata da noi _ah hoc_ per questo progetto adattandola al meglio per valorizzare il nostro lavoro.
+* Nella cartella _StartingCode_ abbiamo inserito un backup del codice di partenza che ci è stato fornito.
+* Nella cartella _scripts_ sono stati inseriti i file riguardanti le luci, il codice di getHeightData e un file main.js che ci siamo tenuti nel caso servisse implementare qualche funzione generale.
+* Le texture usate sono state inserite nella cartella denominata _textures_, mentre l'immagine utilizzata per generare il terreno è stata inserita all'interno della cartella _ground_, presente nella stessa cartella, dove sono presenti anche varie texture sempre per il terreno.
+* L'immagine che abbiamo utilizzato come Heightmap è stata creata da noi _ah hoc_ tramite Photoshop, adattandola al meglio per valorizzare il nostro lavoro. Il risultato è volutamente molto "discontinuo", questo perchè volevamo rendere una sorta di terreno pieno di rocce insidiose e poco uniformi. Inoltre, in base al valore di scala di grigi, posizioniamo il primo cubo a una determinata altezza, con sotto una pila di cubi uguali a esso.
 
 # Animazioni della scena
 
