@@ -196,3 +196,13 @@
   * Telecamera posizionata
 
   * Commentato tutto il codice
+
+# 6 - 7 - 8 aprile 2019
+
+  * Revisione totale del journal
+  
+  * Modifica posizione della camera
+
+  * Conclusione file _README.md_
+
+  * Rimozione screen e file non utilizzati
